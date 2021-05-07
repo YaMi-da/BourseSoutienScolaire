@@ -21,33 +21,23 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th width=5%>#</th>
+                                            <th>Rôle</th>
+                                            <th>Nom Complet</th>
+                                            <th>Email</th>
+                                            <th width=25%>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
+                                        @foreach($allData as $key => $user)
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <th>{{ $key+1 }}</th>
+                                            <th></th>
+                                            <th>{{ $user->name }}</th>
+                                            <th>{{ $user->email }}</th>
+                                            <th><a href="" class="btn btn-info">Modifier</a>     <a href="" class="btn btn-danger">Supprimer</a></th>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
