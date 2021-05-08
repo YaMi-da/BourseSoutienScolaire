@@ -35,7 +35,7 @@
                                             <th>{{ $user->user_type }}</th>
                                             <th>{{ $user->name }}</th>
                                             <th>{{ $user->email }}</th>
-                                            <th><a href="" class="btn btn-info">Modifier</a>     <a href="" class="btn btn-danger">Supprimer</a></th>
+                                            <th><a href="{{ route('users.edit', $user->id) }}" class="btn btn-info">Modifier</a>     <a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger">Supprimer</a></th>
                                         </tr>
                                         @endforeach
                                     </tbody>
