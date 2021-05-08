@@ -29,8 +29,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Utilisateurs</h6>
-                        <a class="collapse-item" href="{{ route('user.view') }}">Liste Utilisateurs</a>
-                        <a class="collapse-item" href="">Ajouter Utilisateur</a>
+                        <a class="collapse-item" href="{{ route('users.view') }}">Liste Utilisateurs</a>
+                        <a class="collapse-item" href="{{ route('users.add') }}">Ajouter Utilisateur</a>
                     </div>
                 </div>
             </li>

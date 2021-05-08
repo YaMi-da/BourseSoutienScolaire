@@ -14,7 +14,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h3 class="m-0 font-weight-bold text-primary">Liste d'utilisateurs</h3>
-                            <a href="" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Utilisateur</a>
+                            <a href="{{ route('users.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Utilisateur</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -32,7 +32,7 @@
                                         @foreach($allData as $key => $user)
                                         <tr>
                                             <th>{{ $key+1 }}</th>
-                                            <th></th>
+                                            <th>{{ $user->user_type }}</th>
                                             <th>{{ $user->name }}</th>
                                             <th>{{ $user->email }}</th>
                                             <th><a href="" class="btn btn-info">Modifier</a>     <a href="" class="btn btn-danger">Supprimer</a></th>

@@ -31,5 +31,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/admin/logout', [AdminController::class, 'Logout'])->name('admin.logout');
 
 Route::prefix('users')->group(function(){
-    Route::get('/view', [UserController::class, 'UserView'])->name('user.view');
+    Route::get('/view', [UserController::class, 'UserView'])->name('users.view');
+    Route::get('/add', [UserController::class, 'AddUser'])->name('users.add');
+    Route::post('/store', [UserController::class, 'StoreUser'])->name('users.store');
 });
