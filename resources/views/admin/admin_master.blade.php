@@ -72,6 +72,40 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('template/js/demo/datatables-demo.js') }}"></script>
 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            $(document).on('click', '#delete', function(e){
+                e.preventDefault();
+                var link = $(this).attr("href");
+
+
+
+                Swal.fire({
+                    title: 'Êtes-vous sûr?',
+                    text: "Cette action est irreversible.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    cancelButtonText: 'Annuler',
+                    confirmButtonText: 'Oui, je suis sûr!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = link
+                        Swal.fire(
+                        'Supprimé!',
+                        'Cette entrée a été supprimé!',
+                        'success'
+                        )
+                    }
+                })
+
+            });
+        });
+    </script>
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> 
 
     <script type="text/javascript">

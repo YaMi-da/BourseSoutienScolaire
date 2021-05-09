@@ -38,6 +38,24 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProfile"
+                    aria-expanded="true" aria-controls="collapseProfile">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <div id="collapseProfile" class="collapse" aria-labelledby="headingProfile"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('users.view') }}">Mon Profile</a>
+                        <a class="collapse-item" href="{{ route('users.add') }}">Changer mon mot de passe</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
