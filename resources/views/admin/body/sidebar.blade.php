@@ -42,12 +42,12 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProfile"
                     aria-expanded="true" aria-controls="collapseProfile">
                     <i class="fas fa-fw fa-user"></i>
-                    <span>Profile</span>
+                    <span>Profil</span>
                 </a>
                 <div id="collapseProfile" class="collapse" aria-labelledby="headingProfile"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ route('users.view') }}">Mon Profile</a>
+                        <a class="collapse-item" href="{{ route('profile.view') }}">Mon Profil</a>
                         <a class="collapse-item" href="{{ route('users.add') }}">Changer mon mot de passe</a>
                     </div>
                 </div>

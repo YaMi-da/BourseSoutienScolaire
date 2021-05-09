@@ -18,7 +18,9 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
+    <link href="{{ asset('template/css/custom2-css.css') }}" rel="stylesheet">
     <link href="{{ asset('template/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    
     <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
 
