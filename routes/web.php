@@ -19,15 +19,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     if(Auth::check()) {
-        return redirect('/dashboard');
+        return redirect('/adminDashboard');
     } else {
         return view('auth.login');
     }
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/adminDashboard', function () {
     return view('admin.index');
-})->name('dashboard');
+})->name('adminDashboard');
 
 Route::get('/admin/logout', [AdminController::class, 'Logout'])->name('admin.logout');
 
@@ -42,4 +42,8 @@ Route::prefix('users')->group(function(){
 
 Route::prefix('profile')->group(function(){
     Route::get('/view', [ProfileController::class, 'ProfileView'])->name('profile.view');
+    Route::get('/edit', [ProfileController::class, 'ProfileEdit'])->name('profile.edit');
+    Route::post('/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
+    Route::get('/password/view', [ProfileController::class, 'PasswordView'])->name('password.view');
+    Route::password('/password/update', [ProfileController::class, 'PasswordUpdate'])->name('password.update');
 });

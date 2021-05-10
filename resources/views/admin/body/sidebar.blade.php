@@ -10,7 +10,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('dashboard') }}">
+                <a class="nav-link" href="{{ route('adminDashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Tableau de Bord</span></a>
             </li>
@@ -48,7 +48,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('profile.view') }}">Mon Profil</a>
-                        <a class="collapse-item" href="{{ route('users.add') }}">Changer mon mot de passe</a>
+                        <a class="collapse-item" href="{{ route('password.view') }}">Changer mon mot de passe</a>
                     </div>
                 </div>
             </li>
