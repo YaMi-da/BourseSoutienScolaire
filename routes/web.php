@@ -19,15 +19,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     if(Auth::check()) {
-        return redirect('/adminDashboard');
+        return redirect('/dashboard');
     } else {
         return view('auth.login');
     }
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/adminDashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin.index');
-})->name('adminDashboard');
+})->name('dashboard');
 
 Route::get('/admin/logout', [AdminController::class, 'Logout'])->name('admin.logout');
 
