@@ -14,7 +14,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h3 class="m-0 font-weight-bold text-primary">Liste d'eleves</h3>
-                            <a href="{{ route('users.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Eleve</a>
+                            <a href="{{ route('students.list.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Eleve</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -32,8 +32,8 @@
                                         <tr>
                                             <th>{{ $key+1 }}</th>
                                             <th>{{ $eleve->nom }}</th>
-                                            <th>{{ $eleves->email }}</th>
-                                            <th><a href="{{ route('users.edit', $eleve->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('users.delete', $eleve->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
+                                            <th>{{ $eleve->email }}</th>
+                                            <th><a href="{{ route('students.list.edit', $eleve->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('students.list.delete', $eleve->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
                                         </tr>
                                         @endforeach
                                     </tbody>

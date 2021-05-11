@@ -51,4 +51,9 @@ Route::prefix('profile')->group(function(){
 
 Route::prefix('gestion')->group(function(){
     Route::get('eleves/list/view', [StudentsListController::class, 'ViewStudent'])->name('students.list.view');
+    Route::get('eleves/list/add', [StudentsListController::class, 'AddStudent'])->name('students.list.add');
+    Route::post('eleves/list/store', [StudentsListController::class, 'StoreStudent'])->name('students.list.store');
+    Route::get('eleves/list/edit{id}', [StudentsListController::class, 'EditStudent'])->name('students.list.edit');
+    Route::post('eleves/list/update/{id}', [StudentsListController::class, 'UpdateStudent'])->name('students.list.update');
+    Route::get('eleves/list/delete/{id}', [StudentsListController::class, 'DeleteStudent'])->name('students.list.delete');
 });
