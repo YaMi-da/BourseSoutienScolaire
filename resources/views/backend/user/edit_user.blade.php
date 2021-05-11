@@ -33,7 +33,7 @@
                                                             <h5>Role de l'Utilisateur<span class="text-danger">*</span></h5>
                                                             <div class="controls">
                                                                 <select name="role" id="role" required class="form-control">
-                                                                    <option value="" selected="" disabled="">Choisir Role</option>
+                                                                    <option value="" selected="" disabled="">Choisir Type</option>
                                                                     <option value="Admin" {{ ($editData-> user_type == "Admin" ? "selected" : "") }}>Admin</option>
                                                                     <option value="Formateur" {{ ($editData-> user_type == "Formateur" ? "selected" : "") }}>Formatteur</option>
                                                                     <option value="Eleve" {{ ($editData-> user_type == "Eleve" ? "selected" : "") }}>Eleve</option>

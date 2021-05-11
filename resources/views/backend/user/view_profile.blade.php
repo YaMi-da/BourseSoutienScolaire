@@ -20,7 +20,7 @@
 					<div class="widget-user-header" style="color: white; background-color:#4e73df">
 					  <h3 class="widget-user-username">Nom Complet : {{ $user->name }}</h3>
 					  <a href="{{ route('profile.edit') }}" style="float:right;font-size :15px;padding: 10px 10px" class="btn rounded-pill btn-secondary mt-0">Modifier profil</a>
-					  <h6 class="widget-user-desc">Rôle : {{ $user->user_type }}</h6>	
+					  <h6 class="widget-user-desc">Type : {{ $user->user_type }}</h6>	
 					  <h6 class="widget-user-desc">Email : {{ $user->email }}</h6>
 					</div>
 					<div class="widget-user-image">

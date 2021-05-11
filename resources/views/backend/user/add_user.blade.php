@@ -30,10 +30,10 @@
                                                     <div class="col-md-6" >
 
                                                         <div class="form-group">
-                                                            <h5>Role de l'Utilisateur<span class="text-danger">*</span></h5>
+                                                            <h5>Type d'utilisateur<span class="text-danger">*</span></h5>
                                                             <div class="controls">
                                                                 <select name="role" id="role" required class="form-control">
-                                                                    <option value="" selected="" disabled="">Choisir Role</option>
+                                                                    <option value="" selected="" disabled="">Choisir Type</option>
                                                                     <option value="Admin">Admin</option>
                                                                     <option value="Formateur">Formatteur</option>
                                                                     <option value="Eleve">Eleve</option>

@@ -8,13 +8,13 @@
         <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Utilisateurs</h1>
+                    <h1 class="h3 mb-3 text-gray-800">Eleves</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h3 class="m-0 font-weight-bold text-primary">Liste d'utilisateurs</h3>
-                            <a href="{{ route('users.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Utilisateur</a>
+                            <h3 class="m-0 font-weight-bold text-primary">Liste d'eleves</h3>
+                            <a href="{{ route('users.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Eleve</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -22,20 +22,18 @@
                                     <thead>
                                         <tr>
                                             <th width=5%>#</th>
-                                            <th>Type</th>
-                                            <th>Nom Complet</th>
-                                            <th>Email</th>
-                                            <th width=25%>Action</th>
+                                            <th width=25%>Nom Complet</th>
+                                            <th width=25%>Email</th>
+                                            <th width=20%>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($allData as $key => $user)
+                                        @foreach($allData as $key => $eleve)
                                         <tr>
                                             <th>{{ $key+1 }}</th>
-                                            <th>{{ $user->user_type }}</th>
-                                            <th>{{ $user->name }}</th>
-                                            <th>{{ $user->email }}</th>
-                                            <th><a href="{{ route('users.edit', $user->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
+                                            <th>{{ $eleve->nom }}</th>
+                                            <th>{{ $eleves->email }}</th>
+                                            <th><a href="{{ route('users.edit', $eleve->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('users.delete', $eleve->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
                                         </tr>
                                         @endforeach
                                     </tbody>
