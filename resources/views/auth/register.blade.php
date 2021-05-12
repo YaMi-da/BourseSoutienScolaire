@@ -6,7 +6,7 @@
 
         <x-jet-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" x-data="{user_type_id: 2}">
             @csrf
 
             <div>
@@ -28,6 +28,23 @@
                 <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
+
+            <div class="mt-4" style="width: 100%;">
+                    <select name="user_type_id" x-model="user_type_id" class="form-control" style="width: 100%; height:34px; margin-bottom:10px;">
+                        <option :value="2">Eleve</option>
+                        <option :value="3">Formatteur</option>
+                    </select>
+                </div>
+                <div class="mt-4" style="width: 100%;" x-show="user_type_id == 2">
+                    <x-jet-input id="niveau_eleve" type="text" placeholder="Choisir niveau d'etudes" :value="old('niveau_eleve')" name="niveau_eleve" />
+                </div>
+
+                <div class="mt-4" style="width: 100%;" x-show="user_type_id == 2">
+                    <x-jet-input id="matiere_eleve" type="text" placeholder="Choisir la matiere" :value="old('student_licence_number')" name="student_licence_number" />
+                </div>
+                <div class="mt-4" style="width: 100%;" x-show="user_type_id == 3">
+                    <x-jet-input id="niveau_formatteur" type="text" placeholder="Choisir le niveau" :value="old('niveau_formatteur')" name="niveau_formatteur" />
+                </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">

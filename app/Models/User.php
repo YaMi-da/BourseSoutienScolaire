@@ -27,6 +27,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'user_type_id',
+        'niveau_eleve',
+        'matiere_eleve',
+        'niveau_formatteur',
+        'matiere_formatteur',
     ];
 
     /**

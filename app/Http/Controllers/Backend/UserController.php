@@ -26,7 +26,7 @@ class UserController extends Controller
         ]);
 
         $data = new User();
-        $data -> user_type = $request -> role;
+        $data -> user_type_id = $request -> role;
         $data -> name = $request -> name;
         $data -> email = $request -> email;
         $data -> password = bcrypt($request -> password);
@@ -47,7 +47,7 @@ class UserController extends Controller
 
     public function UpdateUser(Request $request, $id){
         $data = User::find($id);
-        $data -> user_type = $request -> role;
+        $data -> user_type_id = $request -> role;
         $data -> name = $request -> name;
         $data -> email = $request -> email;
         $data->save();

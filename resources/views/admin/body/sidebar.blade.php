@@ -46,7 +46,7 @@ $route = Route::current()->getName();
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <li class="nav-item {{ ($prefix == '/profile')?'active':'' }}">
+            <li class="nav-item {{ ($prefix == '/adminProfile')?'active':'' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProfile"
                     aria-expanded="true" aria-controls="collapseProfile">
                     <i class="fas fa-fw fa-user"></i>

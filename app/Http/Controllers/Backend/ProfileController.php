@@ -55,7 +55,7 @@ class ProfileController extends Controller
     public function PasswordUpdate(Request $request){
         $validatedData = $request->validate([
             'oldPassword' =>  'required',
-            'oassword' => 'required|confirmed',
+            'password' => 'required|confirmed',
         ]);
 
         $hashedPassword = Auth::user()->password;
