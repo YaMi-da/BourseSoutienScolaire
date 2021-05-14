@@ -54,7 +54,7 @@
                     <x-jet-input id="niveau_formatteur" type="text" placeholder="Entrer le niveau d'enseignement" :value="old('niveau_formatteur')" name="niveau_formatteur" />
                 </div>
                 <div class="mt-4" style="width: 100%;" x-show="user_type_id == 3">
-                    <x-jet-input id="matiere_formatteur" type="text" placeholder="Entrer le niveau d'enseignement" :value="old('matiere_formatteur')" name="matiere_formatteur" />
+                    <x-jet-input id="matiere_formatteur" type="text" placeholder="Entrer la matière de spécialité" :value="old('matiere_formatteur')" name="matiere_formatteur" />
                 </div>
                 
                 <x-jet-button>S'inscrire</x-jet-button>

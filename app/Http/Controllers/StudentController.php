@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Formatteur;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class CourseController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,12 @@ class CourseController extends Controller
      */
     public function index()
     {
-        
+        //
+    }
+
+    public function Logout(){
+        Auth::logout();
+        return Redirect()->route('login');
     }
 
     /**

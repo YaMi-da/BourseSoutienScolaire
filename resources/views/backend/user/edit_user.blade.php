@@ -34,9 +34,9 @@
                                                             <div class="controls">
                                                                 <select name="role" id="role" required class="form-control">
                                                                     <option value="" selected="" disabled="">Choisir Type</option>
-                                                                    <option value="admin" {{ ($editData-> user_type_id == "admin" ? "selected" : "") }}>Admin</option>
-                                                                    <option value="formateur" {{ ($editData-> user_type_id == "formateur" ? "selected" : "") }}>Formatteur</option>
-                                                                    <option value="eleve" {{ ($editData-> user_type_id == "eleve" ? "selected" : "") }}>Eleve</option>
+                                                                    <option value="1" {{ ($editData-> user_type_id == 1 ? "selected" : "") }}>Admin</option>
+                                                                    <option value="2" {{ ($editData-> user_type_id == 2 ? "selected" : "") }}>Eleve</option>
+                                                                    <option value="3" {{ ($editData-> user_type_id == 3 ? "selected" : "") }}>Formatteur</option>
                         
                                                                 </select>
                                                             </div>

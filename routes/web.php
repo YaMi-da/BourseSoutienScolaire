@@ -4,6 +4,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\Gestion\StudentsListController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Formatteur\FormatteurController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\Students\LessonController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,17 +24,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     if(Auth::check()) {
-        return redirect('/dashboard');
+        return redirect('dashboard');
     } else {
         return view('auth.login');
     }
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard', function () {
     return view('admin.index');
 })->name('dashboard');
 
+Route::get('/formatteur/logout', [FormatteurController::class, 'Logout'])->name('formatteur.logout');
+
+Route::get('/eleve/logout', [StudentController::class, 'Logout'])->name('student.logout');
+
 Route::get('/admin/logout', [AdminController::class, 'Logout'])->name('admin.logout');
+
+Route::get('dashboard', [DashboardController::class, 'index']); 
+
 
 Route::prefix('users')->group(function(){
     Route::get('/view', [UserController::class, 'UserView'])->name('users.view');
@@ -57,3 +68,5 @@ Route::prefix('gestion')->group(function(){
     Route::post('eleves/list/update/{id}', [StudentsListController::class, 'UpdateStudent'])->name('students.list.update');
     Route::get('eleves/list/delete/{id}', [StudentsListController::class, 'DeleteStudent'])->name('students.list.delete');
 });
+
+

@@ -34,9 +34,9 @@
                                                             <div class="controls">
                                                                 <select name="role" id="role" required class="form-control">
                                                                     <option value="" selected="" disabled="">Choisir Type</option>
-                                                                    <option value="admin">Admin</option>
-                                                                    <option value="formateur">Formatteur</option>
-                                                                    <option value="eleve">Eleve</option>
+                                                                    <option value="1">Admin</option>
+                                                                    <option value="2">Eleve</option>
+                                                                    <option value="3">Formatteur</option>
                         
                                                                 </select>
                                                             </div>
