@@ -17,7 +17,7 @@ $route = Route::current()->getName();
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item {{ ($route == 'dashboard')?'active':'' }} ">    
+            <li class="nav-item {{ ($route == 'dashboard')?'active':'' }} ">
                 <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Tableau de Bord</span></a>

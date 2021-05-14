@@ -1,5 +1,5 @@
-@extends('formatteur.formatteur_master')
-@section('formatteur')
+@extends('admin.admin_master')
+@section('admin')
 
 
 <!-- Content Wrapper -->
@@ -9,7 +9,7 @@
 <div id="content">
 
     <!-- Topbar -->
-    @include('formatteur.body.header')
+    @include('admin.body.header')
     <!-- End of Topbar -->
 
     <!-- Begin Page Content -->
@@ -127,7 +127,7 @@
 <!-- End of Main Content -->
 
 <!-- Footer -->
-@include('formatteur.body.footer')
+@include('admin.body.footer')
 <!-- End of Footer -->
 
 </div>

@@ -1,13 +1,14 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\Gestion\StudentsListController;
-use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Formatteur\FormatteurController;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\Formatteur\FormatteurProfileController;
 use App\Http\Controllers\Students\LessonController;
+use App\Http\Controllers\Students\StudentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +32,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard', function () {
-    return view('admin.index');
+    return view('dashboard');
 })->name('dashboard');
 
 Route::get('/formatteur/logout', [FormatteurController::class, 'Logout'])->name('formatteur.logout');
@@ -40,7 +41,7 @@ Route::get('/eleve/logout', [StudentController::class, 'Logout'])->name('student
 
 Route::get('/admin/logout', [AdminController::class, 'Logout'])->name('admin.logout');
 
-Route::get('dashboard', [DashboardController::class, 'index']); 
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
 Route::prefix('users')->group(function(){
@@ -53,11 +54,11 @@ Route::prefix('users')->group(function(){
 });
 
 Route::prefix('adminProfile')->group(function(){
-    Route::get('/view', [ProfileController::class, 'ProfileView'])->name('profile.view');
-    Route::get('/edit', [ProfileController::class, 'ProfileEdit'])->name('profile.edit');
-    Route::post('/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
-    Route::get('/password/view', [ProfileController::class, 'PasswordView'])->name('password.view');
-    Route::post('/password/update', [ProfileController::class, 'PasswordUpdate'])->name('password.update');
+    Route::get('/view', [AdminProfileController::class, 'AdminProfileView'])->name('adminprofile.view');
+    Route::get('/edit', [AdminProfileController::class, 'AdminProfileEdit'])->name('adminprofile.edit');
+    Route::post('/store', [AdminProfileController::class, 'AdminProfileStore'])->name('adminprofile.store');
+    Route::get('/password/view', [AdminProfileController::class, 'AdminPasswordView'])->name('adminpassword.view');
+    Route::post('/password/update', [AdminProfileController::class, 'AdminPasswordUpdate'])->name('adminpassword.update');
 });
 
 Route::prefix('gestion')->group(function(){
@@ -67,6 +68,14 @@ Route::prefix('gestion')->group(function(){
     Route::get('eleves/list/edit{id}', [StudentsListController::class, 'EditStudent'])->name('students.list.edit');
     Route::post('eleves/list/update/{id}', [StudentsListController::class, 'UpdateStudent'])->name('students.list.update');
     Route::get('eleves/list/delete/{id}', [StudentsListController::class, 'DeleteStudent'])->name('students.list.delete');
+});
+
+Route::prefix('formatteurProfile')->group(function(){
+    Route::get('/view', [FormatteurProfileController::class, 'FormatteurProfileView'])->name('formatteurprofile.view');
+    Route::get('/edit', [FormatteurProfileController::class, 'FormatteurProfileEdit'])->name('formatteurprofile.edit');
+    Route::post('/store', [FormatteurProfileController::class, 'FormatteurProfileStore'])->name('formatteurprofile.store');
+    Route::get('/password/view', [FormatteurProfileController::class, 'FormatteurPasswordView'])->name('formatteurpassword.view');
+    Route::post('/password/update', [FormatteurProfileController::class, 'FormatteurPasswordUpdate'])->name('formatteurpassword.update');
 });
 
 

@@ -8,22 +8,22 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class ProfileController extends Controller
+class AdminProfileController extends Controller
 {
-    public function ProfileView(){
+    public function AdminProfileView(){
         $id = Auth::user()->id;
         $user = User::find($id);
 
         return view('backend.user.view_profile', compact('user'));
     }
 
-    public function ProfileEdit(){
+    public function AdminProfileEdit(){
         $id = Auth::user()->id;
         $editData = User::find($id);
         return view('backend.user.edit_profile',compact('editData'));
     }
 
-    public function ProfileStore(Request $request){
+    public function AdminProfileStore(Request $request){
         $data = User::find(Auth::user()->id);
         $data->name = $request->name;
         $data->email = $request->email;
@@ -45,14 +45,14 @@ class ProfileController extends Controller
             'alert-type' => 'info'
         );
 
-        return redirect()->route('profile.view')->with($notification);
+        return redirect()->route('adminprofile.view')->with($notification);
     }
 
-    public function PasswordView(){
+    public function AdminPasswordView(){
         return view('backend.user.edit_password');
     }
 
-    public function PasswordUpdate(Request $request){
+    public function AdminPasswordUpdate(Request $request){
         $validatedData = $request->validate([
             'oldPassword' =>  'required',
             'password' => 'required|confirmed',
