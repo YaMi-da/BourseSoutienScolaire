@@ -29,7 +29,7 @@
     <div class="container" id="container">
         <x-guest-layout>
         <div class="form-container sign-up-container">
-            <form method="POST" action="{{ route('register') }}" x-data="{user_type_id: 2}">
+            <form method="POST" action="{{ route('register') }}" x-data="{user_type_id: 0}">
                 @csrf
                 <h1 style="color: #4e73df;">Créez Votre Compte</h1>
                 <x-jet-validation-errors class="mb-4" />
@@ -38,7 +38,9 @@
                 <x-jet-input id="password" name="password" type="password" placeholder="Mot de Passe" required autocomplete="new-password"/>
                 <x-jet-input id="password_confirmation" name="password_confirmation" type="password" placeholder="Confirmer Mode de Passe" required autocomplete="new-password"/>
                 <div class="mt-4" style="width: 100%;">
+                
                     <select name="user_type_id" x-model="user_type_id" class="form-control" style="width: 100%; height:34px; margin-bottom:10px;">
+                        <option :value="0" selected>Etes vous?</option>
                         <option :value="2">Elève</option>
                         <option :value="3">Formatteur</option>
                     </select>
