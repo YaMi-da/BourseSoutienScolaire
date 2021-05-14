@@ -31,10 +31,10 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-        @include('admin.body.sidebar')
+        @include('students.body.sidebar')
         <!-- End of Sidebar -->
         
-        @yield('admin')
+        @yield('students')
 
  
         

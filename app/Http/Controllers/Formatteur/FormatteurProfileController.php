@@ -29,6 +29,7 @@ class FormatteurProfileController extends Controller
         $data->email = $request->email;
         $data->mobile = $request->mobile;
         $data->address = $request->address;
+        $data->matiere_formatteur = $request->matiere_formatteur;
 
         if ($request->file('image')) {
             $file = $request->file('image');

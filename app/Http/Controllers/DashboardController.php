@@ -15,7 +15,7 @@ class DashboardController extends Controller
         }
 
         else if ($type == 2) {
-            return view('eleve.index');
+            return view('students.index');
         }
 
         else if ($type == 3) {

@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="mt-4" style="width: 100%;" x-show="user_type_id == 2">
-                    <x-jet-input id="matiere_eleve" type="text" placeholder="Entrer la matière à étudier" :value="old('student_licence_number')" name="student_licence_number" />
+                    <x-jet-input id="matiere_eleve" type="text" placeholder="Entrer la matière à étudier" :value="old('matiere_eleve')" name="matiere_eleve" />
                 </div>
                 <div class="mt-4" style="width: 100%;" x-show="user_type_id == 3">
                     <x-jet-input id="niveau_formatteur" type="text" placeholder="Entrer le niveau d'enseignement" :value="old('niveau_formatteur')" name="niveau_formatteur" />
