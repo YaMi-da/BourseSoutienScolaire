@@ -29,7 +29,7 @@ $route = Route::current()->getName();
             <!-- Nav Item - Utilities Collapse Menu -->
 
 
-            <li class="nav-item">
+            <li class="nav-item {{ ($prefix == '/formatteurProfile')?'active':'' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProfile"
                     aria-expanded="true" aria-controls="collapseProfile">
                     <i class="fas fa-fw fa-user"></i>

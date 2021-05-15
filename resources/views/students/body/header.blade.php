@@ -183,12 +183,12 @@
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
             aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="{{ route('profile.view') }}">
+            <a class="dropdown-item" href="{{ route('studentprofile.view') }}">
                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                 Profil
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{ route('admin.logout') }}">
+            <a class="dropdown-item" href="{{ route('student.logout') }}">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Se Déconnecter
             </a>

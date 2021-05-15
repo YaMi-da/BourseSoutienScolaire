@@ -55,8 +55,8 @@ $route = Route::current()->getName();
                 <div id="collapseProfile" class="collapse" aria-labelledby="headingProfile"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ route('profile.view') }}">Mon Profil</a>
-                        <a class="collapse-item" href="{{ route('password.view') }}">Changer mon mot de passe</a>
+                        <a class="collapse-item" href="{{ route('adminprofile.view') }}">Mon Profil</a>
+                        <a class="collapse-item" href="{{ route('adminpassword.view') }}">Changer mon mot de passe</a>
                     </div>
                 </div>
             </li>

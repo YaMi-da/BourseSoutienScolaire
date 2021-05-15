@@ -26,7 +26,7 @@ $route = Route::current()->getName();
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <li class="nav-item">
+            <li class="nav-item {{ ($prefix == '/eleveProfile')?'active':'' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProfile"
                     aria-expanded="true" aria-controls="collapseProfile">
                     <i class="fas fa-fw fa-user"></i>
@@ -44,15 +44,15 @@ $route = Route::current()->getName();
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMeeting"
-                    aria-expanded="true" aria-controls="collapseMeeting">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCourses"
+                    aria-expanded="true" aria-controls="collapseCourses">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Mettings</span>
+                    <span>Mes Cours</span>
                 </a>
-                <div id="collapseMeeting" class="collapse" aria-labelledby="headingMeeting" data-parent="#accordionSidebar">
+                <div id="collapseCourses" class="collapse" aria-labelledby="headingCourses" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"></h6>
-                        <a class="collapse-item" href="login.html"></a>
+                        <a class="collapse-item" href=""></a>
                         <div class="collapse-divider"></div>
                     </div>
                 </div>

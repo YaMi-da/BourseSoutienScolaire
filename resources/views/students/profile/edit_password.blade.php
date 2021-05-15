@@ -1,9 +1,9 @@
-@extends('formatteur.formatteur_master')
-@section('formatteur')
+@extends('students.students_master')
+@section('students')
 
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
-        @include('formatteur.body.header')
+        @include('students.body.header')
 
         <div class="container-fluid">
             <div class="card shadow mb-4">
@@ -21,7 +21,7 @@
 			  <div class="row">
 				<div class="col">
 
-	 <form method="post" action="{{ route('formatteurpassword.update') }}">
+	 <form method="post" action="{{ route('studentpassword.update') }}">
 	 	@csrf
 					  <div class="row">
 						<div class="col-12">	
@@ -89,7 +89,7 @@
 
         
     </div>
-    @include('formatteur.body.footer')
+    @include('students.body.footer')
     
     
 </div>

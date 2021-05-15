@@ -7,8 +7,8 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Formatteur\FormatteurController;
 use App\Http\Controllers\Formatteur\FormatteurProfileController;
-use App\Http\Controllers\Students\LessonController;
 use App\Http\Controllers\Students\StudentController;
+use App\Http\Controllers\Students\StudentProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -76,6 +76,14 @@ Route::prefix('formatteurProfile')->group(function(){
     Route::post('/store', [FormatteurProfileController::class, 'FormatteurProfileStore'])->name('formatteurprofile.store');
     Route::get('/password/view', [FormatteurProfileController::class, 'FormatteurPasswordView'])->name('formatteurpassword.view');
     Route::post('/password/update', [FormatteurProfileController::class, 'FormatteurPasswordUpdate'])->name('formatteurpassword.update');
+});
+
+Route::prefix('eleveProfile')->group(function(){
+    Route::get('/view', [StudentProfileController::class, 'StudentProfileView'])->name('studentprofile.view');
+    Route::get('/edit', [StudentProfileController::class, 'StudentProfileEdit'])->name('studentprofile.edit');
+    Route::post('/store', [StudentProfileController::class, 'StudentProfileStore'])->name('studentprofile.store');
+    Route::get('/password/view', [StudentProfileController::class, 'StudentPasswordView'])->name('studentpassword.view');
+    Route::post('/password/update', [StudentProfileController::class, 'StudentPasswordUpdate'])->name('studentpassword.update');
 });
 
 
