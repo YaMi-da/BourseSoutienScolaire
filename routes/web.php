@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\Gestion\CommentsController;
 use App\Http\Controllers\Backend\Gestion\CourseController;
 use App\Http\Controllers\Backend\Gestion\CourseUserController;
 use App\Http\Controllers\Backend\Gestion\ItemsController;
+use App\Http\Controllers\Backend\Gestion\MatieresController;
 use App\Http\Controllers\Backend\Gestion\StudentsListController;
 use App\Http\Controllers\Backend\Gestion\ViewsController;
 use App\Http\Controllers\Backend\UserController;
@@ -101,6 +102,13 @@ Route::prefix('gestion')->group(function(){
     Route::get('vues/edit/{id}', [ViewsController::class, 'EditViews'])->name('adminview.edit');
     Route::post('vues/update/{id}', [ViewsController::class, 'UpdateViews'])->name('adminview.update');
     Route::get('vues/delete/{id}', [ViewsController::class, 'DeleteViews'])->name('adminview.delete');
+
+    Route::get('matieres/view', [MatieresController::class, 'ViewMatieres'])->name('adminview.view');
+    Route::get('matieres/add', [MatieresController::class, 'AddMatieres'])->name('adminview.add');
+    Route::post('matieres/store', [MatieresController::class, 'StoreMatieres'])->name('adminview.store');
+    Route::get('matieres/edit/{id}', [MatieresController::class, 'EditMatieres'])->name('adminview.edit');
+    Route::post('matieres/update/{id}', [MatieresController::class, 'UpdateMatieres'])->name('adminview.update');
+    Route::get('matieres/delete/{id}', [MatieresController::class, 'DeleteMatieres'])->name('adminview.delete');
 });
 
 Route::prefix('formatteurProfile')->group(function(){
