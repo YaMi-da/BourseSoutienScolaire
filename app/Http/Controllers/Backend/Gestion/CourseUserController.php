@@ -54,8 +54,8 @@ class CourseUserController extends Controller
     }
 
     public function DeleteCourseUser($id){
-        $course = CourseUser::find($id);
-        $course -> delete();
+        $courseuser = CourseUser::find($id);
+        $courseuser -> delete();
 
         $notification = array(
             'message' => 'Course/User Deleted Successfully',

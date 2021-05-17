@@ -46,9 +46,6 @@
 		<h5>Description</h5>
 		<div class="controls">
 	 <textarea type="text" name="description" id="description" style="width: 600px;" rows="6" class="form-control"  ></textarea>
-      @error('description')
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror
 	   </div>
 		 
 	</div>

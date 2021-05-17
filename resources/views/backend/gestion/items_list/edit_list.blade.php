@@ -13,7 +13,7 @@
 		 <!-- Basic Forms -->
 		  <div class="box">
 			<div class="box-header with-border">
-			  <h4 class="box-title">Modifier Eleve</h4>
+			  <h4 class="box-title">Elements</h4>
 			  
 			</div>
 			<!-- /.box-header -->
@@ -21,7 +21,7 @@
 			  <div class="row">
 				<div class="col">
 
-	 <form method="post" action="">
+	 <form method="post" action="{{ route('adminitem.update', $editData->id) }}">
 	 	@csrf
 					  <div class="row">
 						<div class="col-12">	
@@ -30,28 +30,48 @@
  
 
 		<div class="form-group">
-		<h5>Nom Complet <span class="text-danger">*</span></h5>
+		<h5>Utilisateur</h5>
 		<div class="controls">
-	 <input type="name" name="nom" id="name" style="width: 400px;" class="form-control" value="{{ $editData->nom }}"> 
-	 @error('nom')
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror
+	 <input type="number" name="user_id" id="user_id" min="1" style="width: 400px;" class="form-control" value="{{ $editData->user_id }}"> 
+	  </div>
+		 
+	</div>
+
+
+	<div class="form-group">
+		<h5>Cours</h5>
+		<div class="controls">
+	 <input type="number" name="course_id" id="course_id" min="1" style="width: 400px;" class="form-control" value="{{ $editData->course_id }}"> 
 	  </div>
 		 
 	</div>
  
-	 
-		
+	
 	<div class="form-group">
-		<h5>Email <span class="text-danger">*</span></h5>
+		<h5>Vues</h5>
 		<div class="controls">
-	 <input type="email" name="email" id="email" style="width: 400px;" class="form-control" value="{{ $editData->email }}" >
-      @error('email')
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror
-	   </div>
+	 <input type="number" name="view_count" id="view_count" min="1" style="width: 400px;" class="form-control" value="{{ $editData->view_count }}"> 
+	  </div>
 		 
 	</div>
+
+	<div class="form-group">
+		<h5>Vues</h5>
+		<div class="controls">
+	 <input type="url" name="url" id="url" min="1" style="width: 600px;" class="form-control" value="{{ $editData->url }}"> 
+	  </div>
+		 
+	</div>
+
+	<div class="form-group">
+		<h5>Description</h5>
+		<div class="controls">
+		<textarea type="text" name="description" id="description" style="width: 600px;" rows="6" class="form-control"></textarea>
+	  </div>
+		 
+	</div>
+
+	
  
   
 							 

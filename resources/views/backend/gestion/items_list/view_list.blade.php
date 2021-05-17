@@ -23,9 +23,9 @@
                                         <tr>
                                             <th width=5%>#</th>
                                             <th width=15%>Utilisateur</th>
-                                            <th width=25%>Cours</th>
-                                            <th width=15%>Vues</th>
-                                            <th width=20%>Lien</th>
+                                            <th width=20%>Cours</th>
+                                            <th width=10%>Vues</th>
+                                            <th width=15%>Lien</th>
                                             <th width=20%>Description</th>
                                             <th width=20%>Actions</th>
                                         </tr>

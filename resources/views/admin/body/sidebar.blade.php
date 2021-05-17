@@ -78,7 +78,7 @@ $route = Route::current()->getName();
                         <a class="collapse-item" href="{{ route('adminitem.view') }}">Elements</a>
                         <a class="collapse-item" href="{{ route('admincourseuser.view') }}">Cours/Utilisateur</a>
                         <a class="collapse-item" href="{{ route('admincomment.view') }}">Commentaires</a>
-                        <a class="collapse-item" href="">Vues</a>
+                        <a class="collapse-item" href="{{ route('adminview.view') }}">Vues</a>
                         <a class="collapse-item" href="">Matières</a>
                         <a class="collapse-item" href="">Niveaux</a>
                         <div class="collapse-divider"></div>

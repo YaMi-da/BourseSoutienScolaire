@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ItemsController extends Controller
 {
-    public function CourseUserView(){
+    public function ItemsView(){
         //$allData = Course::all();
         $data['allData'] = Item::all();
         return view('backend.gestion.items_list.view_list', $data);
@@ -58,8 +58,8 @@ class ItemsController extends Controller
     }
 
     public function DeleteItems($id){
-        $course = Item::find($id);
-        $course -> delete();
+        $item = Item::find($id);
+        $item -> delete();
 
         $notification = array(
             'message' => 'Item Deleted Successfully',

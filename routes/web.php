@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\Gestion\CourseController;
 use App\Http\Controllers\Backend\Gestion\CourseUserController;
 use App\Http\Controllers\Backend\Gestion\ItemsController;
 use App\Http\Controllers\Backend\Gestion\StudentsListController;
+use App\Http\Controllers\Backend\Gestion\ViewsController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Formatteur\FormatteurController;
@@ -89,10 +90,17 @@ Route::prefix('gestion')->group(function(){
 
     Route::get('elements/view', [ItemsController::class, 'ItemsView'])->name('adminitem.view');
     Route::get('elements/add', [ItemsController::class, 'AddItems'])->name('adminitem.add');
-    Route::post('elements/store', [CourseUserController::class, 'StoreItems'])->name('adminitem.store');
+    Route::post('elements/store', [ItemsController::class, 'StoreItems'])->name('adminitem.store');
     Route::get('elements/edit/{id}', [ItemsController::class, 'EditItems'])->name('adminitem.edit');
     Route::post('elements/update/{id}', [ItemsController::class, 'UpdateItems'])->name('adminitem.update');
     Route::get('elements/delete/{id}', [ItemsController::class, 'DeleteItems'])->name('adminitem.delete');
+
+    Route::get('vues/view', [ViewsController::class, 'ViewViews'])->name('adminview.view');
+    Route::get('vues/add', [ViewsController::class, 'AddViews'])->name('adminview.add');
+    Route::post('vues/store', [ViewsController::class, 'StoreViews'])->name('adminview.store');
+    Route::get('vues/edit/{id}', [ViewsController::class, 'EditViews'])->name('adminview.edit');
+    Route::post('vues/update/{id}', [ViewsController::class, 'UpdateViews'])->name('adminview.update');
+    Route::get('vues/delete/{id}', [ViewsController::class, 'DeleteViews'])->name('adminview.delete');
 });
 
 Route::prefix('formatteurProfile')->group(function(){
