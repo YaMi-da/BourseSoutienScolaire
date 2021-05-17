@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
+use App\Http\Controllers\Backend\Gestion\CourseController;
 use App\Http\Controllers\Backend\Gestion\StudentsListController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\DashboardController;
@@ -62,12 +63,12 @@ Route::prefix('adminProfile')->group(function(){
 });
 
 Route::prefix('gestion')->group(function(){
-    Route::get('eleves/list/view', [StudentsListController::class, 'ViewStudent'])->name('students.list.view');
-    Route::get('eleves/list/add', [StudentsListController::class, 'AddStudent'])->name('students.list.add');
-    Route::post('eleves/list/store', [StudentsListController::class, 'StoreStudent'])->name('students.list.store');
-    Route::get('eleves/list/edit{id}', [StudentsListController::class, 'EditStudent'])->name('students.list.edit');
-    Route::post('eleves/list/update/{id}', [StudentsListController::class, 'UpdateStudent'])->name('students.list.update');
-    Route::get('eleves/list/delete/{id}', [StudentsListController::class, 'DeleteStudent'])->name('students.list.delete');
+    Route::get('cours/view', [CourseController::class, 'CourseView'])->name('admincourse.view');
+    Route::get('cours/add', [CourseController::class, 'AddCourse'])->name('admincourse.add');
+    Route::post('cours/store', [CourseController::class, 'StoreCourse'])->name('admincourse.store');
+    Route::get('cours/edit/{id}', [CourseController::class, 'EditCourse'])->name('admincourse.edit');
+    Route::post('cours/update/{id}', [CourseController::class, 'UpdateCourse'])->name('admincourse.update');
+    Route::get('cours/delete/{id}', [CourseController::class, 'DeleteCourse'])->name('admincourse.delete');
 });
 
 Route::prefix('formatteurProfile')->group(function(){

@@ -29,7 +29,7 @@ class User extends Authenticatable
         'password',
         'user_type_id',
         'niveau_eleve',
-        'matiere_eleve',
+        'matiere_eleve',    
         'niveau_formatteur',
         'matiere_formatteur',
     ];

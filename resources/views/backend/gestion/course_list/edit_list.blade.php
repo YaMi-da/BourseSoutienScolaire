@@ -13,7 +13,7 @@
 		 <!-- Basic Forms -->
 		  <div class="box">
 			<div class="box-header with-border">
-			  <h4 class="box-title">Modifier Eleve</h4>
+			  <h4 class="box-title">Modifier Cours</h4>
 			  
 			</div>
 			<!-- /.box-header -->
@@ -21,7 +21,7 @@
 			  <div class="row">
 				<div class="col">
 
-	 <form method="post" action="{{ route('students.list.update', $editData->id) }}">
+	 <form method="post" action="{{ route('admincourse.update', $editData->id) }}">
 	 	@csrf
 					  <div class="row">
 						<div class="col-12">	
@@ -30,12 +30,9 @@
  
 
 		<div class="form-group">
-		<h5>Nom Complet <span class="text-danger">*</span></h5>
+		<h5>Titre</h5>
 		<div class="controls">
-	 <input type="name" name="nom" id="name" style="width: 400px;" class="form-control" value="{{ $editData->nom }}"> 
-	 @error('nom')
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror
+	 <input type="name" name="titre" id="titre" style="width: 400px;" class="form-control" value="{{ $editData->titre }}"> 
 	  </div>
 		 
 	</div>
@@ -43,13 +40,17 @@
 	 
 		
 	<div class="form-group">
-		<h5>Email <span class="text-danger">*</span></h5>
+		<h5>Description</h5>
 		<div class="controls">
-	 <input type="email" name="email" id="email" style="width: 400px;" class="form-control" value="{{ $editData->email }}" >
-      @error('email')
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror
-	   </div>
+		<textarea type="text" name="description" id="description" style="width: 600px;" rows="6" class="form-control"></textarea>
+	   </div>		 
+	</div>
+
+	<div class="form-group">
+		<h5>Lien Session</h5>
+		<div class="controls">
+	 <input type="url" name="session_url" id="session_url" style="width: 600px;" class="form-control" value="{{ $editData->session_url }}"> 
+	  </div>
 		 
 	</div>
  

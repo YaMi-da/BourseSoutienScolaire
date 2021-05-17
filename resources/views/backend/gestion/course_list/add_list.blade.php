@@ -13,7 +13,7 @@
 		 <!-- Basic Forms -->
 		  <div class="box">
 			<div class="box-header with-border">
-			  <h4 class="box-title">Ajouter Eleve</h4>
+			  <h4 class="box-title">Ajouter Cours</h4>
 			  
 			</div>
 			<!-- /.box-header -->
@@ -21,7 +21,7 @@
 			  <div class="row">
 				<div class="col">
 
-	 <form method="post" action="{{ route('students.list.store') }}">
+	 <form method="post" action="{{ route('admincourse.store') }}">
 	 	@csrf
 					  <div class="row">
 						<div class="col-12">	
@@ -30,10 +30,10 @@
  
 
 		<div class="form-group">
-		<h5>Nom Complet <span class="text-danger">*</span></h5>
+		<h5>Titre <span class="text-danger">*</span></h5>
 		<div class="controls">
-	 <input type="name" name="nom" id="name" style="width: 400px;" class="form-control" > 
-	 @error('nom')
+	 <input type="name" name="titre" id="titre" style="width: 400px;" class="form-control" > 
+	 @error('titre')
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror
 	  </div>
@@ -43,13 +43,24 @@
 	 
 		
 	<div class="form-group">
-		<h5>Email <span class="text-danger">*</span></h5>
+		<h5>Description</h5>
 		<div class="controls">
-	 <input type="email" name="email" id="email" style="width: 400px;" class="form-control"  >
-      @error('email')
+	 <textarea type="text" name="description" id="description" style="width: 600px;" rows="6" class="form-control"  ></textarea>
+      @error('description')
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror
 	   </div>
+		 
+	</div>
+
+	<div class="form-group">
+		<h5>Lien Session <span class="text-danger">*</span></h5>
+		<div class="controls">
+	 <input type="url" name="session_url" id="session_url" style="width: 600px;" class="form-control" > 
+	 @error('session_url')
+	 <span class="text-danger">{{ $message }}</span>
+	 @enderror
+	  </div>
 		 
 	</div>
  

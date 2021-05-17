@@ -74,27 +74,18 @@ $route = Route::current()->getName();
                 </a>
                 <div id="collapseGestion" class="collapse" aria-labelledby="headingGestion" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ route('students.list.view') }}">Eleves</a>
+                        <a class="collapse-item" href="{{ route('admincourse.view') }}">Cours</a>
+                        <a class="collapse-item" href="">Elements</a>
+                        <a class="collapse-item" href="">Cours/Utilisateur</a>
+                        <a class="collapse-item" href="">Commentaires</a>
+                        <a class="collapse-item" href="">Vues</a>
+                        <a class="collapse-item" href="">Matières</a>
+                        <a class="collapse-item" href="">Niveaux</a>
                         <div class="collapse-divider"></div>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMeeting"
-                    aria-expanded="true" aria-controls="collapseMeeting">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Mettings</span>
-                </a>
-                <div id="collapseMeeting" class="collapse" aria-labelledby="headingMeeting" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header"></h6>
-                        <a class="collapse-item" href="login.html"></a>
-                        <div class="collapse-divider"></div>
-                    </div>
-                </div>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

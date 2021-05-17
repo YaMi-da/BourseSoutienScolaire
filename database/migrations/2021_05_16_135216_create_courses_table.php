@@ -15,9 +15,9 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('matiere_id');
-            $table->integer('niveau_id');
+            $table->integer('user_id')->nullable();
+            $table->integer('matiere_id')->nullable();
+            $table->integer('niveau_id')->nullable();
             $table->string('titre');
             $table->string('view_count')->default(0);
             $table->string('enrolled_count')->default(0);
