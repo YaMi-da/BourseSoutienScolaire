@@ -75,8 +75,8 @@ $route = Route::current()->getName();
                 <div id="collapseGestion" class="collapse" aria-labelledby="headingGestion" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('admincourse.view') }}">Cours</a>
-                        <a class="collapse-item" href="">Elements</a>
-                        <a class="collapse-item" href="">Cours/Utilisateur</a>
+                        <a class="collapse-item" href="{{ route('adminitem.view') }}">Elements</a>
+                        <a class="collapse-item" href="{{ route('admincourseuser.view') }}">Cours/Utilisateur</a>
                         <a class="collapse-item" href="{{ route('admincomment.view') }}">Commentaires</a>
                         <a class="collapse-item" href="">Vues</a>
                         <a class="collapse-item" href="">Matières</a>

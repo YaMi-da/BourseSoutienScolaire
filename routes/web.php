@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\Gestion\CommentsController;
 use App\Http\Controllers\Backend\Gestion\CourseController;
+use App\Http\Controllers\Backend\Gestion\CourseUserController;
+use App\Http\Controllers\Backend\Gestion\ItemsController;
 use App\Http\Controllers\Backend\Gestion\StudentsListController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\DashboardController;
@@ -77,6 +79,20 @@ Route::prefix('gestion')->group(function(){
     Route::get('commentaires/edit/{id}', [CommentsController::class, 'EditComment'])->name('admincomment.edit');
     Route::post('commentaires/update/{id}', [CommentsController::class, 'UpdateComment'])->name('admincomment.update');
     Route::get('commentaires/delete/{id}', [CommentsController::class, 'DeleteComment'])->name('admincomment.delete');
+
+    Route::get('coursutilisateur/view', [CourseUserController::class, 'CourseUserView'])->name('admincourseuser.view');
+    Route::get('coursutilisateur/add', [CourseUserController::class, 'AddCourseUser'])->name('admincourseuser.add');
+    Route::post('coursutilisateur/store', [CourseUserController::class, 'StoreCourseUser'])->name('admincourseuser.store');
+    Route::get('coursutilisateur/edit/{id}', [CourseUserController::class, 'EditCourseUser'])->name('admincourseuser.edit');
+    Route::post('coursutilisateur/update/{id}', [CourseUserController::class, 'UpdateCourseUser'])->name('admincourseuser.update');
+    Route::get('coursutilisateur/delete/{id}', [CourseUserController::class, 'DeleteCourseUser'])->name('admincourseuser.delete');
+
+    Route::get('elements/view', [ItemsController::class, 'ItemsView'])->name('adminitem.view');
+    Route::get('elements/add', [ItemsController::class, 'AddItems'])->name('adminitem.add');
+    Route::post('elements/store', [CourseUserController::class, 'StoreItems'])->name('adminitem.store');
+    Route::get('elements/edit/{id}', [ItemsController::class, 'EditItems'])->name('adminitem.edit');
+    Route::post('elements/update/{id}', [ItemsController::class, 'UpdateItems'])->name('adminitem.update');
+    Route::get('elements/delete/{id}', [ItemsController::class, 'DeleteItems'])->name('adminitem.delete');
 });
 
 Route::prefix('formatteurProfile')->group(function(){

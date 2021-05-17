@@ -32,7 +32,7 @@
 		<div class="form-group">
 		<h5>Utilisateur</h5>
 		<div class="controls">
-	 <input type="number" name="user_id" id="user_id" style="width: 400px;" min="1" class="form-control" value="{{ $editData->uder_id }}"> 
+	 <input type="number" name="user_id" id="user_id" style="width: 400px;" min="1" class="form-control" value="{{ $editData->user_id }}"> 
 	  </div>
 		 
 	</div>
@@ -41,7 +41,7 @@
 	<div class="form-group">
 		<h5>Cours</h5>
 		<div class="controls">
-	 <input type="name" name="course_id" id="course_id" style="width: 600px;" min="1" class="form-control" value="{{ $editData->user_id }}"> 
+	 <input type="number" name="course_id" id="course_id" style="width: 600px;" min="1" class="form-control" value="{{ $editData->course_id }}"> 
 	  </div>
 		 
 	</div>
