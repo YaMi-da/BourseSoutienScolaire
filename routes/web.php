@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
+use App\Http\Controllers\Backend\Gestion\CommentsController;
 use App\Http\Controllers\Backend\Gestion\CourseController;
 use App\Http\Controllers\Backend\Gestion\StudentsListController;
 use App\Http\Controllers\Backend\UserController;
@@ -69,6 +70,13 @@ Route::prefix('gestion')->group(function(){
     Route::get('cours/edit/{id}', [CourseController::class, 'EditCourse'])->name('admincourse.edit');
     Route::post('cours/update/{id}', [CourseController::class, 'UpdateCourse'])->name('admincourse.update');
     Route::get('cours/delete/{id}', [CourseController::class, 'DeleteCourse'])->name('admincourse.delete');
+
+    Route::get('commentaires/view', [CommentsController::class, 'CommentView'])->name('admincomment.view');
+    Route::get('commentaires/add', [CommentsController::class, 'AddComment'])->name('admincomment.add');
+    Route::post('commentaires/store', [CommentsController::class, 'StoreComment'])->name('admincomment.store');
+    Route::get('commentaires/edit/{id}', [CommentsController::class, 'EditComment'])->name('admincomment.edit');
+    Route::post('commentaires/update/{id}', [CommentsController::class, 'UpdateComment'])->name('admincomment.update');
+    Route::get('commentaires/delete/{id}', [CommentsController::class, 'DeleteComment'])->name('admincomment.delete');
 });
 
 Route::prefix('formatteurProfile')->group(function(){
