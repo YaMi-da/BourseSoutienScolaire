@@ -21,7 +21,7 @@
 			  <div class="row">
 				<div class="col">
 
-	 <form method="post" action="{{ route('adminmatiere.update', $editData->id) }}">
+	 <form method="post" action="{{ route('adminmatiere.update', $editData->id) }}" enctype="multipart/form-data">
 	 	@csrf
 					  <div class="row">
 						<div class="col-12">	
@@ -45,6 +45,12 @@
 	  </div>
 		 
 	</div>
+
+	<div class="form-group">
+		<h5>Photo</h5>
+		<div class="controls">
+	 <input type="file" name="image" class="form-control" style="height: 50px;" id="image" >  </div>
+	 </div>
 
 		 
 	</div>
@@ -79,5 +85,17 @@
     
     
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#image').change(function(e){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#showImage').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(e.target.files['0']);
+        });
+    });
+</script>
 
 @endsection

@@ -22,6 +22,15 @@ class MatieresController extends Controller
         $data = new Matiere();
         $data -> name = $request -> name;
         $data -> view_count = $request -> view_count;
+
+        if ($request->hasFile('image')) {
+            $file = $request -> file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move(public_path('upload/matiere_img'), $filename);
+            $data->image = $filename;
+        }
+
         $data->save();
 
         $notification = array(
@@ -41,6 +50,13 @@ class MatieresController extends Controller
         $data = Matiere::find($id);
         $data -> name = $request -> name;
         $data -> view_count = $request -> view_count;
+        if ($request->hasFile('image')) {
+            $file = $request -> file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move(public_path('upload/matiere_img'), $filename);
+            $data->image = $filename;
+        }
         $data->save();
 
         $notification = array(

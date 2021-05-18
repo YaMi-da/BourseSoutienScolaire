@@ -13,5 +13,6 @@ class Matiere extends Model
         'user_id',
         'name',
         'view_count',
+        'image',
     ];
 }

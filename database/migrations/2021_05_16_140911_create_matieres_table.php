@@ -17,6 +17,7 @@ class CreateMatieresTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('view_count')->default(0);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
