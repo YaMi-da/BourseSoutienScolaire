@@ -13,7 +13,7 @@
 		 <!-- Basic Forms -->
 		  <div class="box">
 			<div class="box-header with-border">
-			  <h4 class="box-title">Ajouter Cours</h4>
+			  <h4 class="box-title">Ajouter Niveau</h4>
 			  
 			</div>
 			<!-- /.box-header -->
@@ -21,7 +21,7 @@
 			  <div class="row">
 				<div class="col">
 
-	 <form method="post" action="">
+	 <form method="post" action="{{ route('adminniveau.store') }}">
 	 	@csrf
 					  <div class="row">
 						<div class="col-12">	
@@ -30,28 +30,23 @@
  
 
 		<div class="form-group">
-		<h5>Titre <span class="text-danger">*</span></h5>
+		<h5>Nom</h5>
 		<div class="controls">
-	 <input type="name" name="titre" id="titre" style="width: 400px;" class="form-control" > 
-	 @error('titre')
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror
+	 <input type="name" name="name" id="name" style="width: 400px;" class="form-control"> 
 	  </div>
 		 
 	</div>
  
-	 
-		
+ 
+			
 	<div class="form-group">
-		<h5>Description <span class="text-danger">*</span></h5>
+		<h5>Vues</h5>
 		<div class="controls">
-	 <input type="name" name="description" id="description" style="width: 600px; height: 400px;" class="form-control"  >
-      @error('description')
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror
+	 <input type="number" name="view_count" id="view_count" style="width: 400px;" min="1" class="form-control"  >
 	   </div>
 		 
 	</div>
+
  
   
 							 

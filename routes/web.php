@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\Gestion\CourseController;
 use App\Http\Controllers\Backend\Gestion\CourseUserController;
 use App\Http\Controllers\Backend\Gestion\ItemsController;
 use App\Http\Controllers\Backend\Gestion\MatieresController;
+use App\Http\Controllers\Backend\Gestion\NiveauxController;
 use App\Http\Controllers\Backend\Gestion\StudentsListController;
 use App\Http\Controllers\Backend\Gestion\ViewsController;
 use App\Http\Controllers\Backend\UserController;
@@ -82,12 +83,12 @@ Route::prefix('gestion')->group(function(){
     Route::post('commentaires/update/{id}', [CommentsController::class, 'UpdateComment'])->name('admincomment.update');
     Route::get('commentaires/delete/{id}', [CommentsController::class, 'DeleteComment'])->name('admincomment.delete');
 
-    Route::get('coursutilisateur/view', [CourseUserController::class, 'CourseUserView'])->name('admincourseuser.view');
-    Route::get('coursutilisateur/add', [CourseUserController::class, 'AddCourseUser'])->name('admincourseuser.add');
-    Route::post('coursutilisateur/store', [CourseUserController::class, 'StoreCourseUser'])->name('admincourseuser.store');
-    Route::get('coursutilisateur/edit/{id}', [CourseUserController::class, 'EditCourseUser'])->name('admincourseuser.edit');
-    Route::post('coursutilisateur/update/{id}', [CourseUserController::class, 'UpdateCourseUser'])->name('admincourseuser.update');
-    Route::get('coursutilisateur/delete/{id}', [CourseUserController::class, 'DeleteCourseUser'])->name('admincourseuser.delete');
+    Route::get('inscriptions/view', [CourseUserController::class, 'CourseUserView'])->name('admincourseuser.view');
+    Route::get('inscriptions/add', [CourseUserController::class, 'AddCourseUser'])->name('admincourseuser.add');
+    Route::post('inscriptions/store', [CourseUserController::class, 'StoreCourseUser'])->name('admincourseuser.store');
+    Route::get('inscriptions/edit/{id}', [CourseUserController::class, 'EditCourseUser'])->name('admincourseuser.edit');
+    Route::post('inscriptions/update/{id}', [CourseUserController::class, 'UpdateCourseUser'])->name('admincourseuser.update');
+    Route::get('inscriptions/delete/{id}', [CourseUserController::class, 'DeleteCourseUser'])->name('admincourseuser.delete');
 
     Route::get('elements/view', [ItemsController::class, 'ItemsView'])->name('adminitem.view');
     Route::get('elements/add', [ItemsController::class, 'AddItems'])->name('adminitem.add');
@@ -103,12 +104,19 @@ Route::prefix('gestion')->group(function(){
     Route::post('vues/update/{id}', [ViewsController::class, 'UpdateViews'])->name('adminview.update');
     Route::get('vues/delete/{id}', [ViewsController::class, 'DeleteViews'])->name('adminview.delete');
 
-    Route::get('matieres/view', [MatieresController::class, 'ViewMatieres'])->name('adminview.view');
-    Route::get('matieres/add', [MatieresController::class, 'AddMatieres'])->name('adminview.add');
-    Route::post('matieres/store', [MatieresController::class, 'StoreMatieres'])->name('adminview.store');
-    Route::get('matieres/edit/{id}', [MatieresController::class, 'EditMatieres'])->name('adminview.edit');
-    Route::post('matieres/update/{id}', [MatieresController::class, 'UpdateMatieres'])->name('adminview.update');
-    Route::get('matieres/delete/{id}', [MatieresController::class, 'DeleteMatieres'])->name('adminview.delete');
+    Route::get('matieres/view', [MatieresController::class, 'ViewMatiere'])->name('adminmatiere.view');
+    Route::get('matieres/add', [MatieresController::class, 'AddMatiere'])->name('adminmatiere.add');
+    Route::post('matieres/store', [MatieresController::class, 'StoreMatiere'])->name('adminmatiere.store');
+    Route::get('matieres/edit/{id}', [MatieresController::class, 'EditMatiere'])->name('adminmatiere.edit');
+    Route::post('matieres/update/{id}', [MatieresController::class, 'UpdateMatiere'])->name('adminmatiere.update');
+    Route::get('matieres/delete/{id}', [MatieresController::class, 'DeleteMatiere'])->name('adminmatiere.delete');
+
+    Route::get('niveaux/view', [NiveauxController::class, 'ViewNiveau'])->name('adminniveau.view');
+    Route::get('niveaux/add', [NiveauxController::class, 'AddNiveau'])->name('adminniveau.add');
+    Route::post('niveaux/store', [NiveauxController::class, 'StoreNiveau'])->name('adminniveau.store');
+    Route::get('niveaux/edit/{id}', [NiveauxController::class, 'EditNiveau'])->name('adminniveau.edit');
+    Route::post('niveaux/update/{id}', [NiveauxController::class, 'UpdateNiveau'])->name('adminniveau.update');
+    Route::get('niveaux/delete/{id}', [NiveauxController::class, 'DeleteNiveau'])->name('adminniveau.delete');
 });
 
 Route::prefix('formatteurProfile')->group(function(){

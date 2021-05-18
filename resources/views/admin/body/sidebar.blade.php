@@ -76,11 +76,11 @@ $route = Route::current()->getName();
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('admincourse.view') }}">Cours</a>
                         <a class="collapse-item" href="{{ route('adminitem.view') }}">Elements</a>
-                        <a class="collapse-item" href="{{ route('admincourseuser.view') }}">Cours/Utilisateur</a>
+                        <a class="collapse-item" href="{{ route('admincourseuser.view') }}">Inscriptions</a>
                         <a class="collapse-item" href="{{ route('admincomment.view') }}">Commentaires</a>
                         <a class="collapse-item" href="{{ route('adminview.view') }}">Vues</a>
-                        <a class="collapse-item" href="">Matières</a>
-                        <a class="collapse-item" href="">Niveaux</a>
+                        <a class="collapse-item" href="{{ route('adminmatiere.view') }}">Matières</a>
+                        <a class="collapse-item" href="{{ route('adminniveau.view') }}">Niveaux</a>
                         <div class="collapse-divider"></div>
                     </div>
                 </div>

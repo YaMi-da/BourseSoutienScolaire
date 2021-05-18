@@ -57,6 +57,14 @@
 	</div>
 
 	<div class="form-group">
+		<h5>Vues</h5>
+		<div class="controls">
+	 <textarea type="number" name="view_count" id="view_count" style="width: 400px;" min="1" class="form-control"  ></textarea>
+	   </div>
+		 
+	</div>
+
+	<div class="form-group">
 		<h5>Lien Session <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="url" name="session_url" id="session_url" style="width: 600px;" class="form-control" > 

@@ -56,7 +56,7 @@
 	</div>
 
 	<div class="form-group">
-		<h5>Vues</h5>
+		<h5>Lien</h5>
 		<div class="controls">
 	 <input type="url" name="url" id="url" min="1" style="width: 600px;" class="form-control" value="{{ $editData->url }}"> 
 	  </div>
