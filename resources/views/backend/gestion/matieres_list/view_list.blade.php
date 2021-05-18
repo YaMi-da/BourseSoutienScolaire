@@ -23,7 +23,7 @@
                                         <tr>
                                             <th width=5%>#</th>
                                             <th width=25%>Nom</th>
-                                            <th width=20%>Vues</th>
+                                            <th width=10%>Vues</th>
                                             <th width=20%>Actions</th>
                                         </tr>
                                     </thead>
@@ -33,7 +33,6 @@
                                             <th>{{ $key+1 }}</th>
                                             <th>{{ $matiere->name }}</th>
                                             <th>{{ $matiere->view_count }}</th>
-                                            <th>{{ $matiere->description }}</th>
                                             <th><a href="{{ route('adminmatiere.edit', $matiere->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('adminmatiere.delete', $matiere->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
                                         </tr>
                                         @endforeach

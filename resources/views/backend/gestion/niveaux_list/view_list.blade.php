@@ -33,7 +33,6 @@
                                             <th>{{ $key+1 }}</th>
                                             <th>{{ $niveau->name }}</th>
                                             <th>{{ $niveau->view_count }}</th>
-                                            <th>{{ $niveau->description }}</th>
                                             <th><a href="{{ route('adminniveau.edit', $niveau->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('adminniveau.delete', $niveau->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
                                         </tr>
                                         @endforeach
