@@ -14,7 +14,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h3 class="m-0 font-weight-bold text-primary">Inscriptions</h3>
-                            <a href="{{ route('admincourseuser.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Cours</a>
+                            <a href="{{ route('admincourseuser.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Inscription</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

@@ -14,7 +14,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h3 class="m-0 font-weight-bold text-primary">Elements</h3>
-                            <a href="{{ route('adminitem.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Cours</a>
+                            <a href="{{ route('adminitem.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Element</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
