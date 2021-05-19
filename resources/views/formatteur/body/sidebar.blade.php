@@ -58,8 +58,8 @@ $route = Route::current()->getName();
                 <div id="collapseCours" class="collapse" aria-labelledby="headingCours" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"></h6>
-                        <a class="collapse-item" href="">Tous les cours</a>
-                        <a class="collapse-item" href="">Mes cours</a>
+                        <a class="collapse-item" href="touslescoursformatteur.view">Tous les cours</a>
+                        <a class="collapse-item" href="coursformatteur.view">Mes cours</a>
                     </div>
                 </div>
             </li>

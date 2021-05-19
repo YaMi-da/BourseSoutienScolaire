@@ -1,35 +1,28 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Gestion;
+namespace App\Http\Controllers\Formatteur;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
-class CourseController extends Controller
+class CoursFormatteurController extends Controller
 {
-    public function CourseView(){
+    public function MesCoursView(){
         //$allData = Course::all();
         $data['allData'] = Course::all();
         return view('backend.gestion.course_list.view_list', $data);
     }
 
-    public function AddCourse(){
+    public function AddMesCours(){
         return view('backend.gestion.course_list.add_list');
     }
 
-    public function StoreCourse(Request $request){
+    public function StoreMesCours(Request $request){
         $data = new Course();
         $data -> titre = $request -> titre;
         $data -> description = $request -> description;
         $data -> session_url = $request -> session_url;
-        if ($request->hasFile('photo')) {
-            $file = $request -> file('photo');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move(public_path('upload/cours_img'), $filename);
-            $data->photo = $filename;
-        }
         $data->save();
 
         $notification = array(
@@ -40,23 +33,16 @@ class CourseController extends Controller
         return redirect()->route('admincourse.view')->with($notification);
     }
 
-    public function EditCourse($id){
+    public function EditMesCours($id){
         $editData = Course::find($id);
         return view('backend.gestion.course_list.edit_list', compact('editData'));
     }
 
-    public function UpdateCourse(Request $request, $id){
+    public function UpdateMesCours(Request $request, $id){
         $data = Course::find($id);
         $data -> titre = $request -> titre;
         $data -> description = $request -> description;
         $data -> session_url = $request -> session_url;
-        if ($request->hasFile('photo')) {
-            $file = $request -> file('photo');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move(public_path('upload/cours_img'), $filename);
-            $data->photo = $filename;
-        }
         $data->save();
 
         $notification = array(
@@ -67,7 +53,7 @@ class CourseController extends Controller
         return redirect()->route('admincourse.view')->with($notification);
     }
 
-    public function DeleteCourse($id){
+    public function DeleteMesCours($id){
         $course = Course::find($id);
         $course -> delete();
 
