@@ -24,32 +24,99 @@
 	 <form method="post" action="{{ route('admincourse.update', $editData->id) }}">
 	 	@csrf
 					  <div class="row">
-						<div class="col-12">	
- 
+						<div class="col-12">
 
- 
 
-		<div class="form-group">
-		<h5>Titre</h5>
+						<div class="form-group">
+		<h5>Titre <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="name" name="titre" id="titre" style="width: 400px;" class="form-control" value="{{ $editData->titre }}"> 
+	 @error('titre')
+	 <span class="text-danger">{{ $message }}</span>
+	 @enderror
 	  </div>
 		 
 	</div>
+
+	<div class="form-group">
+    <label for="matiere_id"><h5>Matiere <span class="text-danger">*</span></h5></label>
+    <select class="form-control" id="matiere_id" name= "matiere_id" style="width: 400px;">
+		@foreach($matieres as $matiere)
+      	<option value="{{ $matiere->matiere_id }}">{{ $matiere->name }}</option>
+		@endforeach
+      
+    </select>
+  	</div>
  
 	 
 		
 	<div class="form-group">
 		<h5>Description</h5>
 		<div class="controls">
-		<textarea type="text" name="description" id="description" style="width: 600px;" rows="6" class="form-control"></textarea>
-	   </div>		 
+	 <textarea type="text" name="description" id="description" style="width: 600px;" rows="6" class="form-control"  ></textarea>
+	   </div>
+		 
+	</div>
+
+
+	<div class="form-group">
+	<label for="user_id"><h5>Formatteur <span class="text-danger">*</span></h5></label>
+    <select class="form-control" id="user_id" name= "user_id" style="width: 400px;">
+		@foreach($users as $user)
+      	<option value="{{ $user->user_id }}">{{ $user->name }}</option>
+		@endforeach
+      
+    </select>
+		 
 	</div>
 
 	<div class="form-group">
-		<h5>Lien Session</h5>
+	<label for="niveau_id"><h5>Niveaux <span class="text-danger">*</span></h5></label>
+    <select class="form-control" id="niveau_id" name= "niveau_id" style="width: 400px;">
+		@foreach($niveaux as $niveau)
+      	<option value="{{ $niveau->niveau_id }}">{{ $niveau->name }}</option>
+		@endforeach
+      
+    </select>
+		 
+	</div>
+
+	<div class="form-group">
+		<h5>Vues <span class="text-danger">*</span></h5>
+		<div class="controls">
+	 <input type="number" name="view_count" id="view_count" style="width: 400px;" min="1" class="form-control" value="{{ $editData->view_count }}">
+	 @error('view_count')
+	 <span class="text-danger">{{ $message }}</span>
+	 @enderror
+	   </div>
+		 
+	</div>
+
+	<div class="form-group">
+		<h5>Eleves Inscrits <span class="text-danger">*</span></h5>
+		<div class="controls">
+	 <input type="number" name="enrolled_count" id="enrolled_count" style="width: 400px;" min="1" class="form-control" value="{{ $editData->enrolled_count }}" >
+	 @error('enrolled_count')
+	 <span class="text-danger">{{ $message }}</span>
+	 @enderror
+	   </div>
+		 
+	</div>
+
+
+	<div class="form-group">
+		<h5>Photo <span class="text-danger">*</span></h5>
+		<div class="controls">
+	 <input type="file" name="photo" class="form-control" style="height: 50px; width: 600px;" id="photo" >  </div>
+	 </div>
+
+	<div class="form-group">
+		<h5>Lien Session <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="url" name="session_url" id="session_url" style="width: 600px;" class="form-control" value="{{ $editData->session_url }}"> 
+	 @error('session_url')
+	 <span class="text-danger">{{ $message }}</span>
+	 @enderror
 	  </div>
 		 
 	</div>

@@ -50,7 +50,7 @@
 	<div class="form-group">
 		<h5>Status</h5>
 		<div class="controls">
-	 <input type="number" name="status" id="status" min="1" style="width: 400px;" class="form-control" value="{{ $editData->status }}"> 
+	 <input type="number" name="status" id="status" min="0" style="width: 400px; " class="form-control" value="{{ $editData->status }}"> 
 	  </div>
 		 
 	</div>

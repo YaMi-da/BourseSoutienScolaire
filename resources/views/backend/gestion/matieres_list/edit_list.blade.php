@@ -49,7 +49,7 @@
 	<div class="form-group">
 		<h5>Photo</h5>
 		<div class="controls">
-	 <input type="file" name="image" class="form-control" style="height: 50px;" id="image" >  </div>
+	 <input type="file" name="image" class="form-control" style="height: 50px; width: 600px;" id="image" >  </div>
 	 </div>
 
 		 

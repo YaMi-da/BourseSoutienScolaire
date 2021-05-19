@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Backend\Gestion;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\Matiere;
+use App\Models\Niveau;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -15,13 +18,21 @@ class CourseController extends Controller
     }
 
     public function AddCourse(){
-        return view('backend.gestion.course_list.add_list');
+        $matieres = Matiere::all();
+        $niveaux = Niveau::all();
+        $users = User::where('user_type_id', '3')->get();
+        return view('backend.gestion.course_list.add_list')->with('matieres', $matieres)->with('users', $users)->with('niveaux', $niveaux);
     }
 
     public function StoreCourse(Request $request){
         $data = new Course();
         $data -> titre = $request -> titre;
+        $data -> matiere_id = $request -> matiere_id;
         $data -> description = $request -> description;
+        $data -> user_id = $request -> user_id;
+        $data -> niveau_id = $request -> niveau_id;
+        $data -> view_count = $request -> view_count;
+        $data -> enrolled_count = $request -> enrolled_count;
         $data -> session_url = $request -> session_url;
         if ($request->hasFile('photo')) {
             $file = $request -> file('photo');
@@ -41,14 +52,22 @@ class CourseController extends Controller
     }
 
     public function EditCourse($id){
+        $matieres = Matiere::all();
+        $niveaux = Niveau::all();
+        $users = User::where('user_type_id', '3')->get();
         $editData = Course::find($id);
-        return view('backend.gestion.course_list.edit_list', compact('editData'));
+        return view('backend.gestion.course_list.edit_list', compact('editData'))->with('matieres', $matieres)->with('users', $users)->with('niveaux', $niveaux);
     }
 
     public function UpdateCourse(Request $request, $id){
         $data = Course::find($id);
         $data -> titre = $request -> titre;
+        $data -> matiere_id = $request -> matiere_id;
         $data -> description = $request -> description;
+        $data -> user_id = $request -> user_id;
+        $data -> niveau_id = $request -> niveau_id;
+        $data -> view_count = $request -> view_count;
+        $data -> enrolled_count = $request -> enrolled_count;
         $data -> session_url = $request -> session_url;
         if ($request->hasFile('photo')) {
             $file = $request -> file('photo');

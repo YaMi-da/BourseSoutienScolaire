@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserType;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -15,10 +16,12 @@ class UserController extends Controller
     }
 
     public function AddUser(){
+       
         return view('backend.user.add_user');
     }
 
     public function StoreUser(Request $request){
+        
         $validatedData = $request->validate([
             'email' =>  'required|unique:users',
             'name' => 'required',

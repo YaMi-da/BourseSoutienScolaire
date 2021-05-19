@@ -17,24 +17,32 @@
                             <a href="{{ route('admincourse.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Cours</a>
                         </div>
                         <div class="card-body">
-                                        <div class="row row-cols-md-5 g-4 justify-content-center">
-                                        @foreach($allData as $key => $cours)
-                                        <div class="card" style="margin-left: 2%; margin-right: 2%">
-                                            <img src="{{ (!empty($cours->photo) ? url('upload/cours_img/'.$cours->photo):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 25vh; object-fit: cover;"  alt="...">
-                                            <div class="card-body">
-                                                <h5 class="card-title" style="text-align: center;">{{ $cours-> titre }}</h5>
-                                                <p class="card-text">{{ $cours-> description }}</p>
-                                                <ul class="list-group list-group-flush" style="text-align: center;">
-                                                <a href="" class="text-muted">Lien: {{ $cours-> session_url }}</a>
-                                                </ul>
-                                            </div>
-                                            <div class="card-footer" style="text-align: center;">
-                                                <a href="{{ route('admincourse.edit', $cours->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('admincourse.delete', $cours->id) }}" class="btn btn-danger" id="delete">Supprimer</a>
-                                            </div>
-                                            
-                                        </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th width=5%>#</th>
+                                            <th width=15%>Titre</th>
+                                            <th width=25%>Description</th>
+                                            <th width=10%>Vues</th>
+                                            <th width=10%>Eleves inscrits</th>
+                                            <th width=20%>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($allData as $key => $course)
+                                        <tr>
+                                            <th>{{ $key+1 }}</th>
+                                            <th>{{ $course->titre }}</th>
+                                            <th>{{ $course->description }}</th>
+                                            <th>{{ $course->view_count }}</th>
+                                            <th>{{ $course->enrolled_count }}</th>
+                                            <th><a href="{{ route('admincourse.edit', $course->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('admincourse.delete', $course->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
+                                        </tr>
                                         @endforeach
-                                        </div>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
