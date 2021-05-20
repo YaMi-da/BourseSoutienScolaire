@@ -17,6 +17,12 @@ class CourseController extends Controller
         return view('backend.gestion.course_list.view_list', $data);
     }
 
+    public function CourseView2(){
+        //$allData = Course::all();
+        $data['allData'] = Course::all();
+        return view('formatteur.cours.touslescours_formatteur_view', $data);
+    }
+
     public function AddCourse(){
         $matieres = Matiere::all();
         $niveaux = Niveau::all();
@@ -50,6 +56,12 @@ class CourseController extends Controller
 
         return redirect()->route('admincourse.view')->with($notification);
     }
+
+    public function ShowCours($id){
+        $showData = Course::find($id);
+        return view('showcours.showcours_admin', compact('showData'));
+    }
+
 
     public function EditCourse($id){
         $matieres = Matiere::all();

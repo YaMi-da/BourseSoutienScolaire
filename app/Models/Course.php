@@ -21,4 +21,12 @@ class Course extends Model
         'description',
         'photo',
     ];
+
+    public function matiere(){
+        return $this->belongsTo('App\Models\Matiere');
+    }
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }

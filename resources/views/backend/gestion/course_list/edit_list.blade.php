@@ -42,7 +42,7 @@
     <label for="matiere_id"><h5>Matiere <span class="text-danger">*</span></h5></label>
     <select class="form-control" id="matiere_id" name= "matiere_id" style="width: 400px;">
 		@foreach($matieres as $matiere)
-      	<option value="{{ $matiere->matiere_id }}">{{ $matiere->name }}</option>
+      	<option value="{{ $matiere->id }}">{{ $matiere->name }}</option>
 		@endforeach
       
     </select>
@@ -63,7 +63,7 @@
 	<label for="user_id"><h5>Formatteur <span class="text-danger">*</span></h5></label>
     <select class="form-control" id="user_id" name= "user_id" style="width: 400px;">
 		@foreach($users as $user)
-      	<option value="{{ $user->user_id }}">{{ $user->name }}</option>
+      	<option value="{{ $user->id }}">{{ $user->name }}</option>
 		@endforeach
       
     </select>
@@ -74,7 +74,7 @@
 	<label for="niveau_id"><h5>Niveaux <span class="text-danger">*</span></h5></label>
     <select class="form-control" id="niveau_id" name= "niveau_id" style="width: 400px;">
 		@foreach($niveaux as $niveau)
-      	<option value="{{ $niveau->niveau_id }}">{{ $niveau->name }}</option>
+      	<option value="{{ $niveau->id }}">{{ $niveau->name }}</option>
 		@endforeach
       
     </select>

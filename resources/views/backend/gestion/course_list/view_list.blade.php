@@ -23,9 +23,10 @@
                                         <tr>
                                             <th width=5%>#</th>
                                             <th width=15%>Titre</th>
+                                            <th width=20%>Formatteur | Matiere</th>
                                             <th width=25%>Description</th>
-                                            <th width=10%>Vues</th>
-                                            <th width=10%>Eleves inscrits</th>
+                                            <th width=5%>Vues</th>
+                                            <th width=5%>Eleves inscrits</th>
                                             <th width=20%>Actions</th>
                                         </tr>
                                     </thead>
@@ -33,7 +34,8 @@
                                         @foreach($allData as $key => $course)
                                         <tr>
                                             <th>{{ $key+1 }}</th>
-                                            <th>{{ $course->titre }}</th>
+                                            <th> <a href="{{ route('showcours.view', $course->id) }}"> {{ $course->titre }}</a></th>
+                                            <th>{{ $course->user['name'] }} | {{ $course->matiere['name'] }}</th>
                                             <th>{{ $course->description }}</th>
                                             <th>{{ $course->view_count }}</th>
                                             <th>{{ $course->enrolled_count }}</th>
