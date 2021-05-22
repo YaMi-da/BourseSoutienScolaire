@@ -1,9 +1,9 @@
-@extends('formatteur.formatteur_master')
-@section('formatteur')
+@extends('students.students_master')
+@section('students')
 
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
-        @include('formatteur.body.header')
+        @include('students.body.header')
 
         <div class="container-fluid">
 
@@ -38,7 +38,7 @@
                     </div>
                 </div>
     </div>
-    @include('formatteur.body.footer')
+    @include('students.body.footer')
 </div>
 
 

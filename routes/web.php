@@ -148,4 +148,15 @@ Route::prefix('coursFormatteur')->group(function(){
     Route::get('mescours/delete/{id}', [CoursFormatteurController::class, 'DeleteMesCours'])->name('coursformatteur.delete');
 });
 
+Route::prefix('coursEleve')->group(function(){
+    Route::get('touslescours/view', [CourseController::class, 'CourseView3'])->name('touslescourseleves.view');
+    Route::get('details/{id}', [CourseController::class, 'ShowCours3'])->name('showcourseleve.view');
+    Route::get('mescours/view/{id}', [CoursFormatteurController::class, 'MesCoursView'])->name('coursformatteur.view');
+    Route::get('mescours/add', [CoursFormatteurController::class, 'AddMesCours'])->name('coursformatteur.add');
+    Route::post('mescours/store/{id}', [CoursFormatteurController::class, 'StoreMesCours'])->name('coursformatteur.store');
+    Route::get('mescours/edit/{id}', [CoursFormatteurController::class, 'EditMesCours'])->name('coursformatteur.edit');
+    Route::post('mescours/update/{id}', [CoursFormatteurController::class, 'UpdateMesCours'])->name('coursformatteur.update');
+    Route::get('mescours/delete/{id}', [CoursFormatteurController::class, 'DeleteMesCours'])->name('coursformatteur.delete');
+});
+
 

@@ -43,17 +43,16 @@ $route = Route::current()->getName();
 
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCourses"
-                    aria-expanded="true" aria-controls="collapseCourses">
+            <li class="nav-item {{ ($prefix == '/coursEleve')?'active':'' }}">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCours"
+                    aria-expanded="true" aria-controls="collapseCours">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Mes Cours</span>
+                    <span>Cours</span>
                 </a>
-                <div id="collapseCourses" class="collapse" aria-labelledby="headingCourses" data-parent="#accordionSidebar">
+                <div id="collapseCours" class="collapse" aria-labelledby="headingCours" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header"></h6>
-                        <a class="collapse-item" href=""></a>
-                        <div class="collapse-divider"></div>
+                        <a class="collapse-item" href="{{ route('touslescourseleves.view') }}">Tous les cours</a>
+                        <a class="collapse-item" href="">Mes cours</a>
                     </div>
                 </div>
             </li>

@@ -110,16 +110,21 @@ class CourseController extends Controller
         return view('formatteur.cours.touslescours_formatteur_view', $data);
     }
 
+    public function ShowCours2($id){
+        $showData = Course::find($id);
+        return view('showcours.showcours_formatteur', compact('showData'));
+    }
+
     public function CourseView3(){
         //$allData = Course::all();
         $data['allData'] = Course::all();
         $users = User::where('user_type_id', '3')->get();
-        return view('formatteur.cours.cours_formatteur_view', $data)->with('users', $users);
+        return view('students.cours.touslescours_eleve_view', $data)->with('users', $users);
     }
 
-    public function ShowCours2($id){
+    public function ShowCours3($id){
         $showData = Course::find($id);
-        return view('showcours.showcours_formatteur', compact('showData'));
+        return view('showcours.showcours_eleve', compact('showData'));
     }
 
     
