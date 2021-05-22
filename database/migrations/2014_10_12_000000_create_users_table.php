@@ -24,6 +24,9 @@ class CreateUsersTable extends Migration
             $table->text('profile_photo_path')->nullable();
             $table->tinyInteger('is_enrolled')->nullable()->default(0);
             $table->integer('view_count')->default(0);
+            $table->string('mobile')->nullable();
+            $table->string('address')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

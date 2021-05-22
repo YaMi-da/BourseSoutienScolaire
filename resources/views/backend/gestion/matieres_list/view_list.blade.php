@@ -7,8 +7,6 @@
 
         <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Matieres</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -22,7 +20,7 @@
                                         <div class="card" style="margin-left: 2%; margin-right: 2%">
                                             <img src="{{ (!empty($matiere->image) ? url('upload/matiere_img/'.$matiere->image):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 25vh; object-fit: cover;"  alt="...">
                                             <div class="card-body">
-                                                <h5 class="card-title" style="text-align: center;">{{ $matiere-> name }}</h5>
+                                                <h5 class="card-title" style="text-align: center; color:black">{{ $matiere-> name }}</h5>
                                                 <ul class="list-group list-group-flush" style="text-align: center;">
                                                 <small class="text-muted">Vues: {{ $matiere-> view_count }}</small>
                                                 </ul>

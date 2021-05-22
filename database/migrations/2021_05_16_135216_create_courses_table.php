@@ -23,7 +23,8 @@ class CreateCoursesTable extends Migration
             $table->string('enrolled_count')->default(0);
             $table->string('session_url');
             $table->integer('status')->default(0);
-            $table->string('description')->nullable();
+            $table->longText('incourse')->nullable();
+            $table->longText('description')->nullable();
             $table->string('photo')->nullable();
             $table->softDeletes();
             $table->timestamps();

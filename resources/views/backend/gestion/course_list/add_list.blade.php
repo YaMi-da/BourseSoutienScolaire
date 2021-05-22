@@ -86,7 +86,7 @@
 	<div class="form-group">
 		<h5>Vues <span class="text-danger">*</span></h5>
 		<div class="controls">
-	 <input type="number" name="view_count" id="view_count" style="width: 400px;" min="1" class="form-control"  >
+	 <input type="number" name="view_count" id="view_count" style="width: 400px;" min="0" class="form-control"  >
 	 @error('view_count')
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror
@@ -97,7 +97,7 @@
 	<div class="form-group">
 		<h5>Eleves Inscrits <span class="text-danger">*</span></h5>
 		<div class="controls">
-	 <input type="number" name="enrolled_count" id="enrolled_count" style="width: 400px;" min="1" class="form-control"  >
+	 <input type="number" name="enrolled_count" id="enrolled_count" style="width: 400px;" min="0" class="form-control"  >
 	 @error('enrolled_count')
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror
