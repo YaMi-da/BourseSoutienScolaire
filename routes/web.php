@@ -70,7 +70,7 @@ Route::prefix('adminProfile')->group(function(){
 });
 
 Route::prefix('gestion')->group(function(){
-    Route::get('cours/details/{id}', [CourseController::class, 'ShowCours'])->name('showcours.view');
+    Route::get('cours/details/{id}', [CourseController::class, 'ShowCours'])->name('showcoursadmin.view');
     Route::get('cours/view', [CourseController::class, 'CourseView'])->name('admincourse.view');
     Route::get('cours/add', [CourseController::class, 'AddCourse'])->name('admincourse.add');
     Route::post('cours/store', [CourseController::class, 'StoreCourse'])->name('admincourse.store');
@@ -137,9 +137,9 @@ Route::prefix('eleveProfile')->group(function(){
     Route::post('/password/update', [StudentProfileController::class, 'StudentPasswordUpdate'])->name('studentpassword.update');
 });
 
-Route::prefix('CoursFormatteur')->group(function(){
-    //Route::get('details/{id}', [CourseController::class, 'CourseView2'])->name('showcours.view');
+Route::prefix('coursFormatteur')->group(function(){
     Route::get('touslescours/view', [CourseController::class, 'CourseView2'])->name('touslescoursformatteur.view');
+    Route::get('details/{id}', [CourseController::class, 'ShowCours2'])->name('showcoursformatteur.view');
     Route::get('mescours/view', [CoursFormatteurController::class, 'MesCoursView'])->name('coursformatteur.view');
     Route::get('mescours/add', [CoursFormatteurController::class, 'AddMesCours'])->name('coursformatteur.add');
     Route::post('mescours/store', [CoursFormatteurController::class, 'StoreMesCours'])->name('coursformatteur.store');

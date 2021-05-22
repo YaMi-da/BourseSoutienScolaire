@@ -17,12 +17,6 @@ class CourseController extends Controller
         return view('backend.gestion.course_list.view_list', $data);
     }
 
-    public function CourseView2(){
-        //$allData = Course::all();
-        $data['allData'] = Course::all();
-        return view('formatteur.cours.touslescours_formatteur_view', $data);
-    }
-
     public function AddCourse(){
         $matieres = Matiere::all();
         $niveaux = Niveau::all();
@@ -109,4 +103,24 @@ class CourseController extends Controller
 
         return redirect()->route('admincourse.view')->with($notification);
     }
+
+    public function CourseView2(){
+        //$allData = Course::all();
+        $data['allData'] = Course::all();
+        return view('formatteur.cours.touslescours_formatteur_view', $data);
+    }
+
+    public function CourseView3(){
+        //$allData = Course::all();
+        $data['allData'] = Course::all();
+        $users = User::where('user_type_id', '3')->get();
+        return view('formatteur.cours.cours_formatteur_view', $data)->with('users', $users);
+    }
+
+    public function ShowCours2($id){
+        $showData = Course::find($id);
+        return view('showcours.showcours_formatteur', compact('showData'));
+    }
+
+    
 }

@@ -49,7 +49,7 @@ $route = Route::current()->getName();
 
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item {{ ($prefix == '/coursFormatteur')?'active':'' }}">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCours"
                     aria-expanded="true" aria-controls="collapseCours">
                     <i class="fas fa-fw fa-folder"></i>
@@ -57,9 +57,8 @@ $route = Route::current()->getName();
                 </a>
                 <div id="collapseCours" class="collapse" aria-labelledby="headingCours" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header"></h6>
-                        <a class="collapse-item" href="touslescoursformatteur.view">Tous les cours</a>
-                        <a class="collapse-item" href="coursformatteur.view">Mes cours</a>
+                        <a class="collapse-item" href="{{ route('touslescoursformatteur.view') }}">Tous les cours</a>
+                        <a class="collapse-item" href="{{ route('coursformatteur.view') }}">Mes cours</a>
                     </div>
                 </div>
             </li>

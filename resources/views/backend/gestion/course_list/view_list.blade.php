@@ -34,7 +34,7 @@
                                         @foreach($allData as $key => $course)
                                         <tr>
                                             <th>{{ $key+1 }}</th>
-                                            <th> <a href="{{ route('showcours.view', $course->id) }}"> {{ $course->titre }}</a></th>
+                                            <th> <a href="{{ route('showcoursadmin.view', $course->id) }}"> {{ $course->titre }}</a></th>
                                             <th>{{ $course->user['name'] }} | {{ $course->matiere['name'] }}</th>
                                             <th>{{ $course->description }}</th>
                                             <th>{{ $course->view_count }}</th>
