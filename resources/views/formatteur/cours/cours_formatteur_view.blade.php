@@ -14,7 +14,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h3 class="m-0 font-weight-bold text-primary">Mes Cours</h3>
-                            <a href="" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Cours</a>
+                            <a href="{{ route('coursformatteur.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Cours</a>
                         </div>
                         <div class="card-body">
                         <div class="row row-cols-md-5 g-4 justify-content-center">

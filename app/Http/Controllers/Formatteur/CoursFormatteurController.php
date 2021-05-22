@@ -11,10 +11,11 @@ use Illuminate\Http\Request;
 
 class CoursFormatteurController extends Controller
 {
-    public function MesCoursView(){
+    public function MesCoursView($id){
         //$allData = Course::all();
-        $courses = Course::where('user_id', '3')->get();
-        return view('formatteur.cours.cours_formatteur_view', $courses)->with('courses', $courses);
+        $users = User::find($id);
+        $courses = Course::where('user_id', $id)->get();
+        return view('formatteur.cours.cours_formatteur_view', $users)->with('courses', $courses)->with('users', $users);
     }
 
     public function AddMesCours(){
@@ -24,8 +25,9 @@ class CoursFormatteurController extends Controller
         return view('formatteur.cours.cours_formatteur_add')->with('matieres', $matieres)->with('users', $users)->with('niveaux', $niveaux);
     }
 
-    public function StoreMesCours(Request $request){
+    public function StoreMesCours(Request $request, $id){
         $data = new Course();
+        $user = User::find($id);
         $data -> titre = $request -> titre;
         $data -> matiere_id = $request -> matiere_id;
         $data -> description = $request -> description;
@@ -48,7 +50,7 @@ class CoursFormatteurController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->route('coursformatteur.view')->with($notification);
+        return redirect()->route('coursformatteur.view', $user)->with($notification)->with('user',$user);
     }
 
     public function EditMesCours($id){
