@@ -26,7 +26,7 @@
                 $users = DB::table('users')->where('id', Auth::user()->id)->first();
 
                 @endphp
-	 <form method="post" action="{{ route('coursformatteur.store', $users->id) }}">
+	 <form method="post" action="{{ route('coursformatteur.store', $users->id) }}" enctype="multipart/form-data">
 	 	@csrf
 					  <div class="row">
 						<div class="col-12">	

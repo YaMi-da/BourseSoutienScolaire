@@ -21,7 +21,7 @@
                                         @foreach($allData as $key => $cours)
                                         <div class="booking-card" style="margin-left: 2%; margin-right: 2%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                                                 <div class="book-container">
-                                                <img src="{{ (!empty($matiere->image) ? url('upload/matiere_img/'.$matiere->image):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 290px; object-fit: cover;"  alt="...">
+                                                <img src="{{ (!empty($cours->photo) ? url('upload/cours_img/'.$cours->photo):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 290px; object-fit: cover;"  alt="...">
                                                 </div>
                                                 <div class="informations-container" style="height: 220px;">
                                                 <h2 class="title" style="color: black; font-size:20px">{{ $cours->titre }}</h2>

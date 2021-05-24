@@ -21,7 +21,7 @@
 			  <div class="row">
 				<div class="col">
 
-	 <form method="post" action="{{ route('admincourse.update', $editData->id) }}">
+	 <form method="post" action="{{ route('admincourse.update', $editData->id) }}" enctype="multipart/form-data">
 	 	@csrf
 					  <div class="row">
 						<div class="col-12">

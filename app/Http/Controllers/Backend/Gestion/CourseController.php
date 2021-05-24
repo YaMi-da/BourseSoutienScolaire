@@ -74,7 +74,6 @@ class CourseController extends Controller
         $data -> niveau_id = $request -> niveau_id;
         $data -> view_count = $request -> view_count;
         $data -> enrolled_count = $request -> enrolled_count;
-        $data -> session_url = $request -> session_url;
         if ($request->hasFile('photo')) {
             $file = $request -> file('photo');
             $extension = $file->getClientOriginalExtension();
@@ -82,6 +81,9 @@ class CourseController extends Controller
             $file->move(public_path('upload/cours_img'), $filename);
             $data->photo = $filename;
         }
+        $data -> session_url = $request -> session_url;
+
+        
         $data->save();
 
         $notification = array(

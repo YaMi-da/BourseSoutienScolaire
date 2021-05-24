@@ -50,6 +50,7 @@ class MatieresController extends Controller
         $data = Matiere::find($id);
         $data -> name = $request -> name;
         $data -> view_count = $request -> view_count;
+        
         if ($request->hasFile('image')) {
             $file = $request -> file('image');
             $extension = $file->getClientOriginalExtension();
