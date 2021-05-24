@@ -1,6 +1,8 @@
 @extends('admin.admin_master')
 @section('admin')
 
+<link href="{{ asset('template/css/custom3-css.css') }}" rel="stylesheet">
+
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
         @include('admin.body.header')
@@ -17,20 +19,22 @@
                         <div class="card-body">
                                         <div class="row row-cols-md-5 g-4 justify-content-center">
                                         @foreach($allData as $key => $matiere)
-                                        <div class="card" style="margin-left: 2%; margin-right: 2%">
-                                            <img src="{{ (!empty($matiere->image) ? url('upload/matiere_img/'.$matiere->image):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 25vh; object-fit: cover;"  alt="...">
-                                            <div class="card-body">
-                                                <h5 class="card-title" style="text-align: center; color:black">{{ $matiere-> name }}</h5>
-                                                <ul class="list-group list-group-flush" style="text-align: center;">
-                                                <small class="text-muted">Vues: {{ $matiere-> view_count }}</small>
-                                                </ul>
-                                            </div>
-                                            <div class="card-footer" style="text-align: center;">
+                                        
+                                            <div class="booking-card" style="margin-left: 2%; margin-right: 2%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                                <div class="book-container">
+                                                <img src="{{ (!empty($matiere->image) ? url('upload/matiere_img/'.$matiere->image):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 290px; object-fit: cover;"  alt="...">
+                                                </div>
+                                                <div class="informations-container">
+                                                <h2 class="title">{{ $matiere->name }}</h2>
+                                                <div class="more-information">
                                                 <a href="{{ route('adminmatiere.edit', $matiere->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('adminmatiere.delete', $matiere->id) }}" class="btn btn-danger" id="delete">Supprimer</a>
+                                                </div>
+                                                </div>
                                             </div>
-                                            
-                                        </div>
+                                        
+                                        
                                         @endforeach
+                                        
                                         </div>
                         </div>
                     </div>

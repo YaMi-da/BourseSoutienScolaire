@@ -28,7 +28,7 @@
                                 <div class="col-12 col-lg-8">
                                     <div class="content" style="height: auto; display: block">
                                         <p style="font-size: 17px; white-space: pre-wrap; font-style:italic">Formatteur : {{ $showData->user['name'] }}</p>
-                                        <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum euismod semper. Ut iaculis nisl sit amet elit consequat convallis. Vivamus vitae scelerisque lorem. Aliquam euismod in erat finibus lacinia. Mauris imperdiet enim ut pulvinar rutrum. In sodales ex a elit faucibus bibendum. Nulla viverra erat lacus, sit amet dignissim ligula maximus sit amet. Duis hendrerit, neque non aliquam rutrum, enim est condimentum orci, in rutrum est quam ac urna.</p>
+                                        <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
                                         <p></p>
                                     </div>
                                 </div>

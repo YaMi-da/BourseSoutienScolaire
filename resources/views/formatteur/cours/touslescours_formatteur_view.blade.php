@@ -1,6 +1,7 @@
 @extends('formatteur.formatteur_master')
 @section('formatteur')
 
+<link href="{{ asset('template/css/custom3-css.css') }}" rel="stylesheet">
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
         @include('formatteur.body.header')
@@ -18,22 +19,24 @@
                         <div class="card-body">
                         <div class="row row-cols-md-5 g-4 justify-content-center">
                                         @foreach($allData as $key => $cours)
-                                        <div class="card" style="margin-left: 2%; margin-right: 2%">
-                                            <img src="{{ (!empty($cours->photo) ? url('upload/cours_img/'.$cours->photo):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 25vh; object-fit: cover;"  alt="...">
-                                            <div class="card-body">
-                                                <h5 class="card-title" style="text-align: center;">{{ $cours-> titre }}</h5>
+                                        <div class="booking-card" style="margin-left: 2%; margin-right: 2%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                                <div class="book-container">
+                                                <img src="{{ (!empty($matiere->image) ? url('upload/matiere_img/'.$matiere->image):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 290px; object-fit: cover;"  alt="...">
+                                                </div>
+                                                <div class="informations-container" style="height: 220px;">
+                                                <h2 class="title" style="color: black; font-size:20px">{{ $cours->titre }}</h2>
                                                 <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;text-align:justify;color:black">{{ $cours-> description }}</p>
                                                 <ul class="list-group list-group-flush" style="text-align: center;">
-                                                <small class="text-muted">Vues: {{ $cours-> view_count }}</small>
+                                                <h6 class="text-muted">Vues: {{ $cours-> view_count }}</h6>
                                                 </ul>
+                                                <div class="more-information" style="text-align: right;">
+                                                <a href="{{ route('showcoursformatteur.view', $cours->id) }}" class="btn btn-primary" id="access">Accéder au cours <i class="fas fa-arrow-right"></i></a>
+                                                </div>
+                                                </div>
                                             </div>
-                                            <div class="card-footer" style="text-align:right;">
-                                                <a href="{{ route('showcourseleve.view', $cours->id) }}" class="btn btn-primary" id="access">Accéder au cours <i class="fas fa-arrow-right"></i></a>
-                                            </div>
-                                            
-                                        </div>
                                         @endforeach
-                                        </div>
+                                        
+                        </div>
                         </div>
                     </div>
                 </div>
