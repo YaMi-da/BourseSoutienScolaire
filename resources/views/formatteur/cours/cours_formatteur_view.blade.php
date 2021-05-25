@@ -2,6 +2,8 @@
 @section('formatteur')
 
 <link href="{{ asset('template/css/custom3-css.css') }}" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
@@ -9,21 +11,18 @@
 
         <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Cours</h1>
-
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    <div class="card shadow mb-4" style="margin-top: 50px;">
                         <div class="card-header py-3">
-                            <h3 class="m-0 font-weight-bold text-primary">Mes Cours</h3>
+                            <h3 class="m-0" style="color: black; font-size: 40px; font-weight:bold;">Tous Les Cours</h3>
                             <a href="{{ route('coursformatteur.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Cours</a>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="margin-top: 50px;">
                         <div class="row row-cols-md-5 g-4 justify-content-center">
                                         @foreach($courses as $key => $cours)
                                         <div class="booking-card" style="margin-left: 2%; margin-right: 2%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                                                 <div class="book-container">
-                                                <img src="{{ (!empty($cours->photo) ? url('upload/cours_img/'.$cours->photo):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 290px; object-fit: cover;"  alt="...">
+                                                <img src="{{ (!empty($cours->photo) ? url('upload/cours_img/'.$cours->photo):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 330px; object-fit: cover;"  alt="...">
                                                 </div>
                                                 <div class="informations-container" style="height: 220px;">
                                                 <h2 class="title" style="color: black; font-size:20px">{{ $cours->titre }}</h2>

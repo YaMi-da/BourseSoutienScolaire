@@ -13,16 +13,23 @@
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('template/css/custom2-css.css') }}" rel="stylesheet">
     <link href="{{ asset('template/css/sb-admin-2.min.css') }}" rel="stylesheet">
     
     <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+
+    <style>
+        body{
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
 
 </head>
 
@@ -52,6 +59,7 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src= "{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
     
 
     <!-- Core plugin JavaScript-->
@@ -73,6 +81,8 @@
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('template/js/demo/datatables-demo.js') }}"></script>
+
+    
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -132,6 +142,8 @@
         }
         @endif  
     </script>
+
+        
 
 </body>
 

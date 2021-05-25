@@ -11,7 +11,7 @@
 
 
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    <div class="card shadow mb-4" style="margin-top: 50px;">
                         <div class="card-header py-3">
                             <h3 class="m-0 font-weight-bold text-primary">Matieres</h3>
                             <a href="{{ route('adminmatiere.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Matiere</a>
@@ -22,7 +22,7 @@
                                         
                                             <div class="booking-card" style="margin-left: 2%; margin-right: 2%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                                                 <div class="book-container">
-                                                <img src="{{ (!empty($matiere->image) ? url('upload/matiere_img/'.$matiere->image):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 290px; object-fit: cover;"  alt="...">
+                                                <img src="{{ (!empty($matiere->image) ? url('upload/matiere_img/'.$matiere->image):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 330px; object-fit: cover;"  alt="...">
                                                 </div>
                                                 <div class="informations-container">
                                                 <h2 class="title">{{ $matiere->name }}</h2>

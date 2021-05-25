@@ -10,10 +10,10 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4" style="margin-top: 50px;">
                         <div class="card-header py-3">
-                            <h3 class="m-0 font-weight-bold text-primary">Cours</h3>
+                            <h3 class="m-0 font-weight-bold text-primary">Résultats correspondants à votre recherche...</h3>
                             <a href="{{ route('admincourse.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Cours</a>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="margin-top: 50px;">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
@@ -28,7 +28,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($allData as $key => $course)
+                                        @foreach($courses as $key => $course)
                                         <tr>
                                             <th>{{ $key+1 }}</th>
                                             <th> <a href="{{ route('showcoursadmin.view', $course->id) }}"> {{ $course->titre }}</a></th>

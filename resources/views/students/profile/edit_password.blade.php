@@ -6,7 +6,7 @@
         @include('students.body.header')
 
         <div class="container-fluid">
-            <div class="card shadow mb-4">
+            <div class="card shadow mb-4" style="margin-top: 50px;">
                 <div class="card-body">
                 <section class="content">
 

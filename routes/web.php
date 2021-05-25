@@ -159,4 +159,10 @@ Route::prefix('coursEleve')->group(function(){
     Route::get('mescours/delete/{id}', [CoursFormatteurController::class, 'DeleteMesCours'])->name('coursformatteur.delete');
 });
 
+Route::get('/rechercheadmin', [CourseController::class, 'AdminSearch'])->name('adminsearch');
+Route::get('/rechercheformatteur', [CourseController::class, 'FormatteurSearch'])->name('formatteursearch');
+Route::get('/rechercheeleve', [CourseController::class, 'EleveSearch'])->name('elevesearch');
+
+Route::get('/autocomplete', [CourseController::class, 'Autocomplete'])->name('autocomplete');
+
 

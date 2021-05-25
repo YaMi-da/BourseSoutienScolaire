@@ -10,7 +10,7 @@ $route = Route::current()->getName();
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}">
-                <div class="sidebar-brand-text mx-3">Espace Eleve</div>
+                <div class="sidebar-brand-text mx-3" style="font-weight: light;">Espace Eleve</div>
             </a>
 
             <!-- Divider -->

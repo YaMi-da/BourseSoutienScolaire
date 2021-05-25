@@ -2,27 +2,24 @@
 @section('students')
 
 <link href="{{ asset('template/css/custom3-css.css') }}" rel="stylesheet">
-
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
         @include('students.body.header')
 
         <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Cours</h1>
 
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h3 class="m-0 font-weight-bold text-primary">Tous Les Cours</h3>
+                    <div class="card shadow mb-4" style="margin-top: 50px;">
+                        <div class="card-header py-3" style="justify-content: center;">
+                            <h3 class="m-0" style="color: black; font-size: 40px; font-weight:bold">Tous Les Cours</h3>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="margin-top: 50px;">
                         <div class="row row-cols-md-5 g-4 justify-content-center">
                                         @foreach($allData as $key => $cours)
                                         <div class="booking-card" style="margin-left: 2%; margin-right: 2%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                                                 <div class="book-container">
-                                                <img src="{{ (!empty($cours->photo) ? url('upload/cours_img/'.$cours->photo):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 290px; object-fit: cover;"  alt="...">
+                                                <img src="{{ (!empty($cours->photo) ? url('upload/cours_img/'.$cours->photo):url('upload/no_picture.png')) }}" class="card-img-top" style="width: 100%; height: 330px; object-fit: cover;"  alt="...">
                                                 </div>
                                                 <div class="informations-container" style="height: 235px;">
                                                 <h2 class="title" style="color: black; font-size:20px">{{ $cours->titre }}</h2>

@@ -129,5 +129,23 @@ class CourseController extends Controller
         return view('showcours.showcours_eleve', compact('showData'));
     }
 
+    public function AdminSearch(Request $request){
+        $search_text = $_GET['query'];
+        $courses = Course::where('titre', 'LIKE', '%'.$search_text.'%')->get();
+        return view('admin.search-results',compact('courses'));
+    }
+
+    public function FormatteurSearch(Request $request){
+        $search_text = $_GET['query'];
+        $courses = Course::where('titre', 'LIKE', '%'.$search_text.'%')->get();
+        return view('formatteur.search-results',compact('courses'));
+    }
+
+    public function EleveSearch(Request $request){
+        $search_text = $_GET['query'];
+        $courses = Course::where('titre', 'LIKE', '%'.$search_text.'%')->get();
+        return view('students.search-results',compact('courses'));
+    }
+
     
 }

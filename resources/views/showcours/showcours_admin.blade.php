@@ -2,6 +2,8 @@
 @section('admin')
 
 <link href="{{ asset('template/css/custom3-css.css') }}" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
@@ -18,7 +20,7 @@
                             </div>
                             <div class="col-8" style="width:100%; padding-left: 50px">
                                 <div class="row">
-                                    <h1 style="font-weight: bold">{{ $showData->titre }} ({{ $showData->matiere['name'] }})</h1>
+                                    <h1 style="font-weight: bold">{{ $showData->titre }}</h1>
                                 </div>
                                 <div class="row">
                                     <div class="content" style="height: auto; display: block">
@@ -63,15 +65,15 @@
                             </div> 
                         </div>
                         <div class="col-4">
-                            <div class="card mb-4" style="margin-left: 100px; ; border: none !important; width:60%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <div class="card mb-4" style="margin-left: 100px; ; border: none !important; width:65%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                                 <div class="card-body" style="border-radius:2px; padding-top: 50px; height:fit-content">
-                                    <div class="row" style="padding-left: 40px; padding-right: 40px">
+                                    <div class="row" style="padding-right: 40px">
                                         <div class="content" style="height:auto ;display: block">
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;">Matiere: </p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;">Niveau: </p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;">Commentaires</p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;">Vues: </p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;">Eleves: </p>
+                                        <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-book"></i>   <span>{{$showData->matiere['name']}}</span></p>
+                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-graduation-cap"></i>   <span>{{$showData->niveau['name']}}</span></p>
+                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-eye"></i>   <span>{{$showData->view_count}}</span></p>
+                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-book-reader"></i>   <span>{{$showData->enrolled_count}}</span></p>
+                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-comment"></i>   <span>Commentaires</span></p>
                                         </div>
                                     </div>
                                 </div>

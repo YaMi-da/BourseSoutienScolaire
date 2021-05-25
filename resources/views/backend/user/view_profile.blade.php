@@ -7,10 +7,8 @@
 
         <div class="container-fluid">
 
-                    
-
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    <div class="card shadow mb-4" style="margin-top: 50px;">
                         <div class="card-header py-3">
                             <h3 class="m-0 font-weight-bold text-primary">Mon Profil</h3>
                         </div>
