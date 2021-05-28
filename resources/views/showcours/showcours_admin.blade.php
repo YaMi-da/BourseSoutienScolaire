@@ -71,8 +71,8 @@
                                         <div class="content" style="height:auto ;display: block">
                                         <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-book"></i>   <span>{{$showData->matiere['name']}}</span></p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-graduation-cap"></i>   <span>{{$showData->niveau['name']}}</span></p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-eye"></i>   <a href="{{ route('subscribersview1', $showData->id) }}"><span>{{$showData->view_count}}</span></a></p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-book-reader"></i>   <span>{{$showData->enrolled_count}}</span></p>
+                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-eye"></i>   <span>{{$showData->view_count}}</span></p>
+                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-book-reader"></i>   <a href="{{ route('subscribersview1', $showData->id) }}"><span>{{$showData->enrolled_count}}</span></a></p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-comment"></i>   <span>Commentaires</span></p>
                                         </div>
                                     </div>

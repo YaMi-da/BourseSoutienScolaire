@@ -122,6 +122,10 @@ class CourseController extends Controller
         return view('showcours.showcours_formatteur', compact('showData'));
     }
 
+    public function FormatteurProfileView2($id){
+        $showData = Course::find($id);
+        return view('formatteur.profile.view_formatteur_profile', compact('showData'));
+    }
 
     public function CourseView3(){
         //$allData = Course::all();
@@ -135,7 +139,7 @@ class CourseController extends Controller
         return view('showcours.showcours_eleve', compact('showData'));
     }
 
-    public function FormatteurProfileView2($id){
+    public function FormatteurProfileView3($id){
         $showData = Course::find($id);
         return view('students.profile.view_formatteur_profile', compact('showData'));
     }
@@ -161,6 +165,17 @@ class CourseController extends Controller
     public function SubscribersView1($id){
         $showData = Course::find($id);
         return view('admin.subscribers_view', compact('showData'));
+    }
+
+
+    public function SubscribersView2($id){
+        $showData = Course::find($id);
+        return view('formatteur.subscribers_view', compact('showData'));
+    }
+
+    public function SubscribersView3($id){
+        $showData = Course::find($id);
+        return view('students.subscribers_view', compact('showData'));
     }
     
 }
