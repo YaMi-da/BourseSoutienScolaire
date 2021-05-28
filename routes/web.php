@@ -72,6 +72,7 @@ Route::prefix('adminProfile')->group(function(){
 Route::prefix('gestion')->group(function(){
     Route::get('cours/details/{id}', [CourseController::class, 'ShowCours'])->name('showcoursadmin.view');
     Route::get('cours/details/formatteur/{id}', [CourseController::class, 'FormatteurProfileView'])->name('formatteurprofile1');
+    Route::get('cours/details/eleve/{id}', [CourseController::class, 'StudentProfileView'])->name('studentprofile1');
     Route::get('cours/details/subscribers/{id}', [CourseController::class, 'SubscribersView1'])->name('subscribersview1');
     Route::get('cours/view', [CourseController::class, 'CourseView'])->name('admincourse.view');
     Route::get('cours/add', [CourseController::class, 'AddCourse'])->name('admincourse.add');
@@ -143,6 +144,7 @@ Route::prefix('coursFormatteur')->group(function(){
     Route::get('touslescours/view', [CourseController::class, 'CourseView2'])->name('touslescoursformatteur.view');
     Route::get('details/{id}', [CourseController::class, 'ShowCours2'])->name('showcoursformatteur.view');
     Route::get('details/formatteur/{id}', [CourseController::class, 'FormatteurProfileView2'])->name('formatteurprofile2');
+    Route::get('details/eleve/{id}', [CourseController::class, 'StudentProfileView2'])->name('studentprofile2');
     Route::get('cours/details/subscribers/{id}', [CourseController::class, 'SubscribersView2'])->name('subscribersview2');
     Route::get('mescours/view/{id}', [CoursFormatteurController::class, 'MesCoursView'])->name('coursformatteur.view');
     Route::get('mescours/add', [CoursFormatteurController::class, 'AddMesCours'])->name('coursformatteur.add');
@@ -156,6 +158,7 @@ Route::prefix('coursEleve')->group(function(){
     Route::get('touslescours/view', [CourseController::class, 'CourseView3'])->name('touslescourseleves.view');
     Route::get('details/formatteur/{id}', [CourseController::class, 'FormatteurProfileView3'])->name('formatteurprofile3');
     Route::get('details/{id}', [CourseController::class, 'ShowCours3'])->name('showcourseleve.view');
+    Route::get('details/eleve/{id}', [CourseController::class, 'StudentProfileView3'])->name('studentprofile3');
     Route::get('cours/details/subscribers/{id}', [CourseController::class, 'SubscribersView3'])->name('subscribersview3');
     Route::get('mescours/view/{id}', [CoursFormatteurController::class, 'MesCoursView'])->name('coursformatteur.view');
     Route::get('mescours/add', [CoursFormatteurController::class, 'AddMesCours'])->name('coursformatteur.add');

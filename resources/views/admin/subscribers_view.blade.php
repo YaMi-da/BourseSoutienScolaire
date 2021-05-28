@@ -103,7 +103,7 @@
                                             </div>
                                             <h2 class="name">{{ $user->name }}</h2>
                                             <div class="actions">
-                                                <div class="follow-btn"><button>Voir Profil <i class="fas fa-arrow-right"></i></button></div>
+                                                <a href="{{ route('studentprofile1', $user->id) }}" class="follow-btn"><button>Voir Profil <i class="fas fa-arrow-right"></i></button></a>
                                             </div>
                                         </div>                                        
                                         @endforeach
