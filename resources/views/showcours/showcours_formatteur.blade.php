@@ -22,7 +22,7 @@
                                     <h1 style="font-weight: bold">{{ $showData->titre }}</h1>
                                 </div>
                                 <div class="row">
-                                    <div class="content" style="height: auto; display: block">
+                                    <div style="height: auto; display: block">
                                         <p style="font-size: 17px; white-space: pre-wrap; font-style:italic; color:#5b6378">Formatteur : {{ $showData->user['name'] }}</p>
                                         <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
                                     </div>
@@ -54,7 +54,7 @@
                                         <h1 style="font-weight: bold; color:black">Dans ce cours : </h1>
                                     </div>
                                     <div class="row" style="padding-left: 40px; padding-right: 40px">
-                                        <div class="content" style="height: auto; display: block;">
+                                        <div style="height: auto; display: block;">
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>

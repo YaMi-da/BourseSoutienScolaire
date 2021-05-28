@@ -106,6 +106,11 @@ class CourseController extends Controller
         return redirect()->route('admincourse.view')->with($notification);
     }
 
+    public function FormatteurProfileView($id){
+        $showData = Course::find($id);
+        return view('backend.user.view_formatteur_profile', compact('showData'));
+    }
+
     public function CourseView2(){
         //$allData = Course::all();
         $data['allData'] = Course::all();
@@ -117,6 +122,7 @@ class CourseController extends Controller
         return view('showcours.showcours_formatteur', compact('showData'));
     }
 
+
     public function CourseView3(){
         //$allData = Course::all();
         $data['allData'] = Course::all();
@@ -127,6 +133,11 @@ class CourseController extends Controller
     public function ShowCours3($id){
         $showData = Course::find($id);
         return view('showcours.showcours_eleve', compact('showData'));
+    }
+
+    public function FormatteurProfileView2($id){
+        $showData = Course::find($id);
+        return view('students.profile.view_formatteur_profile', compact('showData'));
     }
 
     public function AdminSearch(Request $request){
@@ -147,5 +158,9 @@ class CourseController extends Controller
         return view('students.search-results',compact('courses'));
     }
 
+    public function SubscribersView1($id){
+        $showData = Course::find($id);
+        return view('admin.subscribers_view', compact('showData'));
+    }
     
 }

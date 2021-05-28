@@ -30,6 +30,11 @@ class Course extends Model
         return $this->belongsTo('App\Models\User');
     }
 
+    public function users(){
+        return $this->belongsToMany('App\Models\User', 'course_users')
+                ->withPivot('created_at');
+    }
+
     public function niveau(){
         return $this->belongsTo('App\Models\Niveau');
     }

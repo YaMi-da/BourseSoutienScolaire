@@ -19,7 +19,7 @@ class CoursFormatteurController extends Controller
     }
 
     public function AddMesCours(){
-        $matieres = Matiere::all();
+        $matieres = Matiere::all(); 
         $niveaux = Niveau::all();
         $users = User::where('user_type_id', '3')->get();
         return view('formatteur.cours.cours_formatteur_add')->with('matieres', $matieres)->with('users', $users)->with('niveaux', $niveaux);

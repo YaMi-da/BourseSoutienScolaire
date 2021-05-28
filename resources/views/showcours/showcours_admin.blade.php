@@ -23,8 +23,8 @@
                                     <h1 style="font-weight: bold">{{ $showData->titre }}</h1>
                                 </div>
                                 <div class="row">
-                                    <div class="content" style="height: auto; display: block">
-                                        <p style="font-size: 17px; white-space: pre-wrap; font-style:italic; color:#5b6378">Formatteur : {{ $showData->user['name'] }}</p>
+                                    <div  style="height: auto; display: block">
+                                        <p style="font-size: 17px; white-space: pre-wrap; font-style:italic; color:#5b6378">Formatteur : <a style="color: bla;" href="{{ route('formatteurprofile1', $showData->user['id']) }}">{{ $showData->user['name'] }}</a></p>
                                         <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@
                                         <h1 style="font-weight: bold; color:black">Dans ce cours : </h1>
                                     </div>
                                     <div class="row" style="padding-left: 40px; padding-right: 40px">
-                                        <div class="content" style="height: auto; display: block;">
+                                        <div style="height: auto; display: block;">
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
@@ -71,7 +71,7 @@
                                         <div class="content" style="height:auto ;display: block">
                                         <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-book"></i>   <span>{{$showData->matiere['name']}}</span></p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-graduation-cap"></i>   <span>{{$showData->niveau['name']}}</span></p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-eye"></i>   <span>{{$showData->view_count}}</span></p>
+                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-eye"></i>   <a href="{{ route('subscribersview1', $showData->id) }}"><span>{{$showData->view_count}}</span></a></p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-book-reader"></i>   <span>{{$showData->enrolled_count}}</span></p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-comment"></i>   <span>Commentaires</span></p>
                                         </div>
