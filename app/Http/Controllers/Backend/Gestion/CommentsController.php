@@ -14,6 +14,11 @@ class CommentsController extends Controller
         return view('backend.gestion.comments_list.view_list', $data);
     }
 
+    public function ShowComments(){
+        $showData = Comment::all();
+        return view('backend.user.view_commentaire', $showData);
+    }
+
     public function AddComment(){
         return view('backend.gestion.comments_list.add_list');
     }
