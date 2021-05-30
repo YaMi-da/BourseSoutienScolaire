@@ -72,7 +72,7 @@
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-graduation-cap"></i>   <span>{{$showData->niveau['name']}}</span></p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-eye"></i>   <span>{{$showData->view_count}}</span></p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-book-reader"></i>   <a href="{{ route('subscribersview2', $showData->id) }}"><span>{{$showData->enrolled_count}}</span></a></p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-comment"></i>   <span>Commentaires</span></p>
+                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-comment"></i>   <a href="{{ route('commentsview2', $showData->id) }}"><span>Commentaires</span></a></p>
                                     </div>
                                 </div>
                             </div> 

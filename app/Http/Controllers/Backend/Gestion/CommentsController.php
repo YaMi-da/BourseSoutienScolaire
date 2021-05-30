@@ -20,6 +20,16 @@ class CommentsController extends Controller
         return view('backend.user.view_commentaire', compact('showData'));
     }
 
+    public function ShowComments2($id){
+        $showData = Course::find($id);
+        return view('formatteur.view_commentaire', compact('showData'));
+    }
+
+    public function ShowComments3($id){
+        $showData = Course::find($id);
+        return view('students.view_commentaire', compact('showData'));
+    }
+
     public function AddComment(){
         return view('backend.gestion.comments_list.add_list');
     }
