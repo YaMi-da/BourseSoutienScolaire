@@ -182,7 +182,6 @@ class CourseController extends Controller
         return view('admin.subscribers_view', compact('showData'));
     }
 
-
     public function SubscribersView2($id){
         $showData = Course::find($id);
         return view('formatteur.subscribers_view', compact('showData'));

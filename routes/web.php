@@ -74,6 +74,7 @@ Route::prefix('gestion')->group(function(){
     Route::get('cours/details/formatteur/{id}', [CourseController::class, 'FormatteurProfileView'])->name('formatteurprofile1');
     Route::get('cours/details/eleve/{id}', [CourseController::class, 'StudentProfileView'])->name('studentprofile1');
     Route::get('cours/details/subscribers/{id}', [CourseController::class, 'SubscribersView1'])->name('subscribersview1');
+    Route::get('cours/details/commentaires/{id}', [CommentsController::class, 'ShowComments'])->name('commentsview1');
     Route::get('cours/view', [CourseController::class, 'CourseView'])->name('admincourse.view');
     Route::get('cours/add', [CourseController::class, 'AddCourse'])->name('admincourse.add');
     Route::post('cours/store', [CourseController::class, 'StoreCourse'])->name('admincourse.store');

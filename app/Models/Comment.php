@@ -16,4 +16,12 @@ class Comment extends Model
         'niveau_id',
         'body',
     ];
+
+    public function course(){
+        return $this->belongsTo('App\Models\Course');
+    }
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }

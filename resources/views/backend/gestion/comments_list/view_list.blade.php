@@ -32,8 +32,8 @@
                                         @foreach($allData as $key => $comment)
                                         <tr>
                                             <th>{{ $key+1 }}</th>
-                                            <th>{{ $comment->user_id }}</th>
-                                            <th>{{ $comment->course_id }}</th>
+                                            <th>{{ $comment->user['name'] }}</th>
+                                            <th>{{ $comment->course['titre'] }}</th>
                                             <th>{{ $comment->body }}</th>
                                             <th><a href="{{ route('admincomment.edit', $comment->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('admincomment.delete', $comment->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
                                         </tr>

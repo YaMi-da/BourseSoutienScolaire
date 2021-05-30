@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Gestion;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class CommentsController extends Controller
@@ -14,9 +15,9 @@ class CommentsController extends Controller
         return view('backend.gestion.comments_list.view_list', $data);
     }
 
-    public function ShowComments(){
-        $showData = Comment::all();
-        return view('backend.user.view_commentaire', $showData);
+    public function ShowComments($id){
+        $showData = Course::find($id);
+        return view('backend.user.view_commentaire', compact('showData'));
     }
 
     public function AddComment(){

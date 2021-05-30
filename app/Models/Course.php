@@ -35,6 +35,10 @@ class Course extends Model
                 ->withPivot('created_at');
     }
 
+    public function comments(){
+        return $this->hasMany('App\Models\Comment');
+    }
+
     public function niveau(){
         return $this->belongsTo('App\Models\Niveau');
     }
