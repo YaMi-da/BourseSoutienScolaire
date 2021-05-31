@@ -19,6 +19,7 @@ class Course extends Model
         'session_url',
         'status',
         'description',
+        'comment_count',
         'photo',
     ];
 
@@ -33,6 +34,10 @@ class Course extends Model
     public function users(){
         return $this->belongsToMany('App\Models\User', 'course_users')
                 ->withPivot('created_at');
+    }
+
+    public function comment(){
+        return $this->belongsTo('App\Models\Comment');
     }
 
     public function comments(){

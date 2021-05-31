@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Backend\Gestion;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
 use App\Models\Course;
+use App\Models\CourseUser;
 use App\Models\Matiere;
 use App\Models\Niveau;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
@@ -52,8 +55,10 @@ class CourseController extends Controller
     }
 
     public function ShowCours($id){
+        $commentcount = Comment::where('course_id', $id)->count();
+        $enrolledcount = CourseUser::where('course_id', $id)->count();
         $showData = Course::find($id);
-        return view('showcours.showcours_admin', compact('showData'));
+        return view('showcours.showcours_admin', compact('showData'))->with('commentcount', $commentcount)->with('enrolledcount', $enrolledcount);
     }
 
 
@@ -123,8 +128,10 @@ class CourseController extends Controller
     }
 
     public function ShowCours2($id){
+        $commentcount = Comment::where('course_id', $id)->count();
+        $enrolledcount = CourseUser::where('course_id', $id)->count();
         $showData = Course::find($id);
-        return view('showcours.showcours_formatteur', compact('showData'));
+        return view('showcours.showcours_formatteur', compact('showData'))->with('commentcount', $commentcount)->with('enrolledcount', $enrolledcount);
     }
 
     public function FormatteurProfileView2($id){
@@ -145,8 +152,10 @@ class CourseController extends Controller
     }
 
     public function ShowCours3($id){
+        $commentcount = Comment::where('course_id', $id)->count();
+        $enrolledcount = CourseUser::where('course_id', $id)->count();
         $showData = Course::find($id);
-        return view('showcours.showcours_eleve', compact('showData'));
+        return view('showcours.showcours_eleve', compact('showData'))->with('commentcount', $commentcount)->with('enrolledcount', $enrolledcount);
     }
 
     public function FormatteurProfileView3($id){

@@ -19,8 +19,9 @@ class CreateCoursesTable extends Migration
             $table->integer('matiere_id')->nullable();
             $table->integer('niveau_id')->nullable();
             $table->string('titre');
-            $table->string('view_count')->default(0);
-            $table->string('enrolled_count')->default(0);
+            $table->integer('view_count')->default(0);
+            $table->integer('enrolled_count')->default(0);
+            $table->integer('comment_count')->default(0);
             $table->string('session_url');
             $table->integer('status')->default(0);
             $table->longText('incourse')->nullable();

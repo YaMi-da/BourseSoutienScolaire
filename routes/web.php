@@ -75,6 +75,8 @@ Route::prefix('gestion')->group(function(){
     Route::get('cours/details/eleve/{id}', [CourseController::class, 'StudentProfileView'])->name('studentprofile1');
     Route::get('cours/details/subscribers/{id}', [CourseController::class, 'SubscribersView1'])->name('subscribersview1');
     Route::get('cours/details/commentaires/{id}', [CommentsController::class, 'ShowComments'])->name('commentsview1');
+    Route::post('cours/details/commentaires/store', [CommentsController::class, 'PostComment'])->name('commentspost1');
+    Route::get('cours/details/commentaires/delete/{id}', [CommentsController::class, 'DeleteComment2'])->name('deletecomment2');
     Route::get('cours/view', [CourseController::class, 'CourseView'])->name('admincourse.view');
     Route::get('cours/add', [CourseController::class, 'AddCourse'])->name('admincourse.add');
     Route::post('cours/store', [CourseController::class, 'StoreCourse'])->name('admincourse.store');
@@ -148,6 +150,8 @@ Route::prefix('coursFormatteur')->group(function(){
     Route::get('details/eleve/{id}', [CourseController::class, 'StudentProfileView2'])->name('studentprofile2');
     Route::get('cours/details/subscribers/{id}', [CourseController::class, 'SubscribersView2'])->name('subscribersview2');
     Route::get('cours/details/commentaires/{id}', [CommentsController::class, 'ShowComments2'])->name('commentsview2');
+    Route::post('cours/details/commentaires/store', [CommentsController::class, 'PostComment2'])->name('commentspost2');
+    Route::get('cours/details/commentaires/delete/{id}', [CommentsController::class, 'DeleteComment3'])->name('deletecomment3');
     Route::get('mescours/view/{id}', [CoursFormatteurController::class, 'MesCoursView'])->name('coursformatteur.view');
     Route::get('mescours/add', [CoursFormatteurController::class, 'AddMesCours'])->name('coursformatteur.add');
     Route::post('mescours/store/{id}', [CoursFormatteurController::class, 'StoreMesCours'])->name('coursformatteur.store');
@@ -163,6 +167,8 @@ Route::prefix('coursEleve')->group(function(){
     Route::get('details/eleve/{id}', [CourseController::class, 'StudentProfileView3'])->name('studentprofile3');
     Route::get('cours/details/subscribers/{id}', [CourseController::class, 'SubscribersView3'])->name('subscribersview3');
     Route::get('cours/details/commentaires/{id}', [CommentsController::class, 'ShowComments3'])->name('commentsview3');
+    Route::post('cours/details/commentaires/store', [CommentsController::class, 'PostComment3'])->name('commentspost3');
+    Route::get('cours/details/commentaires/delete/{id}', [CommentsController::class, 'DeleteComment4'])->name('deletecomment4');
     Route::get('mescours/view/{id}', [CoursFormatteurController::class, 'MesCoursView'])->name('coursformatteur.view');
     Route::get('mescours/add', [CoursFormatteurController::class, 'AddMesCours'])->name('coursformatteur.add');
     Route::post('mescours/store/{id}', [CoursFormatteurController::class, 'StoreMesCours'])->name('coursformatteur.store');

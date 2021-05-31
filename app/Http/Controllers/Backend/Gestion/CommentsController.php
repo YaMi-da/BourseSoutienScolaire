@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
@@ -69,7 +70,7 @@ class CommentsController extends Controller
         return redirect()->route('admincomment.view')->with($notification);
     }
 
-    public function DeleteCourse($id){
+    public function DeleteComment($id){
         $comment = Comment::find($id);
         $comment -> delete();
 
@@ -80,4 +81,57 @@ class CommentsController extends Controller
 
         return redirect()->route('admincomment.view')->with($notification);
     }
+
+    public function PostComment(Request $request){
+        $data = new Comment();
+        $data -> user_id = Auth::user()->id;
+        $data -> course_id = $request->course_id;
+        $data -> body = $request -> body;
+        $data->save();
+
+        return redirect()->back();
+    }
+
+    public function DeleteComment2($id){
+        $comment = Comment::find($id);
+        $comment -> delete();
+
+        return redirect()->back();
+    }
+
+    public function PostComment2(Request $request){
+        $data = new Comment();
+        $data -> user_id = Auth::user()->id;
+        $data -> course_id = $request->course_id;
+        $data -> body = $request -> body;
+        $data->save();
+
+        return redirect()->back();
+    }
+
+    public function DeleteComment3($id){
+        $comment = Comment::find($id);
+        $comment -> delete();
+
+        return redirect()->back();
+    }
+
+    public function PostComment3(Request $request){
+        $data = new Comment();
+        $data -> user_id = Auth::user()->id;
+        $data -> course_id = $request->course_id;
+        $data -> body = $request -> body;
+        $data->save();
+
+        return redirect()->back();
+    }
+
+    public function DeleteComment4($id){
+        $comment = Comment::find($id);
+        $comment -> delete();
+
+        return redirect()->back();
+    }
+
+
 }
