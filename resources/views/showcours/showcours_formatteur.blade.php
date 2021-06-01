@@ -55,9 +55,7 @@
                                     </div>
                                     <div class="row" style="padding-left: 40px; padding-right: 40px">
                                         <div style="height: auto; display: block;">
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
+                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->incourse }}</p>
                                         </div>
                                     </div>
                                 </div>

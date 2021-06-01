@@ -58,6 +58,14 @@
 		 
 	</div>
 
+	<div class="form-group">
+		<h5>Dans ce cours : </h5>
+		<div class="controls">
+	 <textarea type="text" name="incourse" id="incourse" style="width: 600px;" rows="6" class="form-control"  ></textarea>
+	   </div>
+		 
+	</div>
+
 
 	<div class="form-group">
 	<label for="user_id"><h5>Formatteur <span class="text-danger">*</span></h5></label>

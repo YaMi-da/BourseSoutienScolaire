@@ -37,7 +37,15 @@
                                         Carbon\Carbon::setlocale('fr');
                                         @endphp
                                         <p style="font-weight: bold; text-align:center; font-size:20px; color:#5b6378">{{ $showData->created_at->translatedFormat('D d/m/Y') }}</p>
-                                        <a href="" style="float:none; padding: 10px 35px; text-align:center" class="btn rounded-pill btn-success mt-0">S'incrire</a>
+                                        <form method="POST" action="{{ route('subscribe') }}">
+                                        @csrf
+                                        <div class="form-group">
+                                    <div class="controls" style="display:flex;">
+                                    <input type="hidden" name="course_id" value="{{ $showData->id }}">
+                                        <button type="submit" style="float:none; padding: 10px 35px; text-align:center" class="btn rounded-pill btn-success mt-0">S'incrire</button>
+                                    </div>
+                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -57,9 +65,7 @@
                                     </div>
                                     <div class="row" style="padding-left: 40px; padding-right: 40px">
                                         <div style="height: auto; display: block;">
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
+                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->incourse }}</p>
                                         </div>
                                     </div>
                                 </div>

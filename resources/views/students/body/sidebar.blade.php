@@ -41,6 +41,12 @@ $route = Route::current()->getName();
                 </div>
             </li>
 
+            @php
+
+            $users = DB::table('users')->where('id', Auth::user()->id)->first();
+
+            @endphp
+
 
             <!-- Nav Item - Charts -->
             <li class="nav-item {{ ($prefix == '/coursEleve')?'active':'' }}">
@@ -52,7 +58,7 @@ $route = Route::current()->getName();
                 <div id="collapseCours" class="collapse" aria-labelledby="headingCours" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('touslescourseleves.view') }}">Tous les cours</a>
-                        <a class="collapse-item" href="">Mes cours</a>
+                        <a class="collapse-item" href="{{ route('courseleves.view', $users->id) }}">Mes cours</a>
                     </div>
                 </div>
             </li>

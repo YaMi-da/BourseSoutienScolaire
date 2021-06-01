@@ -15,6 +15,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Formatteur\CoursFormatteurController;
 use App\Http\Controllers\Formatteur\FormatteurController;
 use App\Http\Controllers\Formatteur\FormatteurProfileController;
+use App\Http\Controllers\Students\CoursEleveController;
 use App\Http\Controllers\Students\StudentController;
 use App\Http\Controllers\Students\StudentProfileController;
 use Illuminate\Support\Facades\Auth;
@@ -168,8 +169,9 @@ Route::prefix('coursEleve')->group(function(){
     Route::get('cours/details/subscribers/{id}', [CourseController::class, 'SubscribersView3'])->name('subscribersview3');
     Route::get('cours/details/commentaires/{id}', [CommentsController::class, 'ShowComments3'])->name('commentsview3');
     Route::post('cours/details/commentaires/store', [CommentsController::class, 'PostComment3'])->name('commentspost3');
+    Route::post('cours/details/subscription', [CourseUserController::class, 'Subscribe'])->name('subscribe');
     Route::get('cours/details/commentaires/delete/{id}', [CommentsController::class, 'DeleteComment4'])->name('deletecomment4');
-    Route::get('mescours/view/{id}', [CoursFormatteurController::class, 'MesCoursView'])->name('coursformatteur.view');
+    Route::get('mescours/view/{id}', [CoursEleveController::class, 'MesCoursView'])->name('courseleves.view');
     Route::get('mescours/add', [CoursFormatteurController::class, 'AddMesCours'])->name('coursformatteur.add');
     Route::post('mescours/store/{id}', [CoursFormatteurController::class, 'StoreMesCours'])->name('coursformatteur.store');
     Route::get('mescours/edit/{id}', [CoursFormatteurController::class, 'EditMesCours'])->name('coursformatteur.edit');
