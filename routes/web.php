@@ -15,9 +15,12 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Formatteur\CoursFormatteurController;
 use App\Http\Controllers\Formatteur\FormatteurController;
 use App\Http\Controllers\Formatteur\FormatteurProfileController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\Students\CoursEleveController;
 use App\Http\Controllers\Students\StudentController;
 use App\Http\Controllers\Students\StudentProfileController;
+use App\Models\User;
+use App\Notifications\SubscriptionNotification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -134,6 +137,15 @@ Route::prefix('formatteurProfile')->group(function(){
     Route::post('/store', [FormatteurProfileController::class, 'FormatteurProfileStore'])->name('formatteurprofile.store');
     Route::get('/password/view', [FormatteurProfileController::class, 'FormatteurPasswordView'])->name('formatteurpassword.view');
     Route::post('/password/update', [FormatteurProfileController::class, 'FormatteurPasswordUpdate'])->name('formatteurpassword.update');
+});
+
+Route::get('/x', function(){
+    //$user = Auth::user();
+    //$user->notify(new SubscriptionNotification(User::findOrFail(2)));die;
+
+    foreach(Auth::user()->unreadNotifications as $notification){
+        dd($notification);
+    }
 });
 
 Route::prefix('eleveProfile')->group(function(){

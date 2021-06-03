@@ -40,9 +40,13 @@
                                         <form method="POST" action="{{ route('subscribe') }}">
                                         @csrf
                                         <div class="form-group">
-                                    <div class="controls" style="display:flex;">
+                                    <div class="controls">
                                     <input type="hidden" name="course_id" value="{{ $showData->id }}">
-                                        <button type="submit" style="float:none; padding: 10px 35px; text-align:center" class="btn rounded-pill btn-success mt-0">S'incrire</button>
+                                    @if(Auth::user()->isSubscribed($showData))
+                                        <button type="submit" style="float:none; padding: 10px 35px; text-align:center" class="btn rounded-pill btn-secondary mt-0">Inscrit</button>
+                                    @else
+                                        <button type="submit" style="float:none; padding: 10px 35px; text-align:center;" class="btn rounded-pill btn-success mt-0">S'inscrire</button>
+                                    @endif
                                     </div>
                                         </div>
                                         </form>

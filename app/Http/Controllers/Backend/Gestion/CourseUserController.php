@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend\Gestion;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\CourseUser;
+use App\Models\User;
+use App\Notifications\SubscriptionNotification;
 use Facade\FlareClient\Middleware\CensorRequestBodyFields;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -73,6 +75,7 @@ class CourseUserController extends Controller
         $data -> user_id = Auth::user()->id;
         $data -> course_id = $request->course_id;
         $data->save();
+
 
         return redirect()->back();
     }

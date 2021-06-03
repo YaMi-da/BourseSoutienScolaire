@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend\Gestion;
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Course;
+use App\Models\User;
+use App\Notifications\SubscriptionNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -88,6 +90,9 @@ class CommentsController extends Controller
         $data -> course_id = $request->course_id;
         $data -> body = $request -> body;
         $data->save();
+        
+        $cours = Course::find($request->course_id);
+        User::find($cours->user->id)->notify(new SubscriptionNotification($cours));
 
         return redirect()->back();
     }
