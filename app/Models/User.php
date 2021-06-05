@@ -68,6 +68,10 @@ class User extends Authenticatable
         return $this->belongsTo(UserType::class, 'user_type_id');
     }
 
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+
     public function subscribing(){
         return $this->belongsToMany('App\Models\User', 'course_users', 'user_id', 'course_id');
     }

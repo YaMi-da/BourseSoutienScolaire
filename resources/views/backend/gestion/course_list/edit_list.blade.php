@@ -75,7 +75,13 @@
 		@endforeach
       
     </select>
-		 
+	<label for="user_name"><h5>Formatteur <span class="text-danger">*</span></h5></label>
+    <select class="form-control" id="user_name" name= "user_name" style="width: 400px;">
+		@foreach($users as $user)
+      	<option value="{{ $user->name }}">{{ $user->name }}</option>
+		@endforeach
+      
+    </select>
 	</div>
 
 	<div class="form-group">

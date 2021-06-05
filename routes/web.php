@@ -139,15 +139,6 @@ Route::prefix('formatteurProfile')->group(function(){
     Route::post('/password/update', [FormatteurProfileController::class, 'FormatteurPasswordUpdate'])->name('formatteurpassword.update');
 });
 
-Route::get('/x', function(){
-    //$user = Auth::user();
-    //$user->notify(new SubscriptionNotification(User::findOrFail(2)));die;
-
-    foreach(Auth::user()->unreadNotifications as $notification){
-        dd($notification);
-    }
-});
-
 Route::prefix('eleveProfile')->group(function(){
     Route::get('/view', [StudentProfileController::class, 'StudentProfileView'])->name('studentprofile.view');
     Route::get('/edit', [StudentProfileController::class, 'StudentProfileEdit'])->name('studentprofile.edit');

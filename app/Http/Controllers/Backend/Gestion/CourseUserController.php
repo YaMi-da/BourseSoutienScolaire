@@ -74,6 +74,7 @@ class CourseUserController extends Controller
         $data = new CourseUser();
         $data -> user_id = Auth::user()->id;
         $data -> course_id = $request->course_id;
+        $data -> course_title = $request->course_title;
         $data->save();
 
 

@@ -34,6 +34,7 @@ class CourseController extends Controller
         $data -> description = $request -> description;
         $data -> incourse = $request -> incourse;
         $data -> user_id = $request -> user_id;
+        $data -> user_name = $request -> user_name;
         $data -> niveau_id = $request -> niveau_id;
         $data -> view_count = $request -> view_count;
         $data -> enrolled_count = $request -> enrolled_count;
@@ -78,6 +79,7 @@ class CourseController extends Controller
         $data -> description = $request -> description;
         $data -> incourse = $request -> incourse;
         $data -> user_id = $request -> user_id;
+        $data -> user_name = $request -> user_name;
         $data -> niveau_id = $request -> niveau_id;
         $data -> view_count = $request -> view_count;
         $data -> enrolled_count = $request -> enrolled_count;

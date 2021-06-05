@@ -6,9 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Course;
 use App\Models\User;
+use App\Notifications\NewComment;
 use App\Notifications\SubscriptionNotification;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CommentsController extends Controller
 {
@@ -52,12 +55,12 @@ class CommentsController extends Controller
         return redirect()->route('admincomment.view')->with($notification);
     }
 
-    public function EditCourse($id){
+    public function EditComment($id){
         $editData = Comment::find($id);
         return view('backend.gestion.comments_list.edit_list', compact('editData'));
     }
 
-    public function UpdateCourse(Request $request, $id){
+    public function UpdateComment(Request $request, $id){
         $data = Comment::find($id);
         $data -> user_id = $request -> user_id;
         $data -> course_id = $request -> course_id;
@@ -84,15 +87,22 @@ class CommentsController extends Controller
         return redirect()->route('admincomment.view')->with($notification);
     }
 
-    public function PostComment(Request $request){
+    public function PostComment(Request $request, Course $course){
         $data = new Comment();
         $data -> user_id = Auth::user()->id;
         $data -> course_id = $request->course_id;
+        $data -> course_title = $request->course_title;
+        $data -> course_user = $request->course_user;
         $data -> body = $request -> body;
         $data->save();
         
-        $cours = Course::find($request->course_id);
-        User::find($cours->user->id)->notify(new SubscriptionNotification($cours));
+        $course -> id = $request->course_id;
+        $course -> titre = $request->course_title;
+        $course -> user_id = $request->course_user;
+
+        $user = User::where('id',  $course -> user_id)->first();
+
+        $user->notify(new NewComment($course, Auth::user()));
 
         return redirect()->back();
     }
@@ -104,12 +114,22 @@ class CommentsController extends Controller
         return redirect()->back();
     }
 
-    public function PostComment2(Request $request){
+    public function PostComment2(Request $request, Course $course){
         $data = new Comment();
         $data -> user_id = Auth::user()->id;
         $data -> course_id = $request->course_id;
+        $data -> course_title = $request->course_title;
+        $data -> course_user = $request->course_user;
         $data -> body = $request -> body;
         $data->save();
+        
+        $course -> id = $request->course_id;
+        $course -> titre = $request->course_title;
+        $course -> user_id = $request->course_user;
+
+        $user = User::where('id',  $course -> user_id)->first();
+
+        $user->notify(new NewComment($course, Auth::user()));
 
         return redirect()->back();
     }
@@ -121,12 +141,22 @@ class CommentsController extends Controller
         return redirect()->back();
     }
 
-    public function PostComment3(Request $request){
+    public function PostComment3(Request $request, Course $course){
         $data = new Comment();
         $data -> user_id = Auth::user()->id;
         $data -> course_id = $request->course_id;
+        $data -> course_title = $request->course_title;
+        $data -> course_user = $request->course_user;
         $data -> body = $request -> body;
         $data->save();
+        
+        $course -> id = $request->course_id;
+        $course -> titre = $request->course_title;
+        $course -> user_id = $request->course_user;
+
+        $user = User::where('id',  $course -> user_id)->first();
+
+        $user->notify(new NewComment($course, Auth::user()));
 
         return redirect()->back();
     }

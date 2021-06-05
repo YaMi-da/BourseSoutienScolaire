@@ -2,15 +2,20 @@
 
 namespace App\Models;
 
+use App\Notifications\NewComment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class Course extends Model
 {
     use HasFactory;
+    use Notifiable;
 
     protected $fillable = [
         'user_id',
+        'user_name',
         'matiere_id',
         'niveau_id',
         'titre',

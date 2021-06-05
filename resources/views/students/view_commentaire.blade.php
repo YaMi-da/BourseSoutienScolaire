@@ -70,6 +70,8 @@
                                 <div class="form-group">
                                     <div class="controls" style="display:flex;">
                                     <input type="hidden" name="course_id" value="{{ $showData->id }}">
+                                    <input type="hidden" name="course_title" value="{{ $showData->titre }}">
+                                    <input type="hidden" name="course_user" value="{{ $showData->user_id }}">
                                         <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="{{ (!empty($user->image) ? url('upload/user_img/'.$user->image):url('upload/profile.png')) }}" alt="Image Description">
                                         <textarea type="text" name="body" id="body" class="form-control" rows="2" placeholder="Ajouter votre commentaire.." style="max-width:80%; border-radius:30px; padding-left:20px; padding-left:20px; padding-right:20px;"></textarea>
                                         <button type="submit" style="background-color:transparent;border: none;color: black;padding: 10px;text-align: center;text-decoration: none;display: inline-block;font-size: 20px; margin: 4px 2px;border-radius: 50%   "><i class="fa fa-paper-plane" aria-hidden="true"></i></button>        
