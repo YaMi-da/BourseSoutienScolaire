@@ -1,5 +1,5 @@
-@extends('admin.admin_master')
-@section('admin')
+@extends('formatteur.formatteur_master')
+@section('formatteur')
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
  <style>
@@ -52,7 +52,7 @@
 
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
-        @include('admin.body.header')
+        @include('formatteur.body.header')
 
         <div class="container-fluid">
 
@@ -112,7 +112,7 @@
                     </div>
                 </div>
     </div>
-    @include('admin.body.footer')
+    @include('formatteur.body.footer')
 </div>
 
 

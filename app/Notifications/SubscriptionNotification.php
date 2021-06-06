@@ -3,6 +3,7 @@
 namespace App\Notifications;
 
 use App\Models\Course;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -11,8 +12,8 @@ use Illuminate\Notifications\Notification;
 class SubscriptionNotification extends Notification
 {
     use Queueable;
+    public $user;
     public $course;
-    public $course_user;
 
 
     /**
@@ -20,10 +21,10 @@ class SubscriptionNotification extends Notification
      *
      * @return void
      */
-    public function __construct($course, $course_user)
+    public function __construct(Course $course, User $user)
     {
         $this->course = $course;
-        $this->course_user = $course_user;
+        $this->user = $user;
     }
 
     /**
@@ -43,14 +44,6 @@ class SubscriptionNotification extends Notification
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toDatabase($notifiable)
-    {
-        return [
-            'courseTitle' => $this->course->title,
-            'formatteur' => $this->course->user['name'],
-            
-        ];
-    }
 
     /**
      * Get the array representation of the notification.
@@ -61,7 +54,10 @@ class SubscriptionNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            'titreCours' => $this->course->titre,
+            'idCours'=>$this->course->id,
+            'username'=>$this->user->name,
+            'reply'=>"vient de s'inscrire à votre cours :",
         ];
     }
 }

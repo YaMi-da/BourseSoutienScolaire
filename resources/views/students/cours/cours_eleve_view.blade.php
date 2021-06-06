@@ -14,7 +14,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4" style="margin-top: 50px;">
                         <div class="card-header py-3">
-                            <h3 class="m-0" style="color: black; font-size: 40px; font-weight:bold;">Tous Les Cours</h3>
+                            <h3 class="m-0" style="color: black; font-size: 40px; font-weight:bold;">Mes Cours</h3>
                         </div>
                         <div class="card-body" style="margin-top: 50px;">
                         <div class="row row-cols-md-5 g-4 justify-content-center">

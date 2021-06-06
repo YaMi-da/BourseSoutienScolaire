@@ -70,13 +70,21 @@ class CourseUserController extends Controller
         return redirect()->route('admincourseuser.view')->with($notification);
     }
 
-    public function Subscribe(Request $request){
+    public function Subscribe(Request $request, Course $course){
         $data = new CourseUser();
         $data -> user_id = Auth::user()->id;
         $data -> course_id = $request->course_id;
         $data -> course_title = $request->course_title;
+        $data -> course_user = $request->course_user;
         $data->save();
         
+        $course -> id = $request->course_id;
+        $course -> titre = $request->course_title;
+        $course -> user_id = $request->course_user; 
+
+        $user = User::where('id',  $course -> user_id)->first();
+
+        $user->notify(new SubscriptionNotification($course, Auth::user()));
 
         return redirect()->back();
     }

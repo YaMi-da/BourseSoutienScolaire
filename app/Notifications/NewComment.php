@@ -63,6 +63,7 @@ class NewComment extends Notification
             'titreCours' => $this->course->titre,
             'idCours'=>$this->course->id,
             'username'=>$this->user->name,
+            'reply'=>'vient de poster un commentaire sur votre cours :',
         ];
     }
 }
