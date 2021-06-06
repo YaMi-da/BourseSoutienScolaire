@@ -61,18 +61,18 @@
             <h6 class="dropdown-header">
                 Notifications
             </h6>
+            @foreach(Auth::user()->unreadNotifications as $notification)
             <a class="dropdown-item d-flex align-items-center" href="#">
                 <div class="mr-3">
                     <div class="icon-circle bg-primary">
-                        <i class="fas fa-file-alt text-white"></i>
+                        <i class="fas fa-book    text-white"></i>
                     </div>
                 </div>
                 <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                    <span class="font-weight-bold">{{ $notification->data['username'] }}</span> <span>{{ $notification->data['reply'] }}</span> <span class="font-weight-bold">{{ $notification->data['titreCours'] }}</span>
                 </div>
             </a>
-            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+            @endforeach
         </div>
     </li>
     @endunless
