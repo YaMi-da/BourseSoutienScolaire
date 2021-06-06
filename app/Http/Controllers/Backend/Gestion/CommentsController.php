@@ -125,7 +125,7 @@ class CommentsController extends Controller
         
         $course -> id = $request->course_id;
         $course -> titre = $request->course_title;
-        $course -> user_id = $request->course_user;
+        $course -> user_id = $request->course_user; 
 
         $user = User::where('id',  $course -> user_id)->first();
 

@@ -13,6 +13,7 @@ class CourseUser extends Model
         'user_id',
         'course_id',
         'course_title',
+        'course_user',
         'status',
     ];
 

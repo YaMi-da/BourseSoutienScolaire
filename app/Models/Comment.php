@@ -15,6 +15,7 @@ class Comment extends Model
         'user_id',
         'course_id',
         'course_title',
+        'course_user',
         'matiere_id',
         'niveau_id',
         'body',

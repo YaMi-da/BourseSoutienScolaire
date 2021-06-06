@@ -76,7 +76,7 @@ class CourseUserController extends Controller
         $data -> course_id = $request->course_id;
         $data -> course_title = $request->course_title;
         $data->save();
-
+        
 
         return redirect()->back();
     }

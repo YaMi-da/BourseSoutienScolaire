@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->integer('user_id')->nullable();
             $table->integer('course_id')->nullable();
             $table->string('course_title')->nullable();
+            $table->integer('course_user')->nullable();
             $table->integer('matiere_id')->nullable();
             $table->integer('niveau_id')->nullable();
             $table->longText('body');
