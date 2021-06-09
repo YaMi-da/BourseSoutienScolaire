@@ -37,6 +37,8 @@ class CoursFormatteurController extends Controller
         $data -> view_count = $request -> view_count;
         $data -> enrolled_count = $request -> enrolled_count;
         $data -> session_url = $request -> session_url;
+        $data -> debut_seance = $request -> debut_seance;
+        $data -> fin_seance = $request -> fin_seance;
         if ($request->hasFile('photo')) {
             $file = $request -> file('photo');
             $extension = $file->getClientOriginalExtension();
@@ -73,6 +75,8 @@ class CoursFormatteurController extends Controller
         $data -> view_count = $request -> view_count;
         $data -> enrolled_count = $request -> enrolled_count;
         $data -> session_url = $request -> session_url;
+        $data -> debut_seance = $request -> debut_seance;
+        $data -> fin_seance = $request -> fin_seance;
         if ($request->hasFile('photo')) {
             $file = $request -> file('photo');
             $extension = $file->getClientOriginalExtension();

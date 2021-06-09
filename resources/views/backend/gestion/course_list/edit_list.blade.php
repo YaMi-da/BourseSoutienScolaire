@@ -88,16 +88,6 @@
 		 
 	</div>
 
-	<div class="form-group">
-		<h5>Vues <span class="text-danger">*</span></h5>
-		<div class="controls">
-	 <input type="number" name="view_count" id="view_count" style="width: 400px;" min="0" class="form-control" value="{{ $editData->view_count }}">
-	 @error('view_count')
-	 <span class="text-danger">{{ $message }}</span>
-	 @enderror
-	   </div>
-		 
-	</div>
 
 	<div class="form-group">
 		<h5>Eleves Inscrits <span class="text-danger">*</span></h5>
@@ -126,6 +116,16 @@
 	 @enderror
 	  </div>
 		 
+	</div>
+
+	<div class="form-group">
+	<label for="debut_seance"><h5>Debut de Seance <span class="text-danger">*</span></h5></label>
+	<input type="datetime-local" id="debut_seance" name="debut_seance">
+	</div>
+
+	<div class="form-group">
+	<label for="fin_seance"><h5>Fin de Seance <span class="text-danger">*</span></h5></label>
+	<input type="datetime-local" id="fin_seance" name="fin_seance">
 	</div>
  
   

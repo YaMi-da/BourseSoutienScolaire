@@ -37,15 +37,6 @@
 		 
 	</div>
  
- 
-			
-	<div class="form-group">
-		<h5>Vues</h5>
-		<div class="controls">
-	 <input type="number" name="view_count" id="view_count" style="width: 400px;" min="0" class="form-control"  >
-	   </div>
-		 
-	</div>
 	
 	<div class="form-group">
 		<h5>Photo <span class="text-danger">*</span></h5>

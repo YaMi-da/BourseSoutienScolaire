@@ -28,6 +28,8 @@ class CreateCoursesTable extends Migration
             $table->longText('incourse')->nullable();
             $table->longText('description')->nullable();
             $table->string('photo')->nullable();
+            $table->dateTime('debut_seance')->nullable();
+            $table->dateTime('fin_seance')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

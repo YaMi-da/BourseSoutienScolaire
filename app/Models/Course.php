@@ -26,6 +26,8 @@ class Course extends Model
         'description',
         'comment_count',
         'photo',
+        'debut_seance',
+        'fin_seance',
     ];
 
     public function matiere(){

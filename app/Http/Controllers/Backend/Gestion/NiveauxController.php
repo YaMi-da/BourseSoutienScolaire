@@ -21,7 +21,6 @@ class NiveauxController extends Controller
     public function StoreNiveau(Request $request){
         $data = new Niveau();
         $data -> name = $request -> name;
-        $data -> view_count = $request -> view_count;
         $data->save();
 
         $notification = array(
@@ -40,7 +39,6 @@ class NiveauxController extends Controller
     public function UpdateNiveau(Request $request, $id){
         $data = Niveau::find($id);
         $data -> name = $request -> name;
-        $data -> view_count = $request -> view_count;
         $data->save();
 
         $notification = array(
