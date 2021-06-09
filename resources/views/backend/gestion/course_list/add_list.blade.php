@@ -118,7 +118,6 @@
 	  </div>
 		 
 	</div>
-
 	<div class="form-group">
 	<label for="debut_seance"><h5>Debut de Seance <span class="text-danger">*</span></h5></label>
 	<input type="datetime-local" id="debut_seance" name="debut_seance">

@@ -50,11 +50,25 @@
                     <div class="card-body" style="display: flex; justify-content:space-around">
                         <div class="col">
                             <div class="card mb-4" style="margin-left: 50px; border: none !important; width:100%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                                <div class="card-body" style="border-radius:2px; padding: 50px">
+                            <div class="card-body" style="border-radius:2px; padding: 50px; padding-bottom:0px">
                                 <div class="row" style="padding-left: 50px">
+                                        <h1 style="font-weight: bold; color:black">Lien de la séance : </h1>
+                                    </div>
+                                    <div class="row" style="padding-left: 40px; padding-right: 40px; padding-top: 10px">
+                                        <div style="height: auto; display: block;">
+                                        @php    
+                                        Carbon\Carbon::setlocale('fr');
+                                        @endphp
+                                        <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify"> <span style="font-weight: bold;">La séance aura lieu le :</span> {{ Carbon\Carbon::parse($showData->debut_seance)->translatedFormat('D d/m/Y') }}       <span style="font-weight: bold;">{{ Carbon\Carbon::parse($showData->debut_seance)->translatedFormat('H:i') }} - {{ Carbon\Carbon::parse($showData->fin_seance)->translatedFormat('H:i') }}</span></p>
+                                            <a href="{{ $showData->session_url }}" style="font-size: 18px; white-space: pre-wrap ;color: #2e59d9; text-align:justify">{{ $showData->session_url }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" style="border-radius:2px; padding: 50px">
+                                <div class="row" style="padding-left: 50px" >
                                         <h1 style="font-weight: bold; color:black">Dans ce cours : </h1>
                                     </div>
-                                    <div class="row" style="padding-left: 40px; padding-right: 40px">
+                                    <div class="row" style="padding-left: 40px; padding-right: 40px;">
                                         <div style="height: auto; display: block;">
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->incourse }}</p>
                                         </div>
@@ -64,12 +78,11 @@
                         </div>
                         <div class="col-4">
                             <div class="card mb-4" style="margin-left: 100px; ; border: none !important; width:65%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                                <div class="card-body" style="border-radius:2px; padding-top: 50px; height:fit-content">
-                                    <div class="row" style="padding-right: 40px">
-                                        <div class="content" style="height:auto ;display: block">
+                                <div class="card-body" style="border-radius:2px; padding-top: 50px; padding-bottom: 50px; padding-left: 60px; padding-right: 60px ;height:fit-content">
+                                    <div class="row">
+                                        <div style="height:auto ;display: block">
                                         <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-book"></i>   <span>{{$showData->matiere['name']}}</span></p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-graduation-cap"></i>   <span>{{$showData->niveau['name']}}</span></p>
-                                            <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-eye"></i>   <span>{{$showData->view_count}}</span></p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-book-reader"></i>   <a href="{{ route('subscribersview1', $showData->id) }}"><span>{{$enrolledcount}}</span></a></p>
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black;"><i class="fas fa-fw fa-comment"></i>   <a href="{{ route('commentsview1', $showData->id) }}"><span>{{$commentcount}}</span></a></p>
                                         </div>
