@@ -118,7 +118,7 @@ class CourseController extends Controller
     }
 
     public function FormatteurProfileView($id){
-        $showData = Course::find($id);
+        $showData = User::find($id);
         return view('backend.user.view_formatteur_profile', compact('showData'));
     }
 
@@ -141,7 +141,7 @@ class CourseController extends Controller
     }
 
     public function FormatteurProfileView2($id){
-        $showData = Course::find($id);
+        $showData = User::find($id);
         return view('formatteur.profile.view_formatteur_profile', compact('showData'));
     }
 
@@ -165,7 +165,7 @@ class CourseController extends Controller
     }
 
     public function FormatteurProfileView3($id){
-        $showData = Course::find($id);
+        $showData = User::find($id);
         return view('students.profile.view_formatteur_profile', compact('showData'));
     }
 
