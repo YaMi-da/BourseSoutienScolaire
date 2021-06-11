@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Formatteur;
 
 use App\Http\Controllers\Controller;
+use App\Models\Matiere;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,8 @@ class FormatteurProfileController extends Controller
     public function FormatteurProfileEdit(){
         $id = Auth::user()->id;
         $editData = User::find($id);
-        return view('formatteur.profile.edit_profile',compact('editData'));
+        $matieres = Matiere::all();
+        return view('formatteur.profile.edit_profile',compact('editData'))->with('matieres', $matieres);
     }
 
     public function FormatteurProfileStore(Request $request){

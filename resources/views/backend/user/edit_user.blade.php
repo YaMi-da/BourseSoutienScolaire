@@ -30,7 +30,7 @@
                                                     <div class="col-md-6" >
 
                                                         <div class="form-group">
-                                                            <h5>Role de l'Utilisateur<span class="text-danger">*</span></h5>
+                                                            <h5>Role de l'Utilisateur</h5>
                                                             <div class="controls">
                                                                 <select name="role" id="role" required class="form-control">
                                                                     <option value="" selected="" disabled="">Choisir Type</option>
@@ -45,7 +45,7 @@
 
                                                     <div class="col-md-6" >		
                                                         <div class="form-group">
-                                                            <h5>Nom Complet <span class="text-danger">*</span></h5>
+                                                            <h5>Nom Complet</h5>
                                                             <div class="controls">
                                                                 <input id="name" name="name" type="text" class="form-control" value="{{  $editData-> name }}" required>  
                                                             </div>
@@ -63,7 +63,7 @@
                                                     <div class="col-md-6" >
 
                                                         <div class="form-group">
-                                                            <h5>Email <span class="text-danger">*</span></h5>
+                                                            <h5>Email</h5>
                                                             <div class="controls">
                                                                 <input id="email" type="email" name="email" class="form-control" value="{{  $editData-> email }}" required> 
                                                             </div>

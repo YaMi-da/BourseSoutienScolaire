@@ -35,7 +35,7 @@
 	<div class="col-md-6" >
 
 		<div class="form-group">
-		<h5>Nom <span class="text-danger">*</span></h5>
+		<h5>Nom</h5>
 		<div class="controls">
 	 <input type="text" name="name" id="name" class="form-control" value="{{ $editData->name }}">  </div>
 		 
@@ -46,7 +46,7 @@
 	<div class="col-md-6" >
 		
  <div class="form-group">
-		<h5>Email <span class="text-danger">*</span></h5>
+		<h5>Email</h5>
 		<div class="controls">
 	 <input type="email" name="email" id="email" class="form-control" value="{{ $editData->email }}">  </div>
 		 
@@ -62,7 +62,7 @@
 	<div class="col-md-6" >
 
 		<div class="form-group">
-		<h5>Téléphone <span class="text-danger">*</span></h5>
+		<h5>Téléphone</h5>
 		<div class="controls">
 	 <input type="text" name="mobile" id="mobile" class="form-control" value="{{ $editData->mobile }}">  </div>
 		 
@@ -73,7 +73,7 @@
 	<div class="col-md-6" >
 		
  <div class="form-group">
-		<h5>Addresse <span class="text-danger">*</span></h5>
+		<h5>Addresse</h5>
 		<div class="controls">
 	 <input type="text" name="address" id="address" class="form-control" value="{{ $editData->address }}">  </div>
 		 
@@ -95,7 +95,7 @@
 
 	<div class="col-md-6" >		
 	<div class="form-group">
-		<h5>Photo de profil <span class="text-danger">*</span></h5>
+		<h5>Photo de profil</h5>
 		<div class="controls">
 	 <input type="file" name="image" class="form-control" style="height: 50px;" id="image" >  </div>
 	 </div>
@@ -110,13 +110,16 @@
 
 	</div>
     <div class="col-md-6" >	
-    <div class="form-group">
-		<h5>Niveau <span class="text-danger">*</span></h5>
-		<div class="controls">
-	 <input type="text" name="niveau_eleve" id="niveau" class="form-control" value="{{ $editData->niveau_eleve }}" required="">  </div>
-		 
-	</div>
-    </div><!-- End Col Md-6 -->
+	<div class="form-group">
+    <label for="niveau_eleve"><h5>Niveau</h5></label>
+    <select class="form-control" id="niveau_eleve" name= "niveau_eleve" style="width: 400px;">
+		@foreach($niveaux as $niveau)
+      	<option value="{{ $niveau->name }}">{{ $niveau->name }}</option>
+		@endforeach
+      
+    </select>
+  	</div>
+    </div>
 	
 
 </div> <!-- End Row -->

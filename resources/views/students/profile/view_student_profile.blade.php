@@ -25,7 +25,7 @@
 						  <div style="margin-top:10px; text-align:center;">
 						  <span style="padding: 12px 30px; margin: .3125rem 1px;"><i class="fas fa-fw fa-phone" style="color: #4e73df;"></i> {{ $showData->mobile }}</span>
 						  <span style="padding: 12px 30px; margin: .3125rem 1px;"><i class="fas fa-fw fa-envelope" style="color: #4e73df;"></i> {{ $showData->email }}</span>
-						  <span style="padding: 12px 30px; margin: .3125rem 1px;"><i class="fas fa-fw fa-book" style="color: #4e73df;"></i> {{ $showData->niveau_eleve }}</span>
+						  <span style="padding: 12px 30px; margin: .3125rem 1px;"><i class="fas fa-fw fa-graduation-cap" style="color: #4e73df;"></i> {{ $showData->niveau_eleve }}</span>
 						  </div>
 					  </div>
 					  <!-- /.row -->

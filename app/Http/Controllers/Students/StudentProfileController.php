@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Students;
 
 use App\Http\Controllers\Controller;
+use App\Models\Niveau;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,8 @@ class StudentProfileController extends Controller
     public function StudentProfileEdit(){
         $id = Auth::user()->id;
         $editData = User::find($id);
-        return view('students.profile.edit_profile',compact('editData'));
+        $niveaux = Niveau::all();
+        return view('students.profile.edit_profile',compact('editData'))->with('niveaux', $niveaux);
     }
 
     public function StudentProfileStore(Request $request){

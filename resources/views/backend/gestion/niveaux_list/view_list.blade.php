@@ -21,7 +21,6 @@
                                         <tr>
                                             <th width=5%>#</th>
                                             <th width=25%>Nom</th>
-                                            <th width=20%>Vues</th>
                                             <th width=20%>Actions</th>
                                         </tr>
                                     </thead>
@@ -30,7 +29,6 @@
                                         <tr>
                                             <th>{{ $key+1 }}</th>
                                             <th>{{ $niveau->name }}</th>
-                                            <th>{{ $niveau->view_count }}</th>
                                             <th><a href="{{ route('adminniveau.edit', $niveau->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('adminniveau.delete', $niveau->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
                                         </tr>
                                         @endforeach
