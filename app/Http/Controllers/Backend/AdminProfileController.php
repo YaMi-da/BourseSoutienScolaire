@@ -54,7 +54,7 @@ class AdminProfileController extends Controller
 
     public function AdminPasswordUpdate(Request $request){
         $validatedData = $request->validate([
-            'oldPassword' =>  'required',
+            'oldpassword' =>  'required',
             'password' => 'required|confirmed',
         ]);
 

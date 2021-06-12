@@ -46,13 +46,6 @@
 		 
 	</div>
 
-	<div class="form-group">
-		<h5>Status</h5>
-		<div class="controls">
-	 <input type="number" name="status" id="course_id" style="width: 400px;" min="0" class="form-control"> 
-	  </div>
-		 
-	</div>
  
   
 							 

@@ -20,14 +20,15 @@ class CourseUserController extends Controller
     }
 
     public function AddCourseUser(){
-        return view('backend.gestion.course_user_list.add_list');
+        $course = Course::all();
+        $users = User::where('user_type_id', '2')->get();
+        return view('backend.gestion.course_user_list.add_list')->with('users', $users)->with('course', $course);
     }
 
     public function StoreCourseUser(Request $request){
         $data = new CourseUser();
         $data -> user_id = $request -> user_id;
         $data -> course_id = $request -> course_id;
-        $data -> status = $request -> status;
         $data->save();
 
         $notification = array(
@@ -40,14 +41,15 @@ class CourseUserController extends Controller
 
     public function EditCourseUser($id){
         $editData = CourseUser::find($id);
-        return view('backend.gestion.course-user_list.edit_list', compact('editData'));
+        $course = Course::all();
+        $users = User::where('user_type_id', '2')->get();
+        return view('backend.gestion.course-user_list.edit_list', compact('editData'))->with('users', $users)->with('course', $course);
     }
 
     public function UpdateCourseUser(Request $request, $id){
         $data = CourseUser::find($id);
         $data -> user_id = $request -> user_id;
         $data -> course_id = $request -> course_id;
-        $data -> status = $request -> status;
         $data->save();
 
         $notification = array(

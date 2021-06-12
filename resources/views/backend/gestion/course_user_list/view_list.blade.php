@@ -8,7 +8,7 @@
         <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Insciptions</h1>
+                    <h1 class="h3 mb-3 text-gray-800">Inscriptions</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -24,7 +24,6 @@
                                             <th width=5%>#</th>
                                             <th width=15%>Utilisateur</th>
                                             <th width=25%>Cours</th>
-                                            <th width=20%>Status</th>
                                             <th width=20%>Actions</th>
                                         </tr>
                                     </thead>
@@ -32,9 +31,8 @@
                                         @foreach($allData as $key => $courseuser)
                                         <tr>
                                             <th>{{ $key+1 }}</th>
-                                            <th>{{ $courseuser->user_id }}</th>
-                                            <th>{{ $courseuser->course_id }}</th>
-                                            <th>{{ $courseuser->status }}</th>
+                                            <th>{{ $courseuser->user['name'] }}</th>
+                                            <th>{{ $courseuser->course['titre'] }}</th>
                                             <th><a href="{{ route('admincourseuser.edit', $courseuser->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('admincourseuser.delete', $courseuser->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
                                         </tr>
                                         @endforeach
