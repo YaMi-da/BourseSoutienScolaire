@@ -1,6 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
 
+
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
         @include('admin.body.header')
@@ -29,7 +30,7 @@
                                         <tr>
                                             <th>{{ $key+1 }}</th>
                                             <th>{{ $niveau->name }}</th>
-                                            <th><a href="{{ route('adminniveau.edit', $niveau->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('adminniveau.delete', $niveau->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
+                                            <th style="text-align: center;"><a href="{{ route('adminniveau.edit', $niveau->id) }}" class="btn btn-info" id="edit" style="padding:10px 20px">Modifier</a>     <a href="{{ route('adminniveau.delete', $niveau->id) }}" class="btn btn-danger" id="delete" style="padding:10px 20px">Supprimer</a></th>
                                         </tr>
                                         @endforeach
                                     </tbody>

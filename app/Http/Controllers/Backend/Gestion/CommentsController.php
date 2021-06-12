@@ -37,7 +37,9 @@ class CommentsController extends Controller
     }
 
     public function AddComment(){
-        return view('backend.gestion.comments_list.add_list');
+        $course = Course::all();
+        $users = User::all();
+        return view('backend.gestion.comments_list.add_list')->with('users', $users)->with('course', $course);
     }
 
     public function StoreComment(Request $request){
@@ -57,7 +59,9 @@ class CommentsController extends Controller
 
     public function EditComment($id){
         $editData = Comment::find($id);
-        return view('backend.gestion.comments_list.edit_list', compact('editData'));
+        $course = Course::all();
+        $users = User::all();
+        return view('backend.gestion.comments_list.edit_list', compact('editData'))->with('users', $users)->with('course', $course);
     }
 
     public function UpdateComment(Request $request, $id){

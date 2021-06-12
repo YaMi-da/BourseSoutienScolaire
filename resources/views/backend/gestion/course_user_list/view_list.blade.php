@@ -33,7 +33,7 @@
                                             <th>{{ $key+1 }}</th>
                                             <th>{{ $courseuser->user['name'] }}</th>
                                             <th>{{ $courseuser->course['titre'] }}</th>
-                                            <th><a href="{{ route('admincourseuser.edit', $courseuser->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('admincourseuser.delete', $courseuser->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
+                                            <th style="text-align: center;"><a href="{{ route('admincourseuser.edit', $courseuser->id) }}" class="btn btn-info" id="edit" style="padding:10px 20px">Modifier</a>     <a href="{{ route('admincourseuser.delete', $courseuser->id) }}" class="btn btn-danger" id="delete" style="padding:10px 20px">Supprimer</a></th>
                                         </tr>
                                         @endforeach
                                     </tbody>

@@ -35,7 +35,7 @@
                                             <th>{{ $comment->user['name'] }}</th>
                                             <th>{{ $comment->course['titre'] }}</th>
                                             <th>{{ $comment->body }}</th>
-                                            <th><a href="{{ route('admincomment.edit', $comment->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('admincomment.delete', $comment->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
+                                            <th style="text-align: center;"><a href="{{ route('admincomment.edit', $comment->id) }}" class="btn btn-info" id="edit" style="padding:10px 20px">Modifier</a>     <a href="{{ route('admincomment.delete', $comment->id) }}" class="btn btn-danger" id="delete" style="padding:10px 20px">Supprimer</a></th>
                                         </tr>
                                         @endforeach
                                     </tbody>
