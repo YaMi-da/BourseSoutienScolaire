@@ -34,8 +34,6 @@ class CoursFormatteurController extends Controller
         $data -> incourse = $request -> incourse;
         $data -> user_id = $request -> user_id;
         $data -> niveau_id = $request -> niveau_id;
-        $data -> view_count = $request -> view_count;
-        $data -> enrolled_count = $request -> enrolled_count;
         $data -> session_url = $request -> session_url;
         $data -> debut_seance = $request -> debut_seance;
         $data -> fin_seance = $request -> fin_seance;
@@ -72,8 +70,6 @@ class CoursFormatteurController extends Controller
         $data -> incourse = $request -> incourse;
         $data -> user_id = $request -> user_id;
         $data -> niveau_id = $request -> niveau_id;
-        $data -> view_count = $request -> view_count;
-        $data -> enrolled_count = $request -> enrolled_count;
         $data -> session_url = $request -> session_url;
         $data -> debut_seance = $request -> debut_seance;
         $data -> fin_seance = $request -> fin_seance;
