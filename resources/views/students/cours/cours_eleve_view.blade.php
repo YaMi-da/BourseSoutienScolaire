@@ -27,7 +27,9 @@
                                                 <h2 class="title" style="color: black; font-size:20px">{{ $cours->course['titre'] }}</h2>
                                                 <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;text-align:justify;color:black">{{ $cours-> description }}</p>
                                                 <ul class="list-group list-group-flush" style="text-align: center;">
-                                                <h6 class="text-muted">Vues: {{ $cours->course['view_count'] }}</h6>
+                                                <h6 class="text-muted"> <span style="color: black; font-weight:bold">Cours Par :</span> {{ $cours-> user['name'] }}</h6>
+                                                <h6 class="text-muted"> <span style="color: black; font-weight:bold">Niveau :</span> {{ $cours-> niveau['name'] }}</h6>
+                                                <h6 class="text-muted"> <span style="color: black; font-weight:bold">Matière :</span> {{ $cours-> matiere['name'] }}</h6>
                                                 </ul>
                                                 <div class="more-information" style="text-align: right;">
                                                 <a href="{{ route('showcourseleve.view', $cours->course['id']) }}" class="btn btn-primary" id="access">Accéder au cours <i class="fas fa-arrow-right"></i></a>
