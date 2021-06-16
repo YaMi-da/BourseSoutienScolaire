@@ -24,19 +24,20 @@
                                 </div>
                                 <div class="row">
                                     <div style="height: auto; display: block">
-                                        <p style="font-size: 17px; white-space: pre-wrap; font-style:italic; color:#5b6378">Formatteur : <a style="color: black;" href="{{ route('formatteurprofile3', $showData->user['id']) }}">{{ $showData->user['name'] }}</a></p>
+                                        <p style="font-size: 17px; white-space: pre-wrap; font-style:italic; color:#5b6378"><span style="font-weight: bold">Formatteur :</span> <a style="color: black;" href="{{ route('formatteurprofile3', $showData->user['id']) }}">{{ $showData->user['name'] }}</a></p>
                                         <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
                                     </div>
                                 </div>
                                 
                             </div>
-                            <div  class="col" style="width:25%; margin-left: 120px; padding-bottom:2%; padding-top:5%; text-align:center">
+                            <div  class="col" style="width:25%; margin-left: 120px; padding-bottom:2%; padding-top:2%; text-align:center">
                                 <div class="row">
                                     <div style="text-align: center;">
                                         @php    
                                         Carbon\Carbon::setlocale('fr');
                                         @endphp
-                                        <p style="font-weight: bold; text-align:center; font-size:20px; color:#5b6378">{{ $showData->created_at->translatedFormat('D d/m/Y') }}</p>
+                                        <p style="font-weight: bold; text-align:center; font-size:25px; color:black"> Créé le : </p>
+                                        <p style="font-weight: bold; text-align:center; font-size:20px; color:#5b6378"> {{ $showData->created_at->translatedFormat('D d/m/Y') }}</p>
                                         <form method="POST" action="{{ route('subscribe') }}">
                                         @csrf
                                         <div class="form-group">
@@ -74,7 +75,7 @@
                                         @php    
                                         Carbon\Carbon::setlocale('fr');
                                         @endphp
-                                        <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify"> <span style="font-weight: bold;">La séance aura lieu le :</span> {{ Carbon\Carbon::parse($showData->debut_seance)->translatedFormat('D d/m/Y') }}       <span style="font-weight: bold;">{{ Carbon\Carbon::parse($showData->debut_seance)->translatedFormat('H:i') }} - {{ Carbon\Carbon::parse($showData->fin_seance)->translatedFormat('H:i') }}</span></p>
+                                        <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify"> <span style="font-weight: bold;">La séance aura lieu le :</span>  <i class="fas fa-fw fa-calendar-alt" style="color: #2e59d9;"></i> {{ Carbon\Carbon::parse($showData->debut_seance)->translatedFormat('D d/m/Y') }}       <span style="font-weight: bold;">{{ Carbon\Carbon::parse($showData->debut_seance)->translatedFormat('H:i') }} - {{ Carbon\Carbon::parse($showData->fin_seance)->translatedFormat('H:i') }}</span></p>
                                             <a href="{{ $showData->session_url }}" style="font-size: 18px; white-space: pre-wrap ;color: #2e59d9; text-align:justify">{{ $showData->session_url }}</a>
                                         </div>
                                     </div>

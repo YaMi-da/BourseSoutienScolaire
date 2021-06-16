@@ -51,18 +51,26 @@
                         <option :value="3">Formatteur</option>
                     </select>
                 </div>
+                @php
+                $niveaux = DB::table('niveaux')->get();
+                $matieres = DB::table('matieres')->get();
+                @endphp
+                
                 <div class="mt-4" style="width: 100%;" x-show="user_type_id == 2">
-                    <x-jet-input id="niveau_eleve" type="text" placeholder="Entrer le niveau d'études" :value="old('niveau_eleve')" name="niveau_eleve" />
-                </div>
-
-                <div class="mt-4" style="width: 100%;" x-show="user_type_id == 2">
-                    <x-jet-input id="matiere_eleve" type="text" placeholder="Entrer la matière à étudier" :value="old('matiere_eleve')" name="matiere_eleve" />
+                    <select name="niveau_eleve" class="form-control" style="width: 100%; height:34px; margin-bottom:10px;">
+                                        <option value="" selected>Niveau d'étude</option>
+                                        @foreach($niveaux as $niveau)
+										<option value="{{ $niveau->name }}">{{ $niveau->name }}</option>
+										@endforeach
+                    </select>
                 </div>
                 <div class="mt-4" style="width: 100%;" x-show="user_type_id == 3">
-                    <x-jet-input id="niveau_formatteur" type="text" placeholder="Entrer le niveau d'enseignement" :value="old('niveau_formatteur')" name="niveau_formatteur" />
-                </div>
-                <div class="mt-4" style="width: 100%;" x-show="user_type_id == 3">
-                    <x-jet-input id="matiere_formatteur" type="text" placeholder="Entrer la matière de spécialité" :value="old('matiere_formatteur')" name="matiere_formatteur" />
+                <select name="matiere_formatteur" class="form-control" style="width: 100%; height:34px; margin-bottom:10px;">
+                                    <option value="" selected>Matière de spécialité</option>
+                                    @foreach($matieres as $matiere)
+										<option value="{{ $matiere->name }}">{{ $matiere->name }}</option>
+										@endforeach
+                    </select>
                 </div>
                 
                 <x-jet-button>S'inscrire</x-jet-button>
