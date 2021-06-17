@@ -20,10 +20,10 @@
                                         <tr>
                                             <th width=5%>#</th>
                                             <th width=15%>Titre</th>
-                                            <th width=20%>Formatteur | Matiere</th>
+                                            <th width=15%>Formatteur</th>
+                                            <th width=10%>Matiere</th>
+                                            <th width=10%>Niveau</th>
                                             <th width=25%>Description</th>
-                                            <th width=5%>Vues</th>
-                                            <th width=5%>Eleves inscrits</th>
                                             <th width=20%>Actions</th>
                                         </tr>
                                     </thead>
@@ -32,11 +32,11 @@
                                         <tr>
                                             <th>{{ $key+1 }}</th>
                                             <th> <a href="{{ route('showcoursadmin.view', $course->id) }}"> {{ $course->titre }}</a></th>
-                                            <th>{{ $course->user['name'] }} | {{ $course->matiere['name'] }}</th>
+                                            <th>{{ $course->user['name'] }}</th>
+                                            <th>{{ $course->matiere['name'] }}</th>
+                                            <th>{{ $course->niveau['name'] }}</th>
                                             <th>{{ $course->description }}</th>
-                                            <th>{{ $course->view_count }}</th>
-                                            <th>{{ $course->enrolled_count }}</th>
-                                            <th><a href="{{ route('admincourse.edit', $course->id) }}" class="btn btn-info" id="edit">Modifier</a>     <a href="{{ route('admincourse.delete', $course->id) }}" class="btn btn-danger" id="delete">Supprimer</a></th>
+                                            <th style="text-align: center;"><a href="{{ route('admincourse.edit', $course->id) }}" class="btn btn-info" id="edit" style="padding:10px 20px" >Modifier</a>     <a href="{{ route('admincourse.delete', $course->id) }}" class="btn btn-danger" id="delete" style="padding:10px 20px">Supprimer</a></th>
                                         </tr>
                                         @endforeach
                                     </tbody>

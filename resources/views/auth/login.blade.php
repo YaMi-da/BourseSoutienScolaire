@@ -58,7 +58,7 @@
                 
                 <div class="mt-4" style="width: 100%;" x-show="user_type_id == 2">
                     <select name="niveau_eleve" class="form-control" style="width: 100%; height:34px; margin-bottom:10px;">
-                                        <option value="" selected>Niveau d'étude</option>
+                                        <option value="" selected>Niveau scolaire </option>
                                         @foreach($niveaux as $niveau)
 										<option value="{{ $niveau->name }}">{{ $niveau->name }}</option>
 										@endforeach
@@ -66,7 +66,7 @@
                 </div>
                 <div class="mt-4" style="width: 100%;" x-show="user_type_id == 3">
                 <select name="matiere_formatteur" class="form-control" style="width: 100%; height:34px; margin-bottom:10px;">
-                                    <option value="" selected>Matière de spécialité</option>
+                                    <option value="" selected>Matière d'expertise</option>
                                     @foreach($matieres as $matiere)
 										<option value="{{ $matiere->name }}">{{ $matiere->name }}</option>
 										@endforeach

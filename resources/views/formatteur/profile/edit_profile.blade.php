@@ -248,6 +248,23 @@
 			</label>
 		</div>
 	</div><!-- End Col Md-6 -->
+
+    <div class="col-md-6" >
+
+                            <div class="form-group">
+                        	<label for="matiere_formatteur" class="custom-field one">
+                            	<div class="select">
+                                	<select name="matiere_formatteur" id="matiere_formatteur" required style="width: 400px;">
+                                    	<option value="" selected="" disabled="">Matière</option>
+                                    	@foreach($matieres as $matiere)
+										<option value="{{ $matiere->name }}">{{ $matiere->name }}</option>
+										@endforeach 
+                                	</select>
+                                	</div>
+                                                                                                                            
+                        	</label>
+                    		</div>
+                		</div>
 	
 
 	<div class="col-md-6" >
