@@ -61,7 +61,7 @@
                 Notifications
             </h6>
             @foreach(Auth::user()->unreadNotifications as $notification)
-            <a class="dropdown-item d-flex align-items-center" href="#">
+            <div class="dropdown-item d-flex align-items-center">
                 <div class="mr-3">
                     <div class="icon-circle bg-primary">
                         <i class="fas fa-book text-white"></i>
@@ -70,7 +70,12 @@
                 <div>
                     <span class="font-weight-bold">{{ $notification->data['username'] }}</span> <span>{{ $notification->data['reply'] }}</span> <span class="font-weight-bold">{{ $notification->data['titreCours'] }}</span>
                 </div>
-            </a>
+                <div class="">
+                    <a href="{{ route('markAsRead') }}" class=" ml-3 icon-circle bg-secondary">
+                        <i class="fas fa-check text-white"></i>
+                    </a>
+                </div>
+            </div>
             @endforeach
         </div>
     </li>

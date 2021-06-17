@@ -188,4 +188,8 @@ Route::get('/rechercheeleve', [CourseController::class, 'EleveSearch'])->name('e
 
 Route::get('/autocomplete', [CourseController::class, 'Autocomplete'])->name('autocomplete');
 
+Route::get('markAsRead', function(){
+    Auth::user()->unreadNotifications->markAsRead();
+    return redirect()->back();
+})->name('markAsRead');
 

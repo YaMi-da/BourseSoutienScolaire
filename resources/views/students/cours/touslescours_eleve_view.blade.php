@@ -23,7 +23,6 @@
                                                 </div>
                                                 <div class="informations-container" style="height: 235px;">
                                                 <h2 class="title" style="color: black; font-size:20px">{{ $cours->titre }}</h2>
-                                                <h6 class="text-muted" style="text-align: center;">Matiere: {{ $cours-> matiere['name'] }}</h6>
                                                 <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;text-align:justify;color:black">{{ $cours-> description }}</p>
                                                 <ul class="list-group list-group-flush" style="text-align: center;">
                                                 <h6 class="text-muted"> <span style="color: black; font-weight:bold">Cours Par :</span> {{ $cours-> user['name'] }}</h6>
