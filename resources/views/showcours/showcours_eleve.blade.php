@@ -45,6 +45,9 @@
                                     <input type="hidden" name="course_id" value="{{ $showData->id }}">
                                     <input type="hidden" name="course_user" value="{{ $showData->user_id }}">
                                     <input type="hidden" name="course_title" value="{{ $showData->titre }}">
+                                    <input type="hidden" name="course_username" value="{{ $showData->user['name'] }}">
+                                    <input type="hidden" name="course_niveau" value="{{ $showData->niveau['name'] }}">
+                                    <input type="hidden" name="course_matiere" value="{{ $showData->matiere['name'] }}">
                                     @if(Auth::user()->isSubscribed($showData))
                                         <button type="submit" style="float:none; padding: 10px 35px; text-align:center" class="btn rounded-pill btn-secondary mt-0">Inscrit</button>
                                     @else

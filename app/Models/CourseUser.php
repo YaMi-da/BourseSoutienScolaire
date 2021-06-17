@@ -14,6 +14,9 @@ class CourseUser extends Model
         'course_id',
         'course_title',
         'course_user',
+        'course_username',
+        'course_matiere',
+        'course_niveau',
         'status',
     ];
 
@@ -23,5 +26,9 @@ class CourseUser extends Model
 
     public function course(){
         return $this->belongsTo('App\Models\Course');
+    }
+
+    public function niveau(){
+        return $this->belongsTo('App\Models\Niveau');
     }
 }

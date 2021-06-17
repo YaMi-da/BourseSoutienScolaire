@@ -19,6 +19,9 @@ class CreateCourseUsersTable extends Migration
             $table->integer('course_id')->nullable();
             $table->string('course_title')->nullable();
             $table->integer('course_user')->nullable();
+            $table->string('course_username')->nullable();
+            $table->string('course_matiere')->nullable();
+            $table->string('course_niveau')->nullable();
             $table->timestamps();
         });
     }

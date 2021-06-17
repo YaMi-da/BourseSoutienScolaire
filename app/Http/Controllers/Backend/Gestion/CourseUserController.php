@@ -78,6 +78,9 @@ class CourseUserController extends Controller
         $data -> course_id = $request->course_id;
         $data -> course_title = $request->course_title;
         $data -> course_user = $request->course_user;
+        $data -> course_username = $request->course_username;
+        $data -> course_niveau = $request->course_niveau;
+        $data -> course_matiere = $request->course_matiere;
         $data->save();
         
         $course -> id = $request->course_id;
