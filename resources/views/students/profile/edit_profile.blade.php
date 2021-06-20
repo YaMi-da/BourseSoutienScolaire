@@ -212,10 +212,6 @@
 
 		 <!-- Basic Forms -->
 		  <div class="box">
-			<div class="box-header with-border">
-			  <h4 class="box-title">Profile</h4>
-			  
-			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
 			  <div class="row">
@@ -240,6 +236,23 @@
 
 
 	</div> <!-- End Col Md-6 -->
+
+    <div class="col-md-6" >
+
+                            <div class="form-group">
+                        	<label for="niveau_eleve" class="custom-field one">
+                            	<div class="select">
+                                	<select name="niveau_eleve" id="niveau_eleve" style="width: 400px;">
+                                    	<option value="{{ $editData->niveau_eleve }}" selected="">Niveau</option>
+                                    	@foreach($niveaux as $niveau)
+										<option value="{{ $niveau->name }}">{{ $niveau->name }}</option>
+										@endforeach 
+                                	</select>
+                                	</div>
+                                                                                                                            
+                        	</label>
+                    		</div>
+                		</div>
 
 	<div class="col-md-6" >
 		<div class="form-group">

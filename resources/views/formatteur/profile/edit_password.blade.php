@@ -203,16 +203,13 @@
         @include('formatteur.body.header')
 
         <div class="container-fluid">
+        <h1 class="h3 mb-3 text-gray-800">Changer Mot de Passe</h1>
             <div class="card shadow mb-4">
                 <div class="card-body">
                 <section class="content">
 
 		 <!-- Basic Forms -->
 		  <div class="box">
-			<div class="box-header with-border">
-			  <h4 class="box-title">Changer mot de passe</h4>
-			  
-			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
 			  <div class="row">

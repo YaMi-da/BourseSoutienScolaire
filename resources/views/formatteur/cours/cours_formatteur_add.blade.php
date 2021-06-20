@@ -311,7 +311,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="custom-field one">
-									<input type="url" id="session_url" name="session_url" style="width: 600px;" required placeholder=" "/>
+									<input type="text" id="session_url" name="session_url" style="width: 600px;" required placeholder=" "/>
 									<span class="placeholder">Lien Session <span class="text-danger">*</span></span>
 								</label>
 							</div>	

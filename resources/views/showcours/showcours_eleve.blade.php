@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="row">
                                     <div style="height: auto; display: block">
-                                        <p style="font-size: 17px; white-space: pre-wrap; font-style:italic; color:#5b6378"><span style="font-weight: bold">Formatteur :</span> <a style="color: black;" href="{{ route('formatteurprofile3', $showData->user['id']) }}">{{ $showData->user['name'] }}</a></p>
+                                        <p style="font-size: 17px; white-space: pre-wrap; font-style:italic; color:#5b6378"><span style="font-weight: bold">Formateur :</span> <a style="color: black;" href="{{ route('formatteurprofile3', $showData->user['id']) }}">{{ $showData->user['name'] }}</a></p>
                                         <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->description }}</p>
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@
                                 <div class="row" style="padding-left: 50px">
                                         <h1 style="font-weight: bold; color:black">Dans ce cours : </h1>
                                     </div>
-                                    <div class="row" style="padding-left: 40px; padding-right: 40px">
+                                    <div class="row" style="padding-left: 40px; padding-right: 40px; padding-top: 10px">
                                         <div style="height: auto; display: block;">
                                             <p style="font-size: 18px; white-space: pre-wrap ;color: black; text-align:justify">{{ $showData->incourse }}</p>
                                         </div>

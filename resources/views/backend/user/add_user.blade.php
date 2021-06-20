@@ -232,7 +232,7 @@
                                                                         <option value="" selected="" disabled="">Type d'Utilisateur <span class="text-danger">*</span></option>
                                                                         <option value="1">Admin</option>
                                                                         <option value="2">Eleve</option>
-                                                                        <option value="3">Formatteur</option>
+                                                                        <option value="3">Formateur</option>
                                                                                     
                                                                     </select>
                                                                     </div>

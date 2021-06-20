@@ -231,7 +231,7 @@
                                                                         <option value="" selected="" disabled="">Type d'Utilisateur</option>
                                                                         <option value="1" {{ ($editData-> user_type_id == 1 ? "selected" : "") }}>Admin</option>
                                                                         <option value="2" {{ ($editData-> user_type_id == 2 ? "selected" : "") }}>Eleve</option>
-                                                                        <option value="3" {{ ($editData-> user_type_id == 3 ? "selected" : "") }}>Formatteur</option>
+                                                                        <option value="3" {{ ($editData-> user_type_id == 3 ? "selected" : "") }}>Formateur</option>
                                                                                     
                                                                     </select>
                                                                     </div>

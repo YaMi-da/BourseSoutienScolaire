@@ -20,7 +20,7 @@
                                         <tr>
                                             <th width=5%>#</th>
                                             <th width=15%>Titre</th>
-                                            <th width=15%>Formatteur</th>
+                                            <th width=15%>Formateur</th>
                                             <th width=10%>Matiere</th>
                                             <th width=10%>Niveau</th>
                                             <th width=25%>Description</th>

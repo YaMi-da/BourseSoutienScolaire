@@ -25,7 +25,6 @@
                                                 </div>
                                                 <div class="informations-container" style="height: 220px;">
                                                 <h2 class="title" style="color: black; font-size:20px">{{ $cours->course_title }}</h2>
-                                                <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;text-align:justify;color:black">{{ $cours-> description }}</p>
                                                 <ul class="list-group list-group-flush" style="text-align: center;">
                                                 <h6 class="text-muted"> <span style="color: black; font-weight:bold">Cours Par :</span> {{ $cours->course_username}}</h6>
                                                 <h6 class="text-muted"> <span style="color: black; font-weight:bold">Niveau :</span> {{ $cours-> course_niveau }}</h6>

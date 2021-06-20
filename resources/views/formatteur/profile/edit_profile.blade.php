@@ -212,10 +212,6 @@
 
 		 <!-- Basic Forms -->
 		  <div class="box">
-			<div class="box-header with-border">
-			  <h4 class="box-title">Profile</h4>
-			  
-			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
 			  <div class="row">
@@ -254,8 +250,8 @@
                             <div class="form-group">
                         	<label for="matiere_formatteur" class="custom-field one">
                             	<div class="select">
-                                	<select name="matiere_formatteur" id="matiere_formatteur" required style="width: 400px;">
-                                    	<option value="" selected="" disabled="">Matière</option>
+                                	<select name="matiere_formatteur" id="matiere_formatteur" style="width: 400px;">
+                                    	<option value="{{ $editData->matiere_formatteur }}" selected="">Matière</option>
                                     	@foreach($matieres as $matiere)
 										<option value="{{ $matiere->name }}">{{ $matiere->name }}</option>
 										@endforeach 

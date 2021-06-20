@@ -48,7 +48,7 @@
                     <select name="user_type_id" x-model="user_type_id" class="form-control" style="width: 100%; height:34px; margin-bottom:10px;">
                         <option :value="1" selected>Etes vous?</option>
                         <option :value="2">Elève</option>
-                        <option :value="3">Formatteur</option>
+                        <option :value="3">Formateur</option>
                     </select>
                 </div>
                 @php
@@ -108,9 +108,9 @@
     </div>
 
 <footer>
-	<p>
-		
-	</p>
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Bourse Soutien Scolaire 2021</span>
+        </div>
 </footer>
 
     <!-- Bootstrap core JavaScript-->

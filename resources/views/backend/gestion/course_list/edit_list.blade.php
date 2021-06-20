@@ -272,7 +272,7 @@
                         	<label for="user_id" class="custom-field one">
                             	<div class="select">
                                 	<select name="user_id" id="user_id" required style="width: 400px;">
-                                    	<option value="" selected="" disabled="">Formatteur</option>
+                                    	<option value="" selected="" disabled="">Formateur</option>
                                     	@foreach($users as $user)
 										<option value="{{ $user->id }}">{{ $user->name }}</option>
 										@endforeach 

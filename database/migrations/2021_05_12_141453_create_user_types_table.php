@@ -32,7 +32,7 @@ class CreateUserTypesTable extends Migration
         );
         DB::table('user_types')->insert(
             array(
-                'user_type' => 'formatteur',
+                'user_type' => 'formateur',
             )
         );
     }
