@@ -203,14 +203,14 @@
         @include('admin.body.header')
 
         <div class="container-fluid">
-            <div class="card shadow mb-4">
+            <div class="card shadow mb-4" style="margin-top: 50px;">
                 <div class="card-body">
                 <section class="content">
 
 		 <!-- Basic Forms -->
 		  <div class="box">
-			<div class="box-header with-border" style="margin-top: 50px;">
-			  <h4 class="box-title">Modifier matiere</h4>
+			<div class="box-header with-border">
+			  <h4 class="box-title">Modifier matière</h4>
 			  
 			</div>
 			<!-- /.box-header -->

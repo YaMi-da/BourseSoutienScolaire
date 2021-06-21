@@ -13,8 +13,8 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4" style="margin-top: 50px;">
                         <div class="card-header py-3">
-                            <h3 class="m-0 font-weight-bold text-primary">Matieres</h3>
-                            <a href="{{ route('adminmatiere.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Matiere</a>
+                            <h3 class="m-0 font-weight-bold text-primary">Matières</h3>
+                            <a href="{{ route('adminmatiere.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Matière</a>
                         </div>
                         <div class="card-body">
                                         <div class="row row-cols-md-5 g-4 justify-content-center">

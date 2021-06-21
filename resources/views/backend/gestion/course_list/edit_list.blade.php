@@ -226,7 +226,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="custom-field one">
-									<input type="name" id="titre" name="titre" style="width: 400px;" required value="{{ $editData->titre }}" placeholder=" "/>
+									<input type="name" id="titre" name="titre" style="width: 400px;" value="{{ $editData->titre }}" placeholder=" "/>
 									<span class="placeholder">Titre</span>
 								</label>
 							</div>	
@@ -237,8 +237,8 @@
                             <div class="form-group">
                         	<label for="matiere_id" class="custom-field one">
                             	<div class="select">
-                                	<select name="matiere_id" id="matiere_id" required style="width: 400px;">
-                                    	<option value="" selected="" disabled="">Matière</option>
+                                	<select name="matiere_id" id="matiere_id" style="width: 400px;">
+                                    	<option value="{{ $editData->matiere_id }}" selected="">Matière</option>
                                     	@foreach($matieres as $matiere)
 										<option value="{{ $matiere->id }}">{{ $matiere->name }}</option>
 										@endforeach 
@@ -254,8 +254,8 @@
                             <div class="form-group">
                         	<label for="niveau_id" class="custom-field one">
                             	<div class="select">
-                                	<select name="niveau_id" id="niveau_id" required style="width: 400px;">
-                                    	<option value="" selected="" disabled="">Niveau</option>
+                                	<select name="niveau_id" id="niveau_id" style="width: 400px;">
+                                    	<option value="{{ $editData->niveau_id }}" selected="">Niveau</option>
                                     	@foreach($niveaux as $niveau)
 										<option value="{{ $niveau->id }}">{{ $niveau->name }}</option>
 										@endforeach 
@@ -271,8 +271,8 @@
                             <div class="form-group">
                         	<label for="user_id" class="custom-field one">
                             	<div class="select">
-                                	<select name="user_id" id="user_id" required style="width: 400px;">
-                                    	<option value="" selected="" disabled="">Formateur</option>
+                                	<select name="user_id" id="user_id" style="width: 400px;">
+                                    	<option value="{{ $editData->user_id }}" selected="">Formateur</option>
                                     	@foreach($users as $user)
 										<option value="{{ $user->id }}">{{ $user->name }}</option>
 										@endforeach 
@@ -286,7 +286,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="custom-field one">
-									<textarea type="text" id="description" name="description" rows="6" style="width: 600px;" placeholder=" "/></textarea>
+									<textarea type="text" id="description" name="description" rows="6" style="width: 600px;" placeholder=" "/> {{ $editData->description }}</textarea>
 									<span class="placeholder">Description</span>
 								</label>
 							</div>	
@@ -295,7 +295,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="custom-field one">
-									<textarea type="text" id="incourse" name="incourse" rows="6" style="width: 600px;" placeholder=" "/></textarea>
+									<textarea type="text" id="incourse" name="incourse" rows="6" style="width: 600px;" placeholder=" "/> {{ $editData->incourse }}</textarea>
 									<span class="placeholder">Dans ce cours :</span>
 								</label>
 							</div>	
@@ -313,7 +313,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="custom-field one">
-									<input type="url" id="session_url" name="session_url" value="{{ $editData->session_url }}" style="width: 600px;" placeholder=" "/>
+									<input type="text" id="session_url" name="session_url" value="{{ $editData->session_url }}" style="width: 600px;" placeholder=" "/>
 									<span class="placeholder">Lien Session</span>
 								</label>
 							</div>	

@@ -210,7 +210,7 @@
 		 <!-- Basic Forms -->
 		  <div class="box">
 			<div class="box-header with-border">
-			  <h4 class="box-title">Modifier Cours</h4>
+			  <h4 class="box-title">Modifier Commentaire</h4>
 			  
 			</div>
 			<!-- /.box-header -->
@@ -228,7 +228,7 @@
                         	<label for="user_id" class="custom-field one">
                             	<div class="select">
                                 	<select name="user_id" id="user_id" style="width: 400px;">
-                                    	<option value="" selected="" disabled="">Utilisateur <span class="text-danger">*</span></option>
+                                    	<option value="{{ $editData->user_id }}" selected="">Utilisateur <span class="text-danger">*</span></option>
                                     	@foreach($users as $user)
 										<option value="{{ $user->id }}">{{ $user->name }}</option>
 										@endforeach 
@@ -245,7 +245,7 @@
                         	<label for="course_id" class="custom-field one">
                             	<div class="select">
                                 	<select name="course_id" id="course_id" style="width: 400px;">
-                                    	<option value="" selected="" disabled="">Cours <span class="text-danger">*</span></option>
+                                    	<option value="{{ $editData->course_id }}" selected="">Cours <span class="text-danger">*</span></option>
                                     	@foreach($course as $course)
 										<option value="{{ $course->id }}">{{ $course->titre }}</option>
 										@endforeach 
@@ -259,7 +259,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="custom-field one">
-									<textarea type="text" id="body" name="body" rows="6" style="width: 600px;" placeholder=" "/></textarea>
+									<textarea type="text" id="body" name="body" rows="6" style="width: 600px;" placeholder=" "/>{{ $editData->body }}</textarea>
 									<span class="placeholder">Commentaire</span>
 								</label>
 							</div>	

@@ -34,9 +34,7 @@ class CourseController extends Controller
         $data -> description = $request -> description;
         $data -> incourse = $request -> incourse;
         $data -> user_id = $request -> user_id;
-        $data -> user_name = $request -> user_name;
         $data -> niveau_id = $request -> niveau_id;
-        $data -> enrolled_count = $request -> enrolled_count;
         $data -> session_url = $request -> session_url;
         $data -> debut_seance = $request -> debut_seance;
         $data -> fin_seance = $request -> fin_seance;
@@ -80,9 +78,7 @@ class CourseController extends Controller
         $data -> description = $request -> description;
         $data -> incourse = $request -> incourse;
         $data -> user_id = $request -> user_id;
-        $data -> user_name = $request -> user_name;
         $data -> niveau_id = $request -> niveau_id;
-        $data -> enrolled_count = $request -> enrolled_count;
         $data -> debut_seance = $request -> debut_seance;
         $data -> fin_seance = $request -> fin_seance;
         if ($request->hasFile('photo')) {

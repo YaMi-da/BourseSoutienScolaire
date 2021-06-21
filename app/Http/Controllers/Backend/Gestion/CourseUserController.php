@@ -43,7 +43,7 @@ class CourseUserController extends Controller
         $editData = CourseUser::find($id);
         $course = Course::all();
         $users = User::where('user_type_id', '2')->get();
-        return view('backend.gestion.course-user_list.edit_list', compact('editData'))->with('users', $users)->with('course', $course);
+        return view('backend.gestion.course_user_list.edit_list', compact('editData'))->with('users', $users)->with('course', $course);
     }
 
     public function UpdateCourseUser(Request $request, $id){

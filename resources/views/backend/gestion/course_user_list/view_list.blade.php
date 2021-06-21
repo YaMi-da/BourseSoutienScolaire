@@ -8,10 +8,9 @@
         <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Inscriptions</h1>
 
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    <div class="card shadow mb-4" style="margin-top: 50px;">
                         <div class="card-header py-3">
                             <h3 class="m-0 font-weight-bold text-primary">Inscriptions</h3>
                             <a href="{{ route('admincourseuser.add') }}" style="float:right;" class="btn rounded-pill btn-success mt-0">Ajouter Inscription</a>
