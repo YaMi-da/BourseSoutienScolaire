@@ -26,6 +26,7 @@
 						  <span style="padding: 12px 30px; margin: .3125rem 1px;"><i class="fas fa-fw fa-phone" style="color: #4e73df;"></i> {{ $user->mobile }}</span>
 						  <span style="padding: 12px 30px; margin: .3125rem 1px;"><i class="fas fa-fw fa-envelope" style="color: #4e73df;"></i> {{ $user->email }}</span>
 						  <span style="padding: 12px 30px; margin: .3125rem 1px;"><i class="fas fa-fw fa-graduation-cap" style="color: #4e73df;"></i> {{ $user->niveau_eleve }}</span>
+						  <span style="padding: 12px 30px; margin: .3125rem 1px;"><i class="fas fa-fw fa-map-marker-alt" style="color: #4e73df;"></i> {{ $user->address }}</span>
 						  </div>
 					  </div>
 					  <!-- /.row -->
