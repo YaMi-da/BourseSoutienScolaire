@@ -86,20 +86,22 @@
                                         <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="{{ (!empty($comment->user['image']) ? url('upload/user_img/'.$comment->user['image']):url('upload/profile.png')) }}" alt="Image Description">
                                         <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30" style="border-radius: 10px;">
                                         <div class="g-mb-15">
+                                        @php    
+                                        Carbon\Carbon::setlocale('fr');
+                                        @endphp
                                             <h5 class="h5 g-color-gray-dark-v1 mb-0" style="color: black; font-size:20px; font-weight: 600">{{ $comment->user['name'] }}</h5>
-                                            <span class="g-color-gray-dark-v4 g-font-size-12">Le: {{ $comment->created_at }}</span>
+                                            <span class="g-color-gray-dark-v4 g-font-size-12">Posté le: {{ $comment->created_at->translatedFormat('D d/m/Y') }} à {{ $comment->created_at->translatedFormat('H:i') }}</span>
                                         </div>
                                     
                                         <p style="color: black; font-size:17px;">{{ $comment->body }}</p>
                                     
                                         <ul class=" d-sm-flex my-0">
                                             <li class="list-inline-item ml-auto">
-                                            <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="">
-                                            <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>Répondre 
-                                            </a>
+                                            @if(Auth::user()->id== $comment->user_id)
                                             <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="{{ route('deletecomment4', $comment->id) }}" id="delete">
                                             <i class="fa fa-ban g-pos-rel g-top-1 g-mr-3"></i>Supprimer
                                             </a>
+                                            @endif
                                             </li>
                                         </ul>
                                         </div>

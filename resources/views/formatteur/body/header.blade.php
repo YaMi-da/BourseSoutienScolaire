@@ -71,7 +71,7 @@
                     <span class="font-weight-bold">{{ $notification->data['username'] }}</span> <span>{{ $notification->data['reply'] }}</span> <span class="font-weight-bold">{{ $notification->data['titreCours'] }}</span>
                 </div>
                 <div class="">
-                    <a href="{{ route('markAsRead') }}" class=" ml-3 icon-circle bg-secondary">
+                    <a href="{{ route('markAsRead') }}" class=" ml-3 icon-circle bg-secondary" style="text-decoration: none;">
                         <i class="fas fa-check text-white"></i>
                     </a>
                 </div>
